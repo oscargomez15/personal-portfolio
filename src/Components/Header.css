@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.header-container{
+    display: flex;
+    background-color: #5885AF;
+    min-height: 100px;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.socials-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    flex-basis: 10%;
+}
+
+.socials-container a{
+    color: white;
+}
+
+
+.social{
+    transition: 0.3s;
+}
+
+.social:hover{
+    box-shadow: 1px 1px 15px #C3E0E5;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 1;
+}
+
+.logo{
+    display: flex;
+    color: white;
+    position: relative;
+}
+
+.logo .O{
+    margin-bottom: 10%;
+}
+
+.logo .logo-divider{
+    position: absolute;
+    background-color:white;
+    height: 90%;
+    width: 2px;
+    left: 50%;
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+.hide-divider{
+    position: absolute;
+    background-color: #5885AF;
+    width: 15px;
+    height: 92%;
+    transform: rotate(30deg);
+    left: 37%;
+    z-index: 0;
+}
+
+.logo .G {
+    margin-top: 20%;
+}
+
+.name p{
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.role{
+    font-size: .7rem;
+}
+
+.contact-me{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #5885AF;
+    padding: .75rem;
+    transition: 0.3s;
+    text-decoration: none;
+
+}
+
+.contact-me:hover{
+    cursor: pointer;
+    box-shadow: 0.3rem 0.3rem #C3E0E5;
+}
+
+.contact-me p{
+    margin-left: 0.3rem;
+    font-weight: 500;
+}
+
+a:link {
+    text-decoration: none;
+}

@@ -1,0 +1,60 @@
+:root{
+    --background: #5885AF;
+    --darkblue: #274472;
+}
+
+.skills-container{
+    display:grid;
+    grid-template-columns: repeat(3,240px);
+    grid-template-rows: auto;
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
+    border-radius: 1rem;
+    padding: 5rem 4rem;
+    gap: 3rem;
+    width: 75%;
+    margin: auto;
+    border-radius: 1rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.skill-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column-start: span 3;
+}
+
+.skill-title > h1{
+    font-weight: 500;
+    margin-right: .2rem;
+}
+
+.skillbox{
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.skillbox-heading{
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.skillbox-description {
+    line-height: 1.3rem;
+}
+
+video{
+    display: inline-block;
+    border-radius: 1.2rem;
+    object-fit: cover;
+    transition: scale 1s, margin-bottom 1s;
+}
+
+video:hover{
+    scale: 1.1;
+    cursor: pointer;
+    margin-bottom: 1.3rem;
+}

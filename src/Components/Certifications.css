@@ -1,0 +1,36 @@
+.certifications-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    width: 75%;
+    margin: auto;
+    padding: 4rem;
+    gap: 2rem 6rem;
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
+    border-radius: 1rem ;
+    margin-top: 5rem;
+}
+
+.certs-heading{
+    grid-column-start: span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certs-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.certs-heading h1 {
+    margin-right: .2rem;
+    font-weight: 500;
+}
+
+.certification{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

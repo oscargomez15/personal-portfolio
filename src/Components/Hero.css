@@ -1,0 +1,97 @@
+
+@keyframes ZoomOut {
+    from{scale: 2;}
+    to{scale: 1;}
+}
+
+@keyframes Show {
+    from{opacity:0}
+    to{opacity: 1;}    
+}
+
+@keyframes slidesTop {
+    from{align-items: center;}
+    to{align-items: flex-start;}
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 20rem;
+}
+
+body{
+    background-color: #5885AF;
+}
+
+.invisible-container{
+    width: 100%;
+    height: 90dvh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.name-heading{
+    position: absolute;
+    transform: translateY(-5rem);
+    font-weight: 500;
+    background-color: #5885AF;
+    color: white;
+    padding: 0 2rem;
+    font-size: 3rem;
+}
+
+.hero-container{
+    background-color: none;
+    width: 75%;
+    margin: auto;
+    padding: 3rem;
+    border: .5rem solid rgb(255, 255, 255);
+    border-radius: 1rem;
+    animation: Show 2s, ZoomOut 2s, slidesTop 2s ;
+    animation-iteration-count: 1;
+    overflow: hidden;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    font-weight: 500;
+}
+
+.hero img{
+    align-self: flex-end;
+}
+
+.hero-text p{
+    color: black;
+    font-size: 1.2rem;
+}
+
+.hero-text input[type=submit]{
+    padding: .8rem 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: #5885AF;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 1px 1px 10px rgb(158, 158, 158);
+    transition: .5s;
+    color: white;
+}
+
+.hero-text .download-info{
+    font-size: .8rem;
+    
+}
+
+
