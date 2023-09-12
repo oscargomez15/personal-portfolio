@@ -18,13 +18,29 @@ form{
     margin: auto;
 }
 
-form label{
-    margin-top: 2rem;
+form label,
+.formInput{
+    margin-top: 1.5rem;
     font-weight: 500;
 }
 
-input[type=text],
-input[type=email],
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.formInput label{
+    margin-top: 0;
+}
+
+.formInput span{
+    color: red;
+    padding: .2rem;
+}
+
+.formInput input[type=text],
+.formInput input[type=email],
 select,
 textarea{
     padding: .5rem;
