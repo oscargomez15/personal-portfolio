@@ -15,7 +15,7 @@ export const Certifications = () => {
                 <h1>Certifications</h1>
                 <FontAwesomeIcon icon={faFileLines} />
             </div>
-            <p> Click badges to verify.</p>
+            <p> Click/Tap badges to verify.</p>
         </div>
 
             <div className='certification'>

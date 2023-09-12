@@ -34,3 +34,33 @@
     flex-direction: column;
     align-items: center;
 }
+
+.certification img{
+    transition: scale 1s, opacity 500ms;
+}
+
+.certification img:hover{
+    scale: 1.2;
+    opacity: 0.7;
+}
+
+@media screen and (max-width:800px) {
+    .certifications-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .certification{
+        padding-bottom: 1rem;
+        border-bottom: .5rem rgb(110, 110, 110) dotted;
+    }
+
+    .certification:last-child{
+        border-bottom: none;
+    }
+
+    .certification > p{
+        text-align: center;
+    }
+}
+

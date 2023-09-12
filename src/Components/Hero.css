@@ -24,9 +24,7 @@ body{
 }
 
 .invisible-container{
-    width: 100%;
     height: 90dvh;
-    margin: auto;
     display: flex;
     align-items: center;
     position: relative;
@@ -43,6 +41,8 @@ body{
 }
 
 .hero-container{
+    display: flex;
+    flex-direction: column;
     background-color: none;
     width: 75%;
     margin: auto;
@@ -51,11 +51,12 @@ body{
     border-radius: 1rem;
     animation: Show 2s, ZoomOut 2s, slidesTop 2s ;
     animation-iteration-count: 1;
-    overflow: hidden;
 }
 
 .hero{
     display: flex;
+    width: 100%;
+    flex-basis: 0;
     justify-content: space-around;
     align-items: center;
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
@@ -77,6 +78,7 @@ body{
 }
 
 .hero-text input[type=submit]{
+    width: 50%;
     padding: .8rem 1rem;
     font-weight: 500;
     margin-top: 1rem;
@@ -92,6 +94,44 @@ body{
 .hero-text .download-info{
     font-size: .8rem;
     
+}
+
+@media screen and (max-width:800px){
+
+    .hero-container{
+        width: 90%;
+        padding: .5rem;
+        border: .3rem white solid;
+    }
+
+    .hero{
+        height: 60%;
+    }
+
+    .name-heading{
+        padding: 0 .3rem;
+        transform: translateY(-1.3rem);
+        font-size: 1rem;
+    }
+    
+    .hero img{
+        width: 50%;
+    }
+
+    .hero h1 {
+        font-size: 1rem;
+    }
+
+    .hero-text input[type=submit]{
+        font-size: .4rem;
+        padding: .5rem;
+        border-radius: .5rem;
+    }
+
+    .hero-text p, 
+    .hero-text .download-info {
+        font-size: .5rem;
+    }
 }
 
 

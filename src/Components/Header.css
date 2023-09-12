@@ -97,7 +97,6 @@
     padding: .75rem;
     transition: 0.3s;
     text-decoration: none;
-
 }
 
 .contact-me:hover{
@@ -112,4 +111,16 @@
 
 a:link {
     text-decoration: none;
+}
+
+@media screen and (max-width:800px) {
+    .contact-me,
+    .socials-container
+    {
+        display: none;
+    }
+
+    .header-container{
+        justify-content: center;
+    }
 }

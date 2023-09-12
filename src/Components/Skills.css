@@ -4,16 +4,13 @@
 }
 
 .skills-container{
-    display:grid;
-    grid-template-columns: repeat(3,240px);
-    grid-template-rows: auto;
+    display:flex;
+    flex-direction: column;
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
     border-radius: 1rem;
     padding: 5rem 4rem;
-    gap: 3rem;
     width: 75%;
     margin: auto;
-    border-radius: 1rem;
     margin-top: 5rem;
     justify-content: center;
 }
@@ -30,16 +27,29 @@
     margin-right: .2rem;
 }
 
+.skillbox-container{
+    display: flex;
+    gap: 3rem;
+    padding: 5rem 0 2rem 0;
+    border-radius: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+}
+
 .skillbox{
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex-basis: 0;
 }
 
 .skillbox-heading{
     font-weight: 500;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: .5rem 0;
 }
 
 .skillbox-description {
@@ -47,14 +57,48 @@
 }
 
 video{
-    display: inline-block;
+    width: 15rem;
+    height: 30rem;
     border-radius: 1.2rem;
     object-fit: cover;
     transition: scale 1s, margin-bottom 1s;
+    box-shadow: 0px 0px 1.7rem black;
 }
 
 video:hover{
     scale: 1.1;
     cursor: pointer;
     margin-bottom: 1.3rem;
+}
+
+@media screen and (max-width:800px) {
+    .skillbox-container{
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 0 2rem 0;
+        border-radius: none;
+    }
+
+    .skillbox{
+        border-bottom: .5rem rgb(110, 110, 110) dotted;
+        padding-bottom: 1rem;
+        border-radius: 0;
+    }
+
+    .skillbox:last-child{
+        border:none;
+        border-radius: 0;
+    }
+
+    .skill-title{
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        grid-column-start: span 2;
+    }
+
+    video{
+        width: 12rem;
+        height: 20rem;
+    }
 }

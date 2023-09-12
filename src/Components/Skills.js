@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import reactCoding from '../Videos/react-coding.mp4'
 import photoEditing from '../Videos/photo-editing.mp4'
 import apiIntegration from '../Videos/integration.mp4'
+import userInterface from '../Videos/user-interface.mp4'
 import { SkillBox } from './SkillBox';
 
 const skillsList = [
@@ -31,17 +32,11 @@ const skillsList = [
     of increasing the usability of your website.`
   },
   {
-    video: null,
+    video: userInterface,
     heading: "UX and UI",
     description:`Still don't know exactly what your customers want? Let me take care of the heavy lifting for you! 
     I will contribute to dig those requirements that your clients demand and incorporate them into the design
-    so that we focus on the user and manage to convert more. Similarly, we will focus in each of those aspects 
-    that will make your customers stay active on the page for longer when implementing visual and design best practices.`
-  },
-  {
-    video:null,
-    heading:"Oscar and Karla",
-    description:"Hello my name is Oscar and today I will present my girlfriend."
+     that way your app is user-centered maximizing the conversion.`
   }
 ]
 
@@ -50,7 +45,7 @@ const skillsList = [
 export const Skills = () => {
 
   const renderObject = (object) => {
-    return object.map(({video, heading, description}) => <SkillBox video={video} heading={heading} description={description} ></SkillBox>)
+    return object.map(({video, heading, description}) => <SkillBox key={video} video={video} heading={heading} description={description} ></SkillBox>)
   }
 
   return (
@@ -61,8 +56,9 @@ export const Skills = () => {
             <FontAwesomeIcon icon={faLaptopCode} size='lg'/>  
         </div>
         
-
-        {renderObject(skillsList)}
+        <div className='skillbox-container'>
+            {renderObject(skillsList)}
+        </div>
     </div>
   )
 }
