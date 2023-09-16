@@ -72,7 +72,8 @@ input[type=submit]:hover{
 }
 
 input:invalid[focused="true"] ~ span,
-textarea:invalid[isfocused="true"] ~ span{
+textarea:invalid[isfocused="true"] ~ span,
+select:invalid[isfocused="true"] ~ span{
     display: block;
 }
 

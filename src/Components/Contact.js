@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import './Contact.css'
 import { FormInput } from './FormInput'
-
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
     const [formValues, setValues] = useState({
         firstName:"",
         lastName:"",
         email:"",
+        reason:"",
+        inquiry:""
     });
 
     const [isFocused, setFocus] = useState(false); 
@@ -47,15 +49,47 @@ export const Contact = () => {
 
     const onChange = (e) => {
         setValues({...formValues, [e.target.name]: e.target.value})
-    }
+        }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        /*
+        Sending Form to Gmail through EmailJS
+        (function(){
+            emailjs.init("9k_A3kB7nMVLYiJ6w");
+        })();
+        
+        const serviceID = "service_wmvdhfq"
+        const templateID = "template_xq5ohxl"
+
+        var params = {
+            firstName: formValues.firstName,
+            lastName: formValues.lastName,
+            senderEmail: formValues.email,
+            reason: formValues.reason,
+            message: formValues.inquiry
+        }
+
+        emailjs.send(serviceID,templateID, params)
+        .then(res => {
+            alert('Email Sent');
+        })*/
+
+
+        setFocus(false);
+
+        setValues({
+            firstName:"",
+            lastName:"",
+            email:"",
+            reason:"",
+            inquiry:""
+        });
     }
 
     const handleFocus = (e) => {
         setFocus(true);
-        console.log("Hey you clicked and exit the text area.");
     }
 
   return (
@@ -69,27 +103,33 @@ export const Contact = () => {
             )
             )}
 
-            <label htmlFor='reason'>Reason * </label>
-            <select id='reason' required>
-                <option value=''></option>
-                <option value='Job Offer'>Job Offer</option>
-                <option value='Freelance'>Freelance</option>
-                <option value='Collaboration'>Collaboration</option>
-                <option value='Other'>Other</option>
-            </select>
+            <div className='formInput'>
+                <label htmlFor='reason'>Reason * </label>
+                <select id='reason' name="reason" value={formValues.reason} onChange={onChange} required>
+                    <option value=''></option>
+                    <option value='Job Offer'>Job Offer</option>
+                    <option value='Freelance'>Freelance</option>
+                    <option value='Collaboration'>Collaboration</option>
+                    <option value='Other'>Other</option>
+                </select>
+                <span>Please choose one item from the dropdown</span>
+            </div>
+
             <div className='formInput'>
                 <label htmlFor='inquiry'>Additional Information*</label>
                 <textarea 
                 id='inquiry' 
                 rows='10'
                 name='inquiry'
+                value={formValues.inquiry}
                 pattern="[A-Zaz]{5,250}$"
                 minLength={"25"}
                 onBlur={handleFocus}
-                isFocused={isFocused.toString()}/>
+                isFocused={isFocused.toString()}
+                onChange={onChange}/>
                 <span> Must be minimum of 25 characters. </span>          
             </div>
-            <input type='submit' value='Send' /> 
+            <input type='submit' value='Send' onSubmit={handleSubmit}/> 
         </form>
     </div>
   )
