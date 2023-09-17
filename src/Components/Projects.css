@@ -86,8 +86,7 @@
 .project-link{
     text-decoration: none;
     color: black;
-    display: inline;
-    width: 50%;
+    width: fit-content;
 }
 
 @media screen and (max-width:800px) {

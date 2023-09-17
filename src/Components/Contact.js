@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Contact.css'
 import { FormInput } from './FormInput'
 import emailjs from '@emailjs/browser';
@@ -11,9 +11,7 @@ export const Contact = () => {
         reason:"",
         inquiry:""
     });
-
     const [isFocused, setFocus] = useState(false); 
-
     const inputs = [
         {
             id:1,
@@ -21,7 +19,7 @@ export const Contact = () => {
             type:"text",
             placeholder:"First Name",
             errorMessage:"First name length minimum is 2 and no special characters.",
-            pattern: "^[A-Za-z]{2,16}$",
+            pattern: "^[A-Za-z]{2,25}$",
             label:"First Name *",
             required:true
         },
@@ -31,7 +29,7 @@ export const Contact = () => {
             type:"text",
             placeholder:"Last Name",
             errorMessage:"Last name length minimum is 2 and no special characters.",
-            pattern: "^[A-Za-z]{3,16}$",
+            pattern: "^[A-Za-z]{3,25}$",
             label:"Last Name *",
             required:true
         },
@@ -47,15 +45,17 @@ export const Contact = () => {
 
     ]
 
+    let isValid = false;
     const onChange = (e) => {
-        setValues({...formValues, [e.target.name]: e.target.value})
-        }
+        setValues({...formValues, [e.target.name]: e.target.value});
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        /*
-        Sending Form to Gmail through EmailJS
+        
+        //Sending Form to Gmail through EmailJS
+        
         (function(){
             emailjs.init("9k_A3kB7nMVLYiJ6w");
         })();
@@ -74,10 +74,13 @@ export const Contact = () => {
         emailjs.send(serviceID,templateID, params)
         .then(res => {
             alert('Email Sent');
-        })*/
+        })
+        
 
-
-        setFocus(false);
+        let inputsParents = [...document.getElementsByTagName('input')];
+        inputsParents.map((inputField) => {
+            inputField.setAttribute('focused',false);
+        }); 
 
         setValues({
             firstName:"",
@@ -105,7 +108,14 @@ export const Contact = () => {
 
             <div className='formInput'>
                 <label htmlFor='reason'>Reason * </label>
-                <select id='reason' name="reason" value={formValues.reason} onChange={onChange} required>
+                <select 
+                id='reason' 
+                name="reason" 
+                value={formValues.reason} 
+                onChange={onChange}
+                onBlur={handleFocus}
+                isFocused={isFocused.toString()}
+                required>
                     <option value=''></option>
                     <option value='Job Offer'>Job Offer</option>
                     <option value='Freelance'>Freelance</option>
@@ -123,13 +133,11 @@ export const Contact = () => {
                 name='inquiry'
                 value={formValues.inquiry}
                 pattern="[A-Zaz]{5,250}$"
-                minLength={"25"}
-                onBlur={handleFocus}
-                isFocused={isFocused.toString()}
+                minLength="25"
                 onChange={onChange}/>
                 <span> Must be minimum of 25 characters. </span>          
             </div>
-            <input type='submit' value='Send' onSubmit={handleSubmit}/> 
+             <input type='submit' value='Send'/>
         </form>
     </div>
   )
