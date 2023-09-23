@@ -1,3 +1,4 @@
+
 :root{
     --background: #5885AF;
     --darkblue: #274472;
@@ -25,6 +26,7 @@
 .skill-title > h1{
     font-weight: 500;
     margin-right: .2rem;
+    font-family: 'Sora', sans-serif;
 }
 
 .skillbox-container{
@@ -69,6 +71,36 @@ video:hover{
     scale: 1.1;
     cursor: pointer;
     margin-bottom: 1.3rem;
+}
+
+.slideX-animation{
+    animation: X-slide 2s;
+}
+
+@keyframes X-slide {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.slideY-animation{
+    animation: Y-slide 2s;
+}
+
+@keyframes Y-slide {
+    from{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 @media screen and (max-width:800px) {

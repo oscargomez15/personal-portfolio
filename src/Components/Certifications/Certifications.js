@@ -2,14 +2,38 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws,faFreeCodeCamp,faMeta } from '@fortawesome/free-brands-svg-icons'
 import { faFileLines } from '@fortawesome/free-solid-svg-icons'
-import './Certifications.css'
-import cloudCert from './cloud-practictioner.png'
-import courseraCert from './coursera-meta.png'
-import freeCodeCampCert from './freecodecamp.png'
+import 'Components/Certifications/Certifications.css'
+import cloudCert from 'Assets/cloud-practictioner.png'
+import courseraCert from 'Assets/coursera-meta.png'
+import freeCodeCampCert from 'Assets/freecodecamp.png'
+import { useRef,useEffect,useState } from 'react'
 
 export const Certifications = () => {
+const containerRef = useRef();
+const [isVisible, setVisibility] = useState(false);
+let intersectionCount = 0;
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries => {
+    const entry = entries[0];
+    intersectionCount++; 
+
+    if(intersectionCount <= 2){
+      setVisibility(entry.isIntersecting);
+    }
+  }));
+
+  //observing skills container
+    observer.observe(containerRef.current);
+
+  return () => {
+    observer.unobserve(containerRef.current);
+  }
+  
+},[containerRef])
+
   return (
-    <div className='certifications-container'>
+    <div className={`certifications-container ${isVisible ? 'slideX-animation' : ''} `} ref={containerRef}>
         <div className='certs-heading'>
             <div className='certs-title'>
                 <h1>Certifications</h1>

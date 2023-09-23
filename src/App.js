@@ -1,16 +1,17 @@
 import './App.css';
-import {Header} from './Components/Header.js';
-import { Hero } from './Components/Hero';
-import { Skills } from './Components/Skills';
-import { Projects } from './Components/Projects';
-import { Certifications } from './Components/Certifications';
-import {Footer} from './Components/Footer.js'
-import { Contact } from './Components/Contact';
+import {Header} from './Components/Header/Header.js';
+import { Hero } from './Components/Hero/Hero.js';
+import { Skills } from './Components/Skills/Skills.js';
+import { Projects } from './Components/Project/Projects.js';
+import { Certifications } from './Components/Certifications/Certifications.js';
+import {Footer} from './Components/Footer/Footer.js'
+import { Contact } from './Components/Contact/Contact.js';
 
 function App() {
+
   return (
     <>
-      <Header/>
+      <Header />
       <Hero/>
       <Skills/>
       <Projects/>

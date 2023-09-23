@@ -23,12 +23,13 @@
     justify-content: space-between;
     color: white;
     flex-basis: 10%;
+    background-color: white;
+    padding: 1rem;
 }
 
 .socials-container a{
-    color: white;
+    color: rgb(0, 0, 0);
 }
-
 
 .social{
     transition: 0.3s;
@@ -36,6 +37,37 @@
 
 .social:hover{
     box-shadow: 1px 1px 15px #C3E0E5;
+}
+
+.socials-text{
+    display: inline-block;
+    position: relative;
+    font-family: Sora, sans-serif;
+    color: black;
+    margin:0 .5rem;
+}
+
+.socials-text:after{
+    content: '';
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.socials-text:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+span{
+    color: black;
+    font-family: Sora, sans-serif;
 }
 
 .logo-container{
@@ -93,7 +125,7 @@
     display: flex;
     align-items: center;
     background-color: white;
-    color: #5885AF;
+    color:black;
     padding: .75rem;
     transition: 0.3s;
     text-decoration: none;
@@ -101,7 +133,7 @@
 
 .contact-me:hover{
     cursor: pointer;
-    box-shadow: 0.3rem 0.3rem #C3E0E5;
+    box-shadow: .5rem .5rem #4d4d4d;
 }
 
 .contact-me p{

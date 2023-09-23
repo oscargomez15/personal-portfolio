@@ -1,9 +1,33 @@
 import React, { useEffect, useState } from 'react'
-import './Contact.css'
-import { FormInput } from './FormInput'
+import 'Components/Contact/Contact.css'
+import { FormInput } from 'Components/Contact/FormInput'
 import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 export const Contact = () => {
+const containerRef = useRef();
+const [isVisible, setVisibility] = useState(false);
+let intersectionCount = 0;
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries => {
+    const entry = entries[0];
+    intersectionCount++; 
+
+    if(intersectionCount <= 2){
+      setVisibility(entry.isIntersecting);
+    }
+  }));
+
+  //observing skills container
+    observer.observe(containerRef.current);
+
+  return () => {
+    observer.unobserve(containerRef.current);
+  }
+  
+},[containerRef])
+
     const [formValues, setValues] = useState({
         firstName:"",
         lastName:"",
@@ -42,7 +66,6 @@ export const Contact = () => {
             label:"Email *",
             required: true
         }
-
     ]
 
     let isValid = false;
@@ -55,7 +78,6 @@ export const Contact = () => {
 
         
         //Sending Form to Gmail through EmailJS
-        
         (function(){
             emailjs.init("9k_A3kB7nMVLYiJ6w");
         })();
@@ -96,7 +118,7 @@ export const Contact = () => {
     }
 
   return (
-    <div className='contact-container' id='contact'>
+    <div className={`contact-container ${isVisible ? 'slideY-animation' : ''} `} id='contact' ref={containerRef}>
 
         <h1>Let's Connect!</h1>
         <form action='#' autoComplete='on' onSubmit={handleSubmit}>
@@ -138,6 +160,7 @@ export const Contact = () => {
                 <span> Must be minimum of 25 characters. </span>          
             </div>
              <input type='submit' value='Send'/>
+             {/*<span className='overlay'></span>*/}
         </form>
     </div>
   )

@@ -1,14 +1,38 @@
 import React from 'react'
-import './Projects.css'
-import habanerosProject from '../habaneros-project.png'
-import cryptoTracker from '../crypto-tracker-project.png'
+import 'Components/Project/Projects.css'
+import habanerosProject from 'Assets/habaneros-project.png'
+import cryptoTracker from 'Assets/crypto-tracker-project.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
-import loading from './loading.png'
+import loading from 'Assets/loading.png'
+import { useRef, useState, useEffect } from 'react'
 
 export const Projects = () => {
+const containerRef = useRef();
+const [isVisible, setVisibility] = useState(false);
+let intersectionCount = 0;
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries => {
+    const entry = entries[0];
+    intersectionCount++; 
+
+    if(intersectionCount <= 2){
+      setVisibility(entry.isIntersecting);
+    }
+  }));
+
+  //observing skills container
+    observer.observe(containerRef.current);
+
+  return () => {
+    observer.unobserve(containerRef.current);
+  }
+  
+},[containerRef])
+
   return (
-    <div className='projects-container'>
+    <div className={`projects-container ${isVisible ? 'slideX-animation' : ''} `}  ref={containerRef}>
         <div className='project-title'>
             <h1> Projects </h1>
             <FontAwesomeIcon icon={faFolderOpen} size='lg' />

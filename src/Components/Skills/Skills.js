@@ -1,12 +1,12 @@
-import React from 'react'
-import './Skills.css'
+import React, { useEffect, useRef, useState } from 'react'
+import 'Components/Skills/Skills.css'
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import reactCoding from '../Videos/react-coding.mp4'
-import photoEditing from '../Videos/photo-editing.mp4'
-import apiIntegration from '../Videos/integration.mp4'
-import userInterface from '../Videos/user-interface.mp4'
-import { SkillBox } from './SkillBox';
+import reactCoding from 'Assets/react-coding.mp4'
+import photoEditing from 'Assets/photo-editing.mp4'
+import apiIntegration from 'Assets/integration.mp4'
+import userInterface from 'Assets/user-interface.mp4'
+import { SkillBox } from 'Components/Skills/SkillBox';
 
 const skillsList = [
   {
@@ -44,12 +44,37 @@ const skillsList = [
 
 export const Skills = () => {
 
+//Intersection Oberserver Initialization
+const containerRef = useRef();
+const [isVisible, setVisibility] = useState(false);
+let intersectionCount = 0;
+
+useEffect(() => {
+  const observer = new IntersectionObserver((entries => {
+    const entry = entries[0];
+    intersectionCount++; 
+
+    if(intersectionCount <= 2){
+      setVisibility(entry.isIntersecting);
+    }
+  }));
+
+  //observing skills container
+    observer.observe(containerRef.current);
+
+  return () => {
+    observer.unobserve(containerRef);
+  }
+  
+},[containerRef])
+
   const renderObject = (object) => {
-    return object.map(({video, heading, description}) => <SkillBox key={video} video={video} heading={heading} description={description} ></SkillBox>)
+    return object.map(({video, heading, description}) => 
+    <SkillBox key={video} video={video} heading={heading} description={description} />)
   }
 
   return (
-    <div className='skills-container' >
+    <div className={`skills-container ${isVisible ? 'slideX-animation' : ''} `} ref={containerRef} >
         
         <div className='skill-title'>
             <h1>Technical Skills </h1>

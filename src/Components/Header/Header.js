@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiamond } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { useRef } from 'react'
@@ -11,7 +12,22 @@ export const Header = () => {
     <div className='header-container'>
 
       <div className='socials-container'>
-          <div className='social'>
+        <a href='#'>
+          <p className='socials-text'> Github </p>
+        </a>
+
+        <span><FontAwesomeIcon icon={faDiamond} size='2xs' /></span>
+
+        <a href='https://www.linkedin.com/in/oscar-gomez-77b472195/'>
+          <p className='socials-text'> LinkedIn </p>
+        </a>        
+        
+        <span><FontAwesomeIcon icon={faDiamond} size='2xs' /></span>
+
+        <a href='#'>
+
+          <p className='socials-text'> Facebook </p>
+        </a>          {/*<div className='social'>
             <a href='https://www.linkedin.com/in/oscar-gomez-77b472195/' className='social-link' target='_blank'>
               <FontAwesomeIcon icon={faLinkedin} size='2xl' />
             </a>
@@ -27,8 +43,8 @@ export const Header = () => {
             <a href='https://www.facebook.com/oscargomez1998' target='_blank'>
             <FontAwesomeIcon icon={faSquareFacebook} size='2xl'/>
             </a>
-          </div>
-      </div>
+          </div>*/}
+        </div>
 
       <div className='logo-container'>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Contact.css'
+import 'Components/Contact/Contact.css'
 
 export const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
