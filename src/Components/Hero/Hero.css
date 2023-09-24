@@ -51,6 +51,7 @@ body{
     border-radius: 1rem;
     animation: Show 2s, ZoomOut 2s, slidesTop 2s ;
     animation-iteration-count: 1;
+    overflow: hidden;
 }
 
 .hero{
@@ -79,7 +80,7 @@ body{
 }
 
 .hero-text input[type=submit]{
-    width: 50%;
+    width: fit-content;
     padding: .8rem 1rem;
     font-weight: 500;
     margin-top: 1rem;

@@ -11,24 +11,19 @@ import { useRef,useEffect,useState } from 'react'
 export const Certifications = () => {
 const containerRef = useRef();
 const [isVisible, setVisibility] = useState(false);
-let intersectionCount = 0;
 
 useEffect(() => {
   const observer = new IntersectionObserver((entries => {
     const entry = entries[0];
-    intersectionCount++; 
 
-    if(intersectionCount <= 2){
-      setVisibility(entry.isIntersecting);
-    }
+  if(entry.isIntersecting){
+    setVisibility(true);
+    observer.unobserve(containerRef.current);
+  }
   }));
 
   //observing skills container
     observer.observe(containerRef.current);
-
-  return () => {
-    observer.unobserve(containerRef.current);
-  }
   
 },[containerRef])
 

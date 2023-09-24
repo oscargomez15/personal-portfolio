@@ -7,26 +7,21 @@ import { useRef } from 'react';
 export const Contact = () => {
 const containerRef = useRef();
 const [isVisible, setVisibility] = useState(false);
-let intersectionCount = 0;
 
 useEffect(() => {
-  const observer = new IntersectionObserver((entries => {
-    const entry = entries[0];
-    intersectionCount++; 
-
-    if(intersectionCount <= 2){
-      setVisibility(entry.isIntersecting);
-    }
-  }));
-
-  //observing skills container
-    observer.observe(containerRef.current);
-
-  return () => {
-    observer.unobserve(containerRef.current);
-  }
+    const observer = new IntersectionObserver((entries => {
+      const entry = entries[0];
   
-},[containerRef])
+    if(entry.isIntersecting){
+      setVisibility(true);
+      observer.unobserve(containerRef.current);
+    }
+    }));
+  
+    //observing skills container
+      observer.observe(containerRef.current);
+    
+  },[containerRef])
 
     const [formValues, setValues] = useState({
         firstName:"",
