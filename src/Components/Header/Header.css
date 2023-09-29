@@ -124,8 +124,8 @@
 .contact-me{
     display: flex;
     align-items: center;
-    background-color: white;
-    color:black;
+    background-color:#2f577e;
+    color: white;
     padding: .75rem;
     transition: 0.3s;
     text-decoration: none;

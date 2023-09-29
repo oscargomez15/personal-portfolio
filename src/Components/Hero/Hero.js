@@ -12,7 +12,7 @@ export const Hero = () => {
             <div className='hero-text'>
                 <h1>Hello there,</h1>
                 <p>I'm a front end developer and a Cloud Enthusiast
-                  who's willing to help your business grow and adopt to a constantly changing tech enviorment.<br/></p>
+                  who's willing to help your business grow and adapt to a constantly changing tech enviorment.<br/></p>
                   <input type='submit' value='Download Resume'/>
                 <p className='download-info'>or keep scrolling to learn more about me.</p>
             </div>

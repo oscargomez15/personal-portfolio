@@ -76,7 +76,7 @@ body{
 
 .hero-text p{
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .hero-text input[type=submit]{
@@ -85,17 +85,21 @@ body{
     font-weight: 500;
     margin-top: 1rem;
     cursor: pointer;
-    background-color: #5885AF;
-    border-radius: 1rem;
+    background-color: white;
     border: none;
-    box-shadow: 1px 1px 10px rgb(158, 158, 158);
+    box-shadow: 1px 1px 5px rgb(158, 158, 158);
+    font-family: Sora, sans-serif;
     transition: .5s;
-    color: white;
+    color: black;
+}
+
+.hero-text input[type=submit]:hover{
+    box-shadow: .5rem .5rem #4d4d4d;
+    margin-bottom: 0.5rem;
 }
 
 .hero-text .download-info{
     font-size: .8rem;
-    
 }
 
 @media screen and (max-width:800px){

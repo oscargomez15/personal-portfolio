@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     width: 75%;
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
+    border-radius: 1rem;
     margin: auto;
     padding: 4rem;
     gap: 2rem 6rem;
@@ -12,28 +13,50 @@
     border-radius: 1rem;
 }
 
-.project-title{
+.projects-list{
     display: flex;
+    flex-basis: auto;
+    overflow-x: scroll;
+    padding: 2rem 0;
+    gap: 5rem;
+}
+
+.projects-list article{
+    flex: 1 1 0;
+}
+
+.project-card{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-column-start: span 3;
 }
 
-.projects-list{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.project-description{
-    line-height: 1.7rem;
-}
-
-.project-title > h1{
-    font-weight: 500;
-    margin-right: .2rem;
+.project-card h1{
     font-family: Sora, sans-serif;
+    margin-bottom: .5rem;
+    font-size: 3rem;
+    font-weight: 400;
 }
 
+ .project-card p{
+    line-height: 1.5rem;
+ }
+
+.project{
+    background-color: white;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-rows: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: scale 0.5s;
+}
+
+.project:hover{
+    scale: 1.05;
+}
 
 .project-img{
     margin: auto;
@@ -42,15 +65,14 @@
 }
 
 .heading{
+    font-family: Sora, sans-serif;
     font-weight: 500;
-    font-size: 1.3rem;
-    margin-bottom: .2rem;
+    font-size: 1.5rem;
 }
 
-
-.project{
-    display: grid;
-    grid-template-rows: auto;
+.project-description{
+    margin-top: .5rem;
+    line-height: 1.5rem;
 }
 
 .project a{
@@ -61,7 +83,8 @@
     display: flex;
     height: auto;
     max-width: fit-content;
-    background-color: white;
+    background-color: #2f577e;
+    color: white;
     padding: .4rem .6rem;
     margin-top: 0.5rem;
     align-items: center;
@@ -74,7 +97,7 @@
 }
 
 .see-more-btn:hover{
-    box-shadow: .5rem .5rem #4d4d4d;
+    background-color: #5084b9;
 }
 
 .see-more{
@@ -94,6 +117,36 @@
     width: fit-content;
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: 8px;
+    scrollbar-color: white transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(219, 219, 219);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(59, 59, 59);
+    cursor: grab;
+    border-radius: 10px;
+  }
+
+  .projects-list::-webkit-scrollbar{
+    height: 8px;
+  }
+
+  .project-list::-webkit-scrollbar-track{
+    background-color: #2f2f2f;
+  }
+  
 @media screen and (max-width:800px) {
     .projects-container{
         display: flex;

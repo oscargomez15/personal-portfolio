@@ -10,6 +10,33 @@ import { useRef, useState, useEffect } from 'react'
 export const Projects = () => {
 const containerRef = useRef();
 const [isVisible, setVisibility] = useState(false);
+const projectsInfo =[
+    {
+        image:habanerosProject,
+        title: 'Local Restaurant Website',
+        description:`Developed two static SEO-optimized and responsive websites 
+        for a Mexican Restaurant using HTML, CSS, and Javascript 
+        for basic functions. Responsible for creating and managing the ads 
+        campaign as well as creating content for them. This led to
+        an increase of 50% in organic traffic and a 125% increase 
+        in paid traffic.`
+    },
+    {
+        image:cryptoTracker,
+        title:'Cryptocurrency Tracker',
+        description:`Built a Cryptocurrency Data Tracker using React that displayed a list of 
+        cryptocurrencies and their price, volume, market cap, and names 
+        along with the symbol using CoinGecko API. This tool has search capabilities 
+        and was developed using hooks such as useEffect, useState and useRef.`
+    },
+    {
+        image:loading,
+        title:'Personal Portfolio',
+        description:`Developed this website using HTML, CSS and React.js. Through it I'm able to showcase 
+        my skills, projects, and certifications in the Web Development Spectrum. Using Intersection Observer, and Email JS I was able to add 
+        additional interactivity that has made this website stand out the most out of all the projects.`
+    }
+]
 
 useEffect(() => {
   const observer = new IntersectionObserver((entries => {
@@ -27,69 +54,37 @@ useEffect(() => {
 },[containerRef])
 
   return (
-    <div className={`projects-container ${isVisible ? 'slideX-animation' : ''} `}  ref={containerRef}>
-        <div className='project-title'>
-            <h1> Projects </h1>
-            <FontAwesomeIcon icon={faFolderOpen} size='lg' />
-        </div>
+    <section>
+        <div className={`projects-container ${isVisible ? 'slideX-animation' : ''} `}  ref={containerRef}>
 
-        <div className='projects-list'>
-            <div className='project'>
-                <img src={habanerosProject} alt='example-project' className='project-img'/>
-                <p className='heading'>Local Restaurant Website</p>
-                <p className='project-description'>
-                    Developed two static SEO-optimized and responsive websites 
-                    for a Mexican Restaurant using HTML, CSS, and Javascript 
-                    for basic functions. Responsible for creating and managing the ads 
-                    campaign as well as creating content for them. This led to
-                    an increase of 50% in organic traffic and a 125% increase 
-                    in paid traffic.
-                </p>
+            <div className='projects-list'>
+                <div className='project-card'>
+                    <h1>Project Showcasing</h1>
+                    <p> Take a peak at some of my latest projects along with its Github repository.
+                    </p>
+                </div>
+            
+            {projectsInfo.map((project) => {
+                return (
+                <article>
+                    <div className='project'>
+                        <img src={project.image} alt='example-project' className='project-img'/>
+                        <p className='heading'>{project.title}</p>
+                        <p className='project-description'>
+                            {project.description}
+                        </p>
 
-                <a href='#' className='project-link'>
-                    <div className='see-more-btn'>
-                        <p className='see-more'>Check it out</p>
-                        <FontAwesomeIcon icon={faArrowRight}/>
+                        <a href='#' className='project-link'>
+                            <div className='see-more-btn'>
+                                <p className='see-more'>Check it out</p>
+                                <FontAwesomeIcon icon={faArrowRight}/>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-
-            <div className='project'>
-                <img src={cryptoTracker} alt='example-project'  className='project-img'/>
-                <p className='heading'>Cryptocurrency Tracker</p>
-                <p className='project-description'>
-                Built a Cryptocurrency Data Tracker using React that displayed a list of 
-                cryptocurrencies and their price, volume, market cap, and names 
-                along with the symbol using CoinGecko API. This tool has search capabilities 
-                and was developed using hooks such as useEffect, useState and useRef.
-                </p>
-                <a href='#' className='project-link'>
-                    <div className='see-more-btn'>
-                        <p className='see-more'>Check it out</p>
-                        <FontAwesomeIcon icon={faArrowRight}/>
-                    </div>
-                </a>
-            </div>
-
-            <div className='project'>
-                <img src={loading} alt='example-project'  className='project-img'/>
-                <p className='heading'>Exciting Upcoming Project</p>
-                <p className='project-description'>
-                    I'm currently working on a project that showcases some 3D Objects and provides
-                    a description about them and interesting facts. For now, the topic is classified
-                    but stay tuned, I know you will love it!
-                </p>
-                
-                <a className='project-link'>
-                    <div className='see-more-btn disabled'>
-                        <p className='see-more'>Coming Soon</p>
-                        <FontAwesomeIcon icon={faArrowRight}/>
-                    </div>
-                </a>
-                
-                
+                </article>                  
+            )})}
             </div>
         </div>
-    </div>
+    </section>
   )
 }
