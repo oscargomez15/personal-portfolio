@@ -7,10 +7,9 @@
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
     border-radius: 1rem;
     margin: auto;
-    padding: 4rem;
+    padding: 4rem 0rem 4rem 4rem;
     gap: 2rem 6rem;
     margin-top: 5rem;
-    border-radius: 1rem;
 }
 
 .projects-list{
@@ -23,6 +22,10 @@
 
 .projects-list article{
     flex: 1 1 0;
+}
+
+.projects-list:last-child{
+    padding-right: 4rem;
 }
 
 .project-card{
@@ -79,6 +82,12 @@
     display: flex;
 }
 
+.project-buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .see-more-btn{
     display: flex;
     height: auto;
@@ -86,7 +95,6 @@
     background-color: #2f577e;
     color: white;
     padding: .4rem .6rem;
-    margin-top: 0.5rem;
     align-items: center;
     transition: .5s;
     align-self: flex-end
@@ -105,6 +113,10 @@
     font-weight: 500;
 }
 
+.github-btn{
+    color: rgb(0, 0, 0);
+}
+
 .disabled{
     color: rgb(78, 78, 78);
     background-color: darkgray;
@@ -114,6 +126,7 @@
 .project-link{
     text-decoration: none;
     color: black;
+    width: fit-content;
     width: fit-content;
 }
 

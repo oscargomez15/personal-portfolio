@@ -70,16 +70,13 @@ useEffect(() => {
 
   return (
     <div className={`skills-container ${isVisible ? 'slideX-animation' : ''} `} ref={containerRef} >
-        <section>
-          <div className='skill-title'>
-              <h1>Technical Skills </h1>
-              <FontAwesomeIcon icon={faLaptopCode} size='lg'/>  
-          </div>
-          
           <div className='skillbox-container'>
+            <div className='skillbox-title'>
+              <h1>Technical Skills</h1>
+              <p> A quick description of what are some of my relevant skills and how they can play a catalyst role in your team. </p>
+            </div>
               {renderObject(skillsList)}
           </div>
-        </section>
     </div>
   )
 }

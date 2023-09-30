@@ -6,10 +6,9 @@
 
 .skills-container{
     display:flex;
-    flex-direction: column;
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
     border-radius: 1rem;
-    padding: 5rem 4rem;
+    padding: 4rem 0rem 4rem 4rem;
     width: 75%;
     margin: auto;
     margin-top: 5rem;
@@ -31,12 +30,28 @@
 
 .skillbox-container{
     display: flex;
-    gap: 3rem;
-    padding: 5rem 0 2rem 0;
-    border-radius: 1rem;
-    justify-content: space-around;
+    gap: 5rem;    
+    padding: 2rem 0;
     margin: auto;
-    width: 90%;
+    overflow-x: scroll;
+}
+
+.skillbox-container article{
+    flex: 1 1 0;
+}
+
+.skillbox-container:last-child{
+    padding-right: 4rem;
+}
+
+.skillbox-title{
+    align-self: center;
+}
+
+.skillbox-title h1{
+    font-family: Sora, sans-serif;
+    margin-bottom: .5rem;
+    font-size: 3rem;
 }
 
 .skillbox{
@@ -44,38 +59,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 0;
+    background-color: white;
+    /*padding: 1.5rem;*/
+    margin: 1rem 0;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: scale 0.5s;
 }
 
 .skillbox-heading{
-    font-weight: 500;
+    font-family: Sora, sans-serif;
+    margin-bottom: .5rem;
     font-size: 1.5rem;
-    margin: .5rem 0;
-    align-self: start;
+    align-self: flex-start;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 .skillbox-description {
-    line-height: 1.3rem;
+    line-height: 1.3rem; 
+    padding: 0 1.5rem;
 }
 
 video{
-    width: 15rem;
+    width: 25rem;
     height: 30rem;
-    border-radius: 1.2rem;
+    border-radius: 1.2rem 1.2rem 0 0;
     object-fit: cover;
     transition: scale 1s, margin-bottom 1s;
-    box-shadow: 0px 0px 1rem black;
 }
 
-video:hover{
-    scale: 1.1;
-    cursor: pointer;
-    margin-bottom: 1.3rem;
+.skillbox:hover{
+    scale: 1.02;
 }
 
 .slideX-animation{
     animation: X-slide 2s;
 }
+
+.skillbox-container::-webkit-scrollbar{
+    height: 8px;
+  }
+
+  .project-list::-webkit-scrollbar-track{
+    background-color: #2f2f2f;
+  }
 
 @keyframes X-slide {
     from{
