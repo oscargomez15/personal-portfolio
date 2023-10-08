@@ -5,11 +5,10 @@ import heroPicture from 'Assets/oscar-hero.jpg'
 export const Hero = () => {
   return (
     <div className='invisible-container'>
-      <div className='hero-container'>
-        <h1 className='name-heading'> Oscar Gomez </h1>
         <div className='hero'>
           <div className='image-container'>
               <img src={heroPicture} alt='Oscars-Picture'/>
+              <h1 className='name-heading'> Oscar Gomez </h1>
             </div>
             <div className='hero-text'>
                 <h1>Hello there,</h1>
@@ -19,7 +18,6 @@ export const Hero = () => {
                 <p className='download-info'>or keep scrolling to learn more about me.</p>
             </div>
         </div>
-      </div>
     </div>
   )
 }

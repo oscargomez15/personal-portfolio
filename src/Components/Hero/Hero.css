@@ -25,19 +25,16 @@ body{
 .invisible-container{
     height: 90dvh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
     overflow: hidden;
 }
 
 .name-heading{
-    position: absolute;
-    transform: translateY(-5rem);
+    bottom: -4rem;
     font-weight: 500;
-    background-color: #5885AF;
-    color: white;
     padding: 0 2rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Sora, 'sans-serif';
 }
 
@@ -58,7 +55,7 @@ body{
 .hero{
     display: flex;
     height: 45vh;
-    width: 100%;
+    width: 75%;
     align-items: center;
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
     border-radius: 1rem;
@@ -72,12 +69,13 @@ body{
 
 .image-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .hero img{
-    width: 65%;   
+    width: 55%;   
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);    
     border-radius: 10%;
     box-shadow: 1px 1px 5px rgb(158, 158, 158);
