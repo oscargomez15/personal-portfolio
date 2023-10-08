@@ -3,9 +3,13 @@ import 'Components/Contact/Contact.css'
 import { FormInput } from 'Components/Contact/FormInput'
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const Contact = () => {
 const containerRef = useRef();
+const modalRef = useRef();
+const overlayRef = useRef();
 const [isVisible, setVisibility] = useState(false);
 
 useEffect(() => {
@@ -90,7 +94,8 @@ useEffect(() => {
 
         emailjs.send(serviceID,templateID, params)
         .then(res => {
-            alert('Email Sent');
+            modalRef.current.classList.add('openModal');
+            overlayRef.current.classList.add('hide');
         })
         
 
@@ -112,7 +117,13 @@ useEffect(() => {
         setFocus(true);
     }
 
+    const closeModal = () => {
+        modalRef.current.classList.remove("openModal");
+        overlayRef.current.classList.remove('hide');
+    }
+
   return (
+    <>
     <div className={`contact-container ${isVisible ? 'slideY-animation' : ''} `} id='contact' ref={containerRef}>
 
         <h1>Let's Connect!</h1>
@@ -154,9 +165,18 @@ useEffect(() => {
                 onChange={onChange}/>
                 <span> Must be minimum of 25 characters. </span>          
             </div>
-             <input type='submit' value='Send'/>
-             {/*<span className='overlay'></span>*/}
+            <input type='submit' value='Send'/>
+
+
         </form>
+        <div className='overlay' ref={overlayRef}>
+            <div className='popup' ref={modalRef}>
+                <h2> Success <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon></h2>
+                <p>Email has been sent! <br/> Expect a reply within 24 hours.</p>
+                <button type='button' onClick={closeModal}> Close </button>
+            </div>
+        </div>
     </div>
+    </>
   )
 }

@@ -27,6 +27,7 @@ body{
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .name-heading{
@@ -56,11 +57,10 @@ body{
 
 .hero{
     display: flex;
+    height: 45vh;
     width: 100%;
-    flex-basis: 0;
-    justify-content: space-around;
     align-items: center;
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
     border-radius: 1rem;
 }
 
@@ -70,8 +70,17 @@ body{
     font-family: Sora, sans-serif;
 }
 
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero img{
-    align-self: flex-end;
+    width: 65%;   
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);    
+    border-radius: 10%;
+    box-shadow: 1px 1px 5px rgb(158, 158, 158);
 }
 
 .hero-text p{
@@ -91,11 +100,11 @@ body{
     font-family: Sora, sans-serif;
     transition: .5s;
     color: black;
+    border-radius: .5rem;
 }
 
 .hero-text input[type=submit]:hover{
-    box-shadow: .5rem .5rem #4d4d4d;
-    margin-bottom: 0.5rem;
+    background-color: #e6e6e6;
 }
 
 .hero-text .download-info{

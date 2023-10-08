@@ -97,7 +97,9 @@
     padding: .4rem .6rem;
     align-items: center;
     transition: .5s;
-    align-self: flex-end
+    align-self: flex-end;
+    border-radius: .5rem;
+
 }
 
 .see-more-btn p{

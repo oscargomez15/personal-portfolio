@@ -25,6 +25,8 @@
     flex-basis: 10%;
     background-color: white;
     padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .socials-container a{
@@ -126,16 +128,18 @@
 .contact-me{
     display: flex;
     align-items: center;
-    background-color:#2f577e;
+    background-color:#e4772e;
     color: white;
     padding: .75rem;
     transition: 0.3s;
     text-decoration: none;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-me:hover{
     cursor: pointer;
-    box-shadow: .5rem .5rem #4d4d4d;
+    background-color:#f89c5f;
 }
 
 .contact-me p{

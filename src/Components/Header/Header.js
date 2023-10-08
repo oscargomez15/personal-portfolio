@@ -24,24 +24,8 @@ export const Header = () => {
           <a href='https://www.facebook.com/oscargomez1998' target='__blank'>
             <FontAwesomeIcon icon={faSquareFacebook} size='2xl'/>
             <p className='socials-text'> Facebook </p>
-          </a>          {/*<div className='social'>
-              <a href='https://www.linkedin.com/in/oscar-gomez-77b472195/' className='social-link' target='_blank'>
-                <FontAwesomeIcon icon={faLinkedin} size='2xl' />
-              </a>
-            </div>
-            
-            <div className='social'>
-              <a href='https://github.com/oscargomez15' className='social-link' target='_blank'>
-              <FontAwesomeIcon icon={faSquareGithub} size='2xl'/>
-              </a>
-            </div>
-
-            <div className='social'>
-              <a href='https://www.facebook.com/oscargomez1998' target='_blank'>
-              <FontAwesomeIcon icon={faSquareFacebook} size='2xl'/>
-              </a>
-            </div>*/}
-          </div>
+          </a>
+        </div>
 
         <div className='logo-container'>
 

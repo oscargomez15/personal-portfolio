@@ -1,6 +1,6 @@
 import React from 'react'
 import 'Components/Hero/Hero.css'
-import heroPicture from 'Assets/oscar-hero.png'
+import heroPicture from 'Assets/oscar-hero.jpg'
 
 export const Hero = () => {
   return (
@@ -8,7 +8,9 @@ export const Hero = () => {
       <div className='hero-container'>
         <h1 className='name-heading'> Oscar Gomez </h1>
         <div className='hero'>
-            <img src={heroPicture} alt='Oscars-Picture'/>
+          <div className='image-container'>
+              <img src={heroPicture} alt='Oscars-Picture'/>
+            </div>
             <div className='hero-text'>
                 <h1>Hello there,</h1>
                 <p>I'm a front end developer and a Cloud Enthusiast
