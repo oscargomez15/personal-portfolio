@@ -34,6 +34,7 @@
     padding: 2rem 0;
     margin: auto;
     overflow-x: scroll;
+    align-items: center;
 }
 
 .skillbox-container:last-child{
