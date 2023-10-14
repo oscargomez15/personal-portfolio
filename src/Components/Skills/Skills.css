@@ -36,16 +36,15 @@
     overflow-x: scroll;
 }
 
-.skillbox-container article{
-    flex: 1 1 0;
-}
-
 .skillbox-container:last-child{
     padding-right: 4rem;
 }
 
 .skillbox-title{
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .skillbox-title h1{
@@ -54,13 +53,16 @@
     font-size: 3rem;
 }
 
+.skillbox-title p{
+    line-height: 1.5rem;
+}
+
 .skillbox{
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    /*padding: 1.5rem;*/
     margin: 1rem 0;
     height: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -132,23 +134,69 @@ video{
     }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1140px){
     .skillbox-container{
         display: flex;
         flex-direction: column;
-        padding: 5rem 0 2rem 0;
-        border-radius: none;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .skills-container{
+        padding: 1rem;
+    }
+
+    .skillbox-title{
+        text-align: center;
+    }
+
+    .skillbox-description{
+        padding-bottom: 1rem;
+    }
+
+    article{
+        width: 60%;
+        margin: auto
+    }
+
+    video{
+        width: 100%;
+    }
+
+    .skillbox-container:last-child{
+        padding-right: 0;
+    }
+    
+}
+
+@media screen and (max-width:800px) {
+
+    .skills-container{
+        width: 90%;
+        padding: 2rem;
+    }
+
+    article{
+        padding: 0 .2rem;
+        width: 100%;
+    }
+
+    .skillbox-container{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .skillbox-container:last-child{
+        padding-right: 0;
     }
 
     .skillbox{
         border-bottom: .5rem rgb(110, 110, 110) dotted;
         padding-bottom: 1rem;
-        border-radius: 0;
-    }
-
-    .skillbox:last-child{
-        border:none;
-        border-radius: 0;
+        border-radius: 1.2rem;
+        border: none;
     }
 
     .skill-title{
@@ -159,7 +207,7 @@ video{
     }
 
     video{
-        width: 12rem;
+        width: 100%;
         height: 20rem;
     }
 }

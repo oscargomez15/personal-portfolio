@@ -158,6 +158,10 @@ select:invalid[isFocused="true"]{
 }
 
  @media screen and (max-width:800px) {
+    .contact-container{
+        width: 90%;
+    }
+    
     form{
         width: 100%;
     }

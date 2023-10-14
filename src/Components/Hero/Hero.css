@@ -30,14 +30,6 @@ body{
     overflow: hidden;
 }
 
-.name-heading{
-    bottom: -4rem;
-    font-weight: 500;
-    padding: 0 2rem;
-    font-size: 2rem;
-    font-family: Sora, 'sans-serif';
-}
-
 .hero-container{
     display: flex;
     flex-direction: column;
@@ -61,12 +53,6 @@ body{
     border-radius: 1rem;
 }
 
-.hero-text h1{
-    font-size:3rem;
-    font-weight: 500;
-    font-family: Sora, sans-serif;
-}
-
 .image-container{
     display: flex;
     flex-direction: column;
@@ -74,11 +60,38 @@ body{
     justify-content: center;
 }
 
+.image-container p,
+.image-container input[type='submit']{
+    display: none;
+}
+
+.name-heading{
+    font-weight: 500;
+    padding: 0 2rem;
+    font-size: 2rem;
+    font-family: Sora, 'sans-serif';
+}
+
 .hero img{
     width: 55%;   
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);    
     border-radius: 10%;
     box-shadow: 1px 1px 5px rgb(158, 158, 158);
+}
+
+.hero-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    font-weight: 500;
+    font-family: Sora, sans-serif;
+    align-self: flex-start;
 }
 
 .hero-text p{
@@ -99,6 +112,7 @@ body{
     transition: .5s;
     color: black;
     border-radius: .5rem;
+    align-self: flex-start;
 }
 
 .hero-text input[type=submit]:hover{
@@ -107,44 +121,101 @@ body{
 
 .hero-text .download-info{
     font-size: .8rem;
+    align-self: flex-start;
+}
+
+.hero-socials{
+    display: none;
+    gap: 1rem;
+}
+
+@media screen and (max-width:1140px){
+
+
+    .image-container{
+        flex-grow: 2;
+    }
+
+    .hero img{
+        width: 80%;
+    }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
+    .name-heading{
+        font-size: 1.2rem;
+    }
+
+    .skillbox-title{
+        width: 75%;
+    }
 }
 
 @media screen and (max-width:800px){
 
-    .hero-container{
+    .hero{
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
         width: 90%;
-        padding: .5rem;
-        border: .3rem white solid;
     }
 
-    .hero{
-        height: 60%;
+    .image-container{
+        align-items: start;
+        padding-left: 1rem;
+    }
+    
+    .image-container p{
+        line-height: 1.5em;
+        padding: 0.5rem 1rem 1rem 0;
+        display: inline;
     }
 
     .name-heading{
-        padding: 0 .3rem;
-        transform: translateY(-1.3rem);
-        font-size: 1rem;
+        padding: 0;
+        font-size: 1.2rem;
         font-family: Sora, sans-serif;
     }
     
     .hero img{
         width: 50%;
+        border-radius: 100%;
     }
 
-    .hero h1 {
-        font-size: 1rem;
+    .hero-text{
+        display: none;
     }
 
-    .hero-text input[type=submit]{
-        font-size: .4rem;
-        padding: .5rem;
+    .image-container input[type=submit]{
+        display: inline;
+        width: fit-content;
+        padding: .8rem 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        background-color: white;
+        border: none;
+        box-shadow: 1px 1px 5px rgb(158, 158, 158);
+        font-family: Sora, sans-serif;
+        transition: .5s;
+        color: black;
         border-radius: .5rem;
+        align-self: flex-start;
     }
 
     .hero-text p, 
     .hero-text .download-info {
         font-size: .5rem;
+    }
+
+    .hero-socials{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .hero-socials a{
+        color: black;
     }
 }
 

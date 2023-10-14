@@ -13,8 +13,10 @@
     background-color: #5885AF;
     min-height: 100px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
+    width: 75%;
+    margin: auto;
 }
 
 .socials-container{
@@ -152,7 +154,7 @@ a:link {
     text-decoration: none;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1140px) {
     .contact-me,
     .socials-container
     {

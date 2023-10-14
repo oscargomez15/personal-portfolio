@@ -49,11 +49,11 @@
     .certifications-container{
         display: flex;
         flex-direction: column;
+        width: 90%;
     }
 
     .certification{
         padding-bottom: 1rem;
-        border-bottom: .5rem rgb(110, 110, 110) dotted;
     }
 
     .certification:last-child{
