@@ -3,6 +3,7 @@ import 'Components/Hero/Hero.css'
 import heroPicture from 'Assets/oscar-hero.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
+import resume from 'Assets/Resume.pdf'
 
 export const Hero = () => {
   return (
@@ -24,15 +25,19 @@ export const Hero = () => {
                   <FontAwesomeIcon icon={faSquareFacebook} size='2xl'/>
                 </a>
               </div>
-              <p>Hi, there and welcome to my portfolio! I'm a front end developer and a Cloud Enthusiast
-                  who's willing to help your business grow and adapt to a constantly changing tech enviorment.<br/></p>
-                  <input type='submit' value='Download Resume'/>
+              <p>Hi, there and welcome to my portfolio! I'm a front-end developer and a cloud enthusiast
+                  who's passionate about creating engaging and user-friendly web experiences.
+                  With a strong foundation in HTML, CSS, and JavaScript, I can transform ideas into interactive 
+                  and visually appealing websites.</p>
+                  <a href={resume} target="__blank" className='downloadBtn'> View Resume </a>
             </div>
             <div className='hero-text'>
                 <h1>Hello there,</h1>
-                <p>I'm a front end developer and a Cloud Enthusiast
-                  who's willing to help your business grow and adapt to a constantly changing tech enviorment.<br/></p>
-                  <input type='submit' value='Download Resume'/>
+                <p> I'm a front-end developer and a cloud enthusiast
+                  who's passionate about creating engaging and user-friendly web experiences.
+                  With a strong foundation in HTML, CSS, and JavaScript, I can transform ideas into interactive 
+                  and visually appealing websites.</p>
+                  <a href={resume} target="__blank" className='downloadBtn'> View Resume </a>
                 <p className='download-info'>or keep scrolling to learn more about me.</p>
             </div>
         </div>

@@ -76,6 +76,7 @@
 
 .project-description{
     margin-top: .5rem;
+    padding-bottom: .5rem;
     line-height: 1.5rem;
 }
 
@@ -118,6 +119,11 @@
 
 .github-btn{
     color: rgb(0, 0, 0);
+    transition: color .2s;
+}
+
+.github-btn:hover{
+    color:#707070;
 }
 
 .disabled{

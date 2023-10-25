@@ -20,7 +20,9 @@ const projectsInfo =[
         for basic functions. Responsible for creating and managing the ads 
         campaign as well as creating content for them. This led to
         an increase of 50% in organic traffic and a 125% increase 
-        in paid traffic.`
+        in paid traffic.`,
+        gitHubRepo: "#",
+        projectLink: "https://habanerosbonitasprings.com/"
     },
     {
         image:cryptoTracker,
@@ -37,7 +39,8 @@ const projectsInfo =[
         description:`Developed this website using HTML, CSS and React.js. Through it I'm able to showcase 
         my skills, projects, and certifications in the Web Development Spectrum. Using Intersection Observer, and Email JS I was able to add 
         additional interactivity that has made this website stand out the most out of all the projects.`,
-        gitHubRepo:'https://github.com/oscargomez15/personal-portfolio'
+        gitHubRepo:'https://github.com/oscargomez15/personal-portfolio',
+        projectLink: 'https://oscargomez15.github.io/personal-portfolio/'
     }
 ]
 
@@ -51,8 +54,7 @@ useEffect(() => {
   }
   }));
 
-  //observing skills container
-    observer.observe(containerRef.current);
+  observer.observe(containerRef.current);
   
 },[containerRef])
 
@@ -77,7 +79,7 @@ useEffect(() => {
                             {project.description}
                         </p>
                         <div className='project-buttons'>
-                            <a href='#' className='project-link'>
+                            <a href={project.projectLink} className='project-link' target='__blank'>
                                 <div className='see-more-btn'>
                                     <p className='see-more'>View</p>
                                     <FontAwesomeIcon icon={faArrowRight}/>

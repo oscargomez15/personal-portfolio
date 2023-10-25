@@ -157,7 +157,7 @@ select:invalid[isFocused="true"]{
     transform: translate(-50%, -50%) scale(1);
 }
 
- @media screen and (max-width:800px) {
+ @media screen and (max-width:1000px) {
     .contact-container{
         width: 90%;
     }
