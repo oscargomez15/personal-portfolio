@@ -2,16 +2,26 @@ import React from 'react'
 import 'Components/Project/Projects.css'
 import habanerosProject from 'Assets/habaneros-project.png'
 import cryptoTracker from 'Assets/crypto-tracker-project.png'
+import ecommerceProject from 'Assets/ecommerce-Project.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import {faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-import loading from 'Assets/loading.png'
+import loading from 'Assets/portfolio.png'
 import { useRef, useState, useEffect } from 'react'
 
 export const Projects = () => {
 const containerRef = useRef();
 const [isVisible, setVisibility] = useState(false);
 const projectsInfo =[
+    {
+        image:ecommerceProject,
+        title:'Pixel World eCommerce',
+        description:`Developed an ecommerce web app using HTML, CSS, and React.js in which the user can purchase videogames from
+        a variety of platforms. The app uses RAWG API to deliver data about 500,000+ videogames. Users are capable of adding to cart and checking out.`,
+        gitHubRepo:'https://github.com/oscargomez15/pixelworldecommerce',
+        projectLink:'https://oscargomez15.github.io/pixelworldecommerce/'
+    },
     {
         image:habanerosProject,
         title: 'Local Restaurant Website',
@@ -25,15 +35,6 @@ const projectsInfo =[
         projectLink: "https://habanerosbonitasprings.com/"
     },
     {
-        image:cryptoTracker,
-        title:'Cryptocurrency Tracker',
-        description:`Built a Cryptocurrency Data Tracker using React that displayed a list of 
-        cryptocurrencies and their price, volume, market cap, and names 
-        along with the symbol using CoinGecko API. This tool has search capabilities 
-        and was developed using hooks such as useEffect, useState and useRef.`,
-        gitHubRepo:'https://github.com/oscargomez15/crypto-tracker-app'
-    },
-    {
         image:loading,
         title:'Personal Portfolio',
         description:`Developed this website using HTML, CSS and React.js. Through it I'm able to showcase 
@@ -41,7 +42,18 @@ const projectsInfo =[
         additional interactivity that has made this website stand out the most out of all the projects.`,
         gitHubRepo:'https://github.com/oscargomez15/personal-portfolio',
         projectLink: 'https://oscargomez15.github.io/personal-portfolio/'
-    }
+    },
+    {
+        image:cryptoTracker,
+        title:'Cryptocurrency Tracker',
+        description:`Built a Cryptocurrency Data Tracker using React that displayed a list of 
+        cryptocurrencies and their price, volume, market cap, and names 
+        along with the symbol using CoinGecko API. This tool has search capabilities 
+        and was developed using hooks such as useEffect, useState and useRef.`,
+        gitHubRepo:'https://github.com/oscargomez15/crypto-tracker-app',
+        projectLink:'https://oscargomez15.github.io/crypto-tracker-app/'
+    },
+
 ]
 
 useEffect(() => {
