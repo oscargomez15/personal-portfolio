@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/personal-portfolio/static/css/main.656d4f59.css",
-    "main.js": "/personal-portfolio/static/js/main.0c3a53df.js",
+    "main.js": "/personal-portfolio/static/js/main.c540d959.js",
     "static/media/photo-editing.mp4": "/personal-portfolio/static/media/photo-editing.2333b0edef435a8b4d99.mp4",
     "static/media/integration.mp4": "/personal-portfolio/static/media/integration.d28831bc5d9eeb4a9a44.mp4",
     "static/media/user-interface.mp4": "/personal-portfolio/static/media/user-interface.6ac2a61f87a829991f56.mp4",
     "static/media/react-coding.mp4": "/personal-portfolio/static/media/react-coding.28511850e824854df85d.mp4",
+    "static/media/Resume.pdf": "/personal-portfolio/static/media/Resume.4aa6781437749a2a0c3b.pdf",
     "static/media/ecommerce-Project.png": "/personal-portfolio/static/media/ecommerce-Project.0ca41f487f1472b9b1ad.png",
     "static/media/portfolio.png": "/personal-portfolio/static/media/portfolio.680f4d548d828f85e02f.png",
     "static/media/habaneros-project.png": "/personal-portfolio/static/media/habaneros-project.589978f59ac7b26bc924.png",
     "static/media/crypto-tracker-project.png": "/personal-portfolio/static/media/crypto-tracker-project.7efb71bbbe7cb3d98945.png",
     "static/media/oscar-hero.jpg": "/personal-portfolio/static/media/oscar-hero.76232511fdc415a2d5d1.jpg",
-    "static/media/Resume.pdf": "/personal-portfolio/static/media/Resume.ddd8a1b5b8ebca46f994.pdf",
     "static/media/coursera-meta.png": "/personal-portfolio/static/media/coursera-meta.7f0a2df78fe0ac6cae85.png",
     "static/media/freecodecamp.png": "/personal-portfolio/static/media/freecodecamp.4567982077be6e986f9c.png",
     "static/media/cloud-practictioner.png": "/personal-portfolio/static/media/cloud-practictioner.90d1688bbd4a098ba5cb.png",
     "index.html": "/personal-portfolio/index.html",
     "main.656d4f59.css.map": "/personal-portfolio/static/css/main.656d4f59.css.map",
-    "main.0c3a53df.js.map": "/personal-portfolio/static/js/main.0c3a53df.js.map"
+    "main.c540d959.js.map": "/personal-portfolio/static/js/main.c540d959.js.map"
   },
   "entrypoints": [
     "static/css/main.656d4f59.css",
-    "static/js/main.0c3a53df.js"
+    "static/js/main.c540d959.js"
   ]
 }
