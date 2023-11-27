@@ -3,11 +3,13 @@ import 'Components/Project/Projects.css'
 import habanerosProject from 'Assets/habaneros-project.png'
 import cryptoTracker from 'Assets/crypto-tracker-project.png'
 import ecommerceProject from 'Assets/ecommerce-Project.png'
+import gameProject from 'Assets/game-project.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import {faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-import loading from 'Assets/portfolio.png'
+import portfolio from 'Assets/portfolio.png'
+
 import { useRef, useState, useEffect } from 'react'
 
 export const Projects = () => {
@@ -35,13 +37,13 @@ const projectsInfo =[
         projectLink: "https://habanerosbonitasprings.com/"
     },
     {
-        image:loading,
-        title:'Personal Portfolio',
-        description:`Developed this website using HTML, CSS and React.js. Through it I'm able to showcase 
-        my skills, projects, and certifications in the Web Development Spectrum. Using Intersection Observer, and Email JS I was able to add 
-        additional interactivity that has made this website stand out the most out of all the projects.`,
-        gitHubRepo:'https://github.com/oscargomez15/personal-portfolio',
-        projectLink: 'https://oscargomez15.github.io/personal-portfolio/'
+        image:gameProject,
+        title:'Hangman Game Project',
+        description:`Developed a simple Hangman Game using React/Typescript. This game was developed
+        using mostly CSS to render the Drawing along with some computations using Typescript to 
+        set a word to guess and compare if the letters entered by the user were found within it.`,
+        gitHubRepo:"https://github.com/oscargomez15/hangman",
+        projectLink:"https://oscargomez15.github.io/hangman/"
     },
     {
         image:cryptoTracker,
@@ -53,6 +55,15 @@ const projectsInfo =[
         gitHubRepo:'https://github.com/oscargomez15/crypto-tracker-app',
         projectLink:'https://oscargomez15.github.io/crypto-tracker-app/'
     },
+    {
+        image:portfolio,
+        title:'Personal Portfolio',
+        description:`Developed this website using HTML, CSS and React.js. Through it I'm able to showcase 
+        my skills, projects, and certifications in the Web Development Spectrum. Using Intersection Observer, and Email JS I was able to add 
+        additional interactivity that has made this website stand out the most out of all the projects.`,
+        gitHubRepo:'https://github.com/oscargomez15/personal-portfolio',
+        projectLink: 'https://oscargomez15.github.io/personal-portfolio/'
+    }
 
 ]
 
