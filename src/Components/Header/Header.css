@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 *{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -9,40 +10,61 @@
 }
 
 .header-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #5885AF;
     min-height: 100px;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     color: white;
     width: 75%;
     margin: auto;
 }
 
 .socials-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     color: white;
-    flex-basis: 10%;
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
     background-color: white;
     padding: 1rem;
     border-radius: .5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .socials-container a{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: rgb(0, 0, 0);
 }
 
 .social{
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
 .social:hover{
-    box-shadow: 1px 1px 15px #C3E0E5;
+    -webkit-box-shadow: 1px 1px 15px #C3E0E5;
+            box-shadow: 1px 1px 15px #C3E0E5;
 }
 
 .socials-text{
@@ -58,17 +80,29 @@
     background-color: black;
     position: absolute;
     width: 100%;
-    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
     height: 2px;
     bottom: 0;
     left: 0;
-    transform-origin: bottom right;
+    -webkit-transform-origin: bottom right;
+        -ms-transform-origin: bottom right;
+            transform-origin: bottom right;
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: -webkit-transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
     transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 .socials-text:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
 }
 
 .header-container span{
@@ -77,14 +111,26 @@
 }
 
 .logo-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 1;
+        flex-basis: 1;
 }
 
 .logo{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: white;
     position: relative;
@@ -100,7 +146,9 @@
     height: 90%;
     width: 2px;
     left: 50%;
-    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+            transform: rotate(30deg);
     z-index: 1;
 }
 
@@ -109,7 +157,9 @@
     background-color: #5885AF;
     width: 15px;
     height: 92%;
-    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+            transform: rotate(30deg);
     left: 37%;
     z-index: 0;
 }
@@ -128,15 +178,22 @@
 }
 
 .contact-me{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color:#e4772e;
     color: white;
     padding: .75rem;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     text-decoration: none;
     border-radius: .5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-me:hover{
@@ -162,6 +219,8 @@ a:link {
     }
 
     .header-container{
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }

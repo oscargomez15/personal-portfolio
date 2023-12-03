@@ -2,6 +2,8 @@
 .contact-container{
     width: 75%;
     margin: auto;
+    background: -webkit-gradient(linear, right top, left top, from(#e3ffe7), to(#d9e7ff));
+    background: -o-linear-gradient(right, #e3ffe7 0%, #d9e7ff 100%);
     background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
     padding: 3rem;
     margin-top: 5rem;
@@ -15,8 +17,13 @@
 }
 
 form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 25%;
     margin: auto;
     position: relative;
@@ -30,8 +37,13 @@ form label,
 
 
 .formInput{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .formInput label{
@@ -61,6 +73,8 @@ form input[type=submit]{
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
     font-weight: 500;
     background-color: white;
@@ -73,7 +87,8 @@ form input[type=submit]{
 }
 
 form input[type=submit]:hover{
-    box-shadow: .5rem .5rem #999999;
+    -webkit-box-shadow: .5rem .5rem #999999;
+            box-shadow: .5rem .5rem #999999;
 
 }
 input[type=submit]:disabled{
@@ -117,12 +132,19 @@ select:invalid[isFocused="true"]{
     position: absolute;
     bottom: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
+    -webkit-transform: translate(-50%, -50%) scale(0.1);
+        -ms-transform: translate(-50%, -50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 1rem;
     color: #333;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
     transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
     visibility: hidden;
 }
 
@@ -140,8 +162,13 @@ select:invalid[isFocused="true"]{
     color: white;
     padding: .4rem 0;
     margin-top: 1rem;
+    -webkit-transition: background-color .2s, -webkit-transform .2s;
+    transition: background-color .2s, -webkit-transform .2s;
+    -o-transition: background-color .2s, transform .2s;
     transition: background-color .2s, transform .2s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: background-color .2s, transform .2s, -webkit-transform .2s;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 50%;
     border-radius: .5rem;
 }
@@ -154,14 +181,16 @@ select:invalid[isFocused="true"]{
 .openModal{
     visibility: visible;
     bottom: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
 }
 
  @media screen and (max-width:1000px) {
     .contact-container{
         width: 90%;
     }
-    
+
     form{
         width: 100%;
     }

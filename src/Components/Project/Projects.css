@@ -1,26 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .projects-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 75%;
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
+    background: -webkit-gradient(linear, right top, left top, from(#e3ffe7), to(#d9e7ff));
+    background: -o-linear-gradient(right, #e3ffe7 0%, #d9e7ff 100%);
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);
     border-radius: 1rem;
     gap: 2rem 6rem;
 
     display:flex;
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    
+    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);
     border-radius: 1rem;
     padding: 4rem 0rem 4rem 4rem;
     width: 75%;
     margin: auto;
     margin-top: 5rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .projects-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
     overflow-x: scroll;
     padding: 2rem 0;
     gap: 5rem;
@@ -31,10 +43,19 @@
 }
 
 .project-card{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .project-card h1{
@@ -54,7 +75,10 @@
     padding: 1.5rem;
     display: grid;
     grid-template-rows: auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-transition: scale 0.5s;
+    -o-transition: scale 0.5s;
     transition: scale 0.5s;
 }
 
@@ -81,25 +105,40 @@
 }
 
 .project a{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .project-buttons{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 1rem;
 }
 
 .see-more-btn{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: auto;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     background-color: #2f577e;
     color: white;
     padding: .4rem .6rem;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     border-radius: .5rem;
 
 }
@@ -119,6 +158,8 @@
 
 .github-btn{
     color: rgb(0, 0, 0);
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
     transition: color .2s;
 }
 
@@ -135,6 +176,8 @@
 .project-link{
     text-decoration: none;
     color: black;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     width: fit-content;
 }
@@ -157,6 +200,7 @@
 
   ::-webkit-scrollbar-thumb {
     background-color: rgb(59, 59, 59);
+    cursor: -webkit-grab;
     cursor: grab;
     border-radius: 10px;
   }
@@ -171,10 +215,15 @@
 
 @media screen and (max-width:1140px) {
     .projects-list{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .project{
+        min-width: -webkit-fit-content;
+        min-width: -moz-fit-content;
         min-width: fit-content;
     }
 }
@@ -204,7 +253,6 @@
     }
 
     .project-buttons{
-        gap: 1rem;   
+        gap: 1rem;
     }
 }
-
