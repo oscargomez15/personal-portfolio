@@ -27,18 +27,22 @@
   grid-column: 1/span 2;
   padding: 3rem;
   text-align: center;
+  background-color: #A68B5B;
+  color: white;
 }
 .project-grid .project-item {
   text-align: center;
-  border-top: 1px solid #dfdfdf;
+  border-top: 1px solid #6b6b6b;
   padding: 2rem 10rem;
 }
 .project-grid .project-item:nth-child(odd) {
-  border-left: 1px solid #dfdfdf;
+  border-left: 1px solid #6b6b6b;
   padding: 1rem 10rem;
 }
 .project-grid .project-item:last-child {
   grid-column: 1/span 2;
+  border-right: 1px solid #6b6b6b;
+  border-left: 1px solid #6b6b6b;
 }
 .project-grid .project-item svg {
   height: 50px;
@@ -61,16 +65,25 @@
   gap: 1vw;
   margin-top: 1vw;
 }
+.project-grid .project-item .button-group a {
+  transition: all 0.2s;
+}
 .project-grid .project-item .button-group a:first-child {
   color: black;
+  font-weight: bold;
+}
+.project-grid .project-item .button-group a:hover {
+  color: rgb(104, 104, 104);
 }
 .project-grid .project-item .button-group a:nth-child(2) {
-  background-color: #A68B5B;
+  background-color: #675640;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   height: -moz-fit-content;
   height: fit-content;
-  color: white;
+}
+.project-grid .project-item .button-group a:nth-child(2):hover {
+  background-color: #A68B5B;
 }
 .project-grid .project-item .button-group a svg {
   height: 40px;
@@ -78,4 +91,9 @@
 .project-grid .project-item .button-group .project-button {
   border-radius: 15px;
   font-family: "Karla", sans-serif;
+}
+.project-grid .project-item .button-group .project-button p {
+  font-size: 0.6vw;
+  font-weight: bold;
+  color: white;
 }/*# sourceMappingURL=Projects.css.map */

@@ -27,20 +27,25 @@
         grid-column: 1/ span 2;
         padding: 3rem;
         text-align: center;
+        background-color: $primarycolor;
+        color: white;
+
     }
     .project-item{
             text-align: center;
-            border-top: 1px solid #dfdfdf;
+            border-top: 1px solid $gridBorderColor;
             padding: 2rem 10rem;
 
             &:nth-child(odd){
-                border-left: 1px solid #dfdfdf;
+                border-left: 1px solid $gridBorderColor;
                 padding: 1rem 10rem;
             }
             &:nth-child(even){
             }
             &:last-child{
                 grid-column: 1/span 2;
+                border-right: 1px solid $gridBorderColor;
+                border-left: 1px solid $gridBorderColor;
             }
             svg{
                 height: 50px;
@@ -63,16 +68,24 @@
                 gap: 1vw;
                 margin-top: 1vw;
                 a{
+                    transition: all .2s;
                     &:first-child{
                         color:black;
+                        font-weight: bold;
+                    }&:hover{
+                        color: rgb(104, 104, 104);
                     }
+                    //github button child
                     &:nth-child(2){
-                        background-color: $primarycolor;
+                        background-color: $secondaryColor;
                         padding: .5rem 1rem;
                         border-radius: 10px;
                         height: fit-content;
-                        color: white;
+                        &:hover{
+                            background-color: $primarycolor;
+                        }
                     }
+
                     svg{
                         height: 40px;
                     }
@@ -81,6 +94,11 @@
                 .project-button{
                     border-radius: 15px;
                     font-family: $contentFont;
+                    p{
+                        font-size: .6vw;
+                        font-weight: bold;
+                        color: white;
+                    }
                 }
             }
         }

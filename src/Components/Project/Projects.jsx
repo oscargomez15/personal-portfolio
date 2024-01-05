@@ -80,7 +80,7 @@ const projectsInfo =[
                         <p> {item.description} </p>
                         <div className="button-group">
                             <a href={item.gitHubRepo} target='__blank'> <div className='project-button'> <FontAwesomeIcon icon={faGithub}/>  </div></a>
-                            <a href={item.projectLink} target='__blank'> <div className='project-button'> Live Preview </div> </a>
+                            <a href={item.projectLink} target='__blank'> <div className='project-button'> <p>Live Preview</p> </div> </a>
                         </div>
                     </article>
                 )
