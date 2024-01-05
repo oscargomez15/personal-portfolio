@@ -1,258 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-.projects-container{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 75%;
-    background: -webkit-gradient(linear, right top, left top, from(#e3ffe7), to(#d9e7ff));
-    background: -o-linear-gradient(right, #e3ffe7 0%, #d9e7ff 100%);
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);
-    border-radius: 1rem;
-    gap: 2rem 6rem;
-
-    display:flex;
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);
-    border-radius: 1rem;
-    padding: 4rem 0rem 4rem 4rem;
-    width: 75%;
-    margin: auto;
-    margin-top: 5rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
+.project-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: #F0F0F0;
+}
+.project-wrapper h1 {
+  font-family: "Karla", sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.project-wrapper p {
+  font-family: "Karla", sans-serif;
+  font-size: 1vw;
+  text-align: center;
 }
 
-.projects-list{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    overflow-x: scroll;
-    padding: 2rem 0;
-    gap: 5rem;
+.project-grid {
+  margin: auto;
+  display: grid;
+  width: 80%;
+  gap: 0px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, minmax(fit-content, 1fr));
 }
-
-.projects-list:last-child{
-    padding-right: 4rem;
+.project-grid .project-title {
+  grid-column: 1/span 2;
+  padding: 3rem;
+  text-align: center;
 }
-
-.project-card{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+.project-grid .project-item {
+  text-align: center;
+  border-top: 1px solid #dfdfdf;
+  padding: 2rem 10rem;
 }
-
-.project-card h1{
-    font-family: Sora, sans-serif;
-    margin-bottom: .5rem;
-    font-size: 3rem;
+.project-grid .project-item:nth-child(odd) {
+  border-left: 1px solid #dfdfdf;
+  padding: 1rem 10rem;
 }
-
- .project-card p{
-    line-height: 1.5rem;
- }
-
-.project{
-    background-color: white;
-    height: 100%;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    display: grid;
-    grid-template-rows: auto;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    -webkit-transition: scale 0.5s;
-    -o-transition: scale 0.5s;
-    transition: scale 0.5s;
+.project-grid .project-item:last-child {
+  grid-column: 1/span 2;
 }
-
-.project:hover{
-    scale: 1.05;
+.project-grid .project-item svg {
+  height: 50px;
+  margin: 0.5vw 0;
 }
-
-.project-img{
-    margin: auto;
-    width: 20rem;
-    justify-self: center;
+.project-grid .project-item h2 {
+  font-family: "Karla", sans-serif;
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin-bottom: 0.2vw;
 }
-
-.heading{
-    font-family: Sora, sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
+.project-grid .project-item p {
+  font-family: "Karla", sans-serif;
+  font-size: 0.8vw;
+  text-align: justify;
 }
-
-.project-description{
-    margin-top: .5rem;
-    padding-bottom: .5rem;
-    line-height: 1.5rem;
+.project-grid .project-item .button-group {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 1vw;
 }
-
-.project a{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.project-grid .project-item .button-group a:first-child {
+  color: black;
 }
-
-.project-buttons{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 1rem;
+.project-grid .project-item .button-group a:nth-child(2) {
+  background-color: #A68B5B;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
 }
-
-.see-more-btn{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: auto;
-    max-width: -webkit-fit-content;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    background-color: #2f577e;
-    color: white;
-    padding: .4rem .6rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    border-radius: .5rem;
-
+.project-grid .project-item .button-group a svg {
+  height: 40px;
 }
-
-.see-more-btn p{
-    margin-right: .5rem;
-}
-
-.see-more-btn:hover{
-    background-color: #5084b9;
-}
-
-.see-more{
-    font-style: bold;
-    font-weight: 500;
-}
-
-.github-btn{
-    color: rgb(0, 0, 0);
-    -webkit-transition: color .2s;
-    -o-transition: color .2s;
-    transition: color .2s;
-}
-
-.github-btn:hover{
-    color:#707070;
-}
-
-.disabled{
-    color: rgb(78, 78, 78);
-    background-color: darkgray;
-    cursor: not-allowed;
-}
-
-.project-link{
-    text-decoration: none;
-    color: black;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    width: fit-content;
-}
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: 8px;
-    scrollbar-color: white transparent;
-  }
-
-  /* Chrome, Edge, and Safari */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: rgb(219, 219, 219);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: rgb(59, 59, 59);
-    cursor: -webkit-grab;
-    cursor: grab;
-    border-radius: 10px;
-  }
-
-  .projects-list::-webkit-scrollbar{
-    height: 8px;
-  }
-
-  .project-list::-webkit-scrollbar-track{
-    background-color: #2f2f2f;
-  }
-
-@media screen and (max-width:1140px) {
-    .projects-list{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
-
-    .project{
-        min-width: -webkit-fit-content;
-        min-width: -moz-fit-content;
-        min-width: fit-content;
-    }
-}
-
-@media screen and (max-width:800px) {
-    .projects-container{
-        width: 90%;
-        padding: 2rem;
-    }
-
-    .projects-list:last-child{
-        padding-right: 0;
-    }
-
-    .project-img{
-        width: 100%;
-    }
-
-    .project{
-        padding-bottom: 2rem;
-        border-bottom: .5rem rgb(110, 110, 110) dotted;
-    }
-
-    .project:last-child{
-        border-bottom: none;
-        padding-bottom: none;
-    }
-
-    .project-buttons{
-        gap: 1rem;
-    }
-}
+.project-grid .project-item .button-group .project-button {
+  border-radius: 15px;
+  font-family: "Karla", sans-serif;
+}/*# sourceMappingURL=Projects.css.map */

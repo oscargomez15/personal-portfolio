@@ -1,0 +1,88 @@
+@import '../../Variables.scss';
+
+.project-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: $backgroundColor;
+    h1{
+        font-family: $contentFont;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+    p{
+        font-family: $contentFont;
+        font-size: 1vw;
+        text-align: center;
+    }
+}
+
+.project-grid{
+    margin: auto;
+    display: grid;
+    width: 80%;
+    gap: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, minmax(fit-content,1fr));
+    .project-title{
+        grid-column: 1/ span 2;
+        padding: 3rem;
+        text-align: center;
+    }
+    .project-item{
+            text-align: center;
+            border-top: 1px solid #dfdfdf;
+            padding: 2rem 10rem;
+
+            &:nth-child(odd){
+                border-left: 1px solid #dfdfdf;
+                padding: 1rem 10rem;
+            }
+            &:nth-child(even){
+            }
+            &:last-child{
+                grid-column: 1/span 2;
+            }
+            svg{
+                height: 50px;
+                margin: .5vw 0;
+            }
+            h2{
+                font-family: $contentFont;
+                font-size: 1.5vw;
+                font-weight: bold;
+                margin-bottom: .2vw;
+            }
+            p{
+                font-family: $contentFont;
+                font-size: .8vw;
+                text-align: justify;
+            }
+            .button-group{
+                display: flex;
+                align-items: center;
+                gap: 1vw;
+                margin-top: 1vw;
+                a{
+                    &:first-child{
+                        color:black;
+                    }
+                    &:nth-child(2){
+                        background-color: $primarycolor;
+                        padding: .5rem 1rem;
+                        border-radius: 10px;
+                        height: fit-content;
+                        color: white;
+                    }
+                    svg{
+                        height: 40px;
+                    }
+                }
+
+                .project-button{
+                    border-radius: 15px;
+                    font-family: $contentFont;
+                }
+            }
+        }
+
+    }

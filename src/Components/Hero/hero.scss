@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap');
+@import '../../Variables.scss';
+p{
+    font-size: $contentFontSize;
+}
+
+.hero-wrapper{
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 10rem;
+    background-color: #F0F0F0;
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    h1{
+        font-family: 'Staatliches', sans-serif;
+        font-size: 2.5vw;
+    }
+    h2{
+        font-family: 'Karla', sans-serif;
+        margin-top: -.8vw;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        li{
+            display: inline-block;
+            margin-left: 3vw;
+            font-size: $contentFontSize;
+            font-family: $contentFont;
+            transition: all .2s;
+            a{
+                color: black;
+            }
+        }
+        .contact-btn{
+            border-radius: 15px;
+            border: 2px solid #675640;
+            padding: .5rem 1rem;
+            a{
+                color: #675640;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .hero-grid{
+        display: grid;
+        gap: 2rem;
+        padding: 5rem 20rem 0 20rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 100%;
+        max-width: 100%;
+        .welcome-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            grid-column: 1/ span 2 ;
+            grid-row: 1/ span 2;
+            background-color: #D9D9D9;
+            border-radius: 35px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            h2{
+                font-size: 3vw;
+                font-family: 'Karla', sans-serif;
+                font-weight: bold;
+                padding: 6rem 0 0 2rem;
+            }
+            p{
+                justify-self: flex-end;
+                padding: 0 0 2rem 2rem ;
+                font-size: $contentFontSize;
+                font-family: $contentFont;
+            }
+        }
+
+            img{
+                object-fit: cover;
+                border-radius: 25px;
+                grid-column: 3/ span 2;
+                grid-row: 1/ span 3;
+                width: 100%;
+                height: 100%;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .profile-description{
+            background-color: #C7B299;
+            border-radius: 25px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            transition: all .2s;
+            &:hover{
+                background-color: #C7B299
+            }
+            p{
+                padding: 2rem;
+                color: white;
+                font-family: $contentFont;
+                span{
+                    font-weight: bold;
+                    border-radius: 10px;
+                    padding: 0 0.2rem;
+                }
+            }
+        }
+        .learn-more-box{
+            display: flex;
+            align-items: flex-end;
+            border: 1px solid black;
+            padding: 2rem;
+            border-radius: 25px;
+            font-family: $contentFont;
+        }
+    }
+}
+
+ .contact-btn:hover{
+    background-color: #675640;
+}
+.hero-wrapper ul .contact-btn:hover a{
+    color: white;
+}

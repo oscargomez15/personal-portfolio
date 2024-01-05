@@ -1,8 +1,7 @@
-import './App.css';
 import {Header} from './Components/Header/Header.js';
-import { Hero } from './Components/Hero/Hero.js';
-import { Skills } from './Components/Skills/Skills.js';
-import { Projects } from './Components/Project/Projects.js';
+import { Hero } from './Components/Hero/Hero.jsx';
+import { Skills } from './Components/Skills/Skills.jsx';
+import { Projects } from './Components/Project/Projects.jsx';
 import { Certifications } from './Components/Certifications/Certifications.js';
 import {Footer} from './Components/Footer/Footer.js'
 import { Contact } from './Components/Contact/Contact.js';
@@ -11,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* {<Header />} */}
       <Hero/>
       <Skills/>
       <Projects/>

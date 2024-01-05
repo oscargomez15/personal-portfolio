@@ -1,0 +1,58 @@
+@import '../../Variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.skills-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: $backgroundColor;
+    .skills-flex{
+        padding-top: 5vw;
+        display: flex;
+        width: 70%;
+        margin: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .section-title{
+            margin-top: 5vw;
+            grid-column: 1/-1 ;
+            grid-row: 1;
+            h2{
+                font-weight: bold;
+                font-family: $headingFont;
+                font-size: 2vw;
+            }
+            h3{
+                font-family: $headingFont;
+                font-size: 1vw;
+            }
+            p{
+                font-family: $contentFont;
+            }
+        }
+        .skills-names{
+            display: flex;
+            justify-content: center;
+            margin-top: 2vw;
+            list-style: none;
+            ul{
+                li{
+                    display: inline-block;
+                    font-family: $contentFont;
+                    font-size: $contentFontSize;
+                    font-weight: bold;
+                    margin-right: 3vw;
+                    margin-bottom: 1vw;
+                    color: rgb(139, 139, 139);
+                    svg{
+                        margin-right: .3vw;
+                    }
+                }
+            }
+        }
+    }
+}
