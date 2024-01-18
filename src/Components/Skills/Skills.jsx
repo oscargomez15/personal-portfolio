@@ -29,7 +29,7 @@ export const Skills = () => {
       </article>
 
       <article className='section-title'>
-        <h3 className='third-heading'> In an era in which technology is growing exponentially, it is imperative to keep myself competent and up to date to develop software/apps/websites that meets current standards.
+        <h3 className='sub-heading'> In an era in which technology is growing exponentially, it is imperative to keep myself competent and up to date to develop software/apps/websites that meets current standards.
           These are some of the skills that I'm working on as of 01/2024.
         </h3>
       </article>

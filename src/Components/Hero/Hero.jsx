@@ -23,7 +23,9 @@ export const Hero = () => {
           <button className='dropdown-btn'> social <FontAwesomeIcon icon={faChevronDown} size='sm'/></button>
           <div className="dropdown-content">
             <a href="https://www.facebook.com/oscargomez1998" target='__blank'> <FontAwesomeIcon icon={faSquareFacebook} /> facebook</a>
+            <hr/>
             <a href="https://github.com/oscargomez15" target='__blak'> <FontAwesomeIcon icon={faSquareGithub} /> github</a>
+            <hr/>
             <a href="https://www.linkedin.com/in/oscargomez1998/"target='__blank'> <FontAwesomeIcon icon={faLinkedin} /> linkedIn</a>
           </div>
         </div>
@@ -34,7 +36,7 @@ export const Hero = () => {
       <section className="hero-grid">
         <article className="welcome-box">
           <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
-          <p>A <span>Front End Developer</span> emphasized in delivering scalable, optimized and accessible designs to meet industry standards.</p>
+          <p className='sub-heading'>A <span>Front End Developer</span> emphasized in delivering scalable, optimized and accessible designs to meet industry standards.</p>
           <a href="src\Assets\Resume.pdf" download={true}>
             <div className="resume">
               <p>Download Resume</p>
@@ -68,9 +70,9 @@ export const Hero = () => {
         <article className="certifications-box">
           <h3 className='third-heading'>Certifications</h3>
           <div className='certifications'>
-            <a href="#"><FontAwesomeIcon icon={faFreeCodeCamp} size='lg'/> Responsive Web Design Course </a>
-            <a href="#"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
-            <a href="#"><FontAwesomeIcon icon={faMeta} size='lg'/> Front End Developer Course by Meta</a>
+            <a target='__blank' href="https://www.freecodecamp.org/certification/fcc017c1802-5df9-4f3b-878e-20584d956dee/responsive-web-design"><FontAwesomeIcon icon={faFreeCodeCamp} size='lg'/> Responsive Web Design Course </a>
+            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
+            <a target='__blank' href="https://www.coursera.org/account/accomplishments/verify/JEPNHX3AT2GH"><FontAwesomeIcon icon={faMeta} size='lg'/> Front End Developer Course by Meta</a>
           </div>
         </article>
       </section>

@@ -5,10 +5,12 @@ $primarycolor: #A68B5B;
 $secondaryColor: #675640;
 $gridBorderColor: #6b6b6b;
 $letterSpacing: -3px;
-
+$navheight: 100px;
 //responsive
+
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
+$breakpoint-laptop-l:1440px;
 @mixin resetStyle{
     outline: none;
     appearance: none;

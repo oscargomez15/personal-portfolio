@@ -130,7 +130,6 @@
 }
 .contact-wrapper .overlay-wrapper .popup h2 {
   font-size: 2rem;
-  font-family: "Karla", sans-serif;
   font-weight: bold;
   color: #3FB542;
   text-align: center;
@@ -138,7 +137,6 @@
 .contact-wrapper .overlay-wrapper .popup p {
   text-align: center;
   color: black;
-  font-family: "Karla", sans-serif;
   line-height: 1.1rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -167,4 +165,14 @@
 }
 .contact-wrapper .hide {
   display: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .contact-wrapper .contact-container form .formInput textarea {
+    padding-left: 0.2rem;
+  }
+  .contact-wrapper .contact-container form .formInput input {
+    font-size: 12px;
+    padding-left: 0.2rem;
+  }
 }/*# sourceMappingURL=Contact.css.map */

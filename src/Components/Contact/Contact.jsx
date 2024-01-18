@@ -122,11 +122,6 @@ const lottieRef = useRef();
 
         let checkArray = (element) => element.every (v=> v === true);
         setFormValid(checkArray(formValidityArray));
-        console.log(formValidityArray);
-
-        console.log(checkArray(formValidityArray));
-        //setFormValid(formValidity);
-
     }
 
   return (
@@ -148,7 +143,7 @@ const lottieRef = useRef();
                 name='reason'
                 onChange={fillForm}
                 value={formValues.reason}
-                onBlur={() => {setSelectBlur(true) 
+                onBlur={() => {setSelectBlur(true)
                 checkFormValues()}}>
                     <option value=""></option>
                     <option value='Job Offer'>Job Offer</option>
@@ -169,6 +164,7 @@ const lottieRef = useRef();
                 pattern="[A-Zaz]{5,250}$"
                 minLength="25"
                 onChange={fillForm}
+                placeholder="Go ahead, I don't bite..."
                 onBlur={() => {setTextAreaBlur(true)
                     checkFormValues()}}/>
                 {(formValues.inquiry.length <= 25 && isTextAreaBlur) ? <span tabIndex="0"> Must be minimum of 25 characters. </span> : ""}
