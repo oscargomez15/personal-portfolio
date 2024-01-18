@@ -1,27 +1,18 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.55d4c1b8.css",
-    "main.js": "/personal-portfolio/static/js/main.f8beee23.js",
-    "static/media/photo-editing.mp4": "/personal-portfolio/static/media/photo-editing.2333b0edef435a8b4d99.mp4",
-    "static/media/integration.mp4": "/personal-portfolio/static/media/integration.d28831bc5d9eeb4a9a44.mp4",
-    "static/media/user-interface.mp4": "/personal-portfolio/static/media/user-interface.6ac2a61f87a829991f56.mp4",
-    "static/media/react-coding.mp4": "/personal-portfolio/static/media/react-coding.28511850e824854df85d.mp4",
-    "static/media/Resume.pdf": "/personal-portfolio/static/media/Resume.4aa6781437749a2a0c3b.pdf",
-    "static/media/game-project.png": "/personal-portfolio/static/media/game-project.9d04ce248b049881ecdf.png",
-    "static/media/ecommerce-Project.png": "/personal-portfolio/static/media/ecommerce-Project.0ca41f487f1472b9b1ad.png",
-    "static/media/portfolio.png": "/personal-portfolio/static/media/portfolio.680f4d548d828f85e02f.png",
-    "static/media/habaneros-project.png": "/personal-portfolio/static/media/habaneros-project.589978f59ac7b26bc924.png",
-    "static/media/crypto-tracker-project.png": "/personal-portfolio/static/media/crypto-tracker-project.7efb71bbbe7cb3d98945.png",
-    "static/media/oscar-hero.jpg": "/personal-portfolio/static/media/oscar-hero.76232511fdc415a2d5d1.jpg",
-    "static/media/coursera-meta.png": "/personal-portfolio/static/media/coursera-meta.7f0a2df78fe0ac6cae85.png",
-    "static/media/freecodecamp.png": "/personal-portfolio/static/media/freecodecamp.4567982077be6e986f9c.png",
-    "static/media/cloud-practictioner.png": "/personal-portfolio/static/media/cloud-practictioner.90d1688bbd4a098ba5cb.png",
+    "main.css": "/personal-portfolio/static/css/main.27119487.css",
+    "main.js": "/personal-portfolio/static/js/main.fc3416a1.js",
+    "static/media/hangman-ss.png": "/personal-portfolio/static/media/hangman-ss.5297e6ac95b4f53d2bc2.png",
+    "static/media/habaneros.jpg": "/personal-portfolio/static/media/habaneros.321187ed687bdbfa4b91.jpg",
+    "static/media/oscar.jpeg": "/personal-portfolio/static/media/oscar.0394f1388366bdda63c6.jpeg",
+    "static/media/crypto.jpg": "/personal-portfolio/static/media/crypto.a10dcebcf83b5af537b9.jpg",
+    "static/media/videogames.jpg": "/personal-portfolio/static/media/videogames.b5db27195216376469e7.jpg",
     "index.html": "/personal-portfolio/index.html",
-    "main.55d4c1b8.css.map": "/personal-portfolio/static/css/main.55d4c1b8.css.map",
-    "main.f8beee23.js.map": "/personal-portfolio/static/js/main.f8beee23.js.map"
+    "main.27119487.css.map": "/personal-portfolio/static/css/main.27119487.css.map",
+    "main.fc3416a1.js.map": "/personal-portfolio/static/js/main.fc3416a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.55d4c1b8.css",
-    "static/js/main.f8beee23.js"
+    "static/css/main.27119487.css",
+    "static/js/main.fc3416a1.js"
   ]
 }
