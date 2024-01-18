@@ -1,18 +1,20 @@
 @import '../../Variables.scss';
 
 .project-wrapper{
+    scroll-snap-align: start;
+    display: flex;
     height: 100vh;
     width: 100%;
-    background-color: $backgroundColor;
+    border-bottom: 1px solid #dfdfdf;
     h1{
         font-family: $contentFont;
         font-size: 2vw;
         font-weight: bold;
+        letter-spacing: $letterSpacing;
+
     }
     p{
-        font-family: $contentFont;
-        font-size: 1vw;
-        text-align: center;
+        text-align: left;
     }
 }
 
@@ -26,48 +28,70 @@
     .project-title{
         grid-column: 1/ span 2;
         padding: 3rem;
-        text-align: center;
-        background-color: $primarycolor;
-        color: white;
-
+        text-align: left;
     }
     .project-item{
-            text-align: center;
-            border-top: 1px solid $gridBorderColor;
-            padding: 2rem 10rem;
-
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 2rem 5rem;
+        overflow: hidden;
+        min-height: 400px;
             &:nth-child(odd){
-                border-left: 1px solid $gridBorderColor;
-                padding: 1rem 10rem;
-            }
-            &:nth-child(even){
-            }
-            &:last-child{
-                grid-column: 1/span 2;
-                border-right: 1px solid $gridBorderColor;
-                border-left: 1px solid $gridBorderColor;
+                border-left: 1px solid rgb(139, 139, 139);
+                padding: 2rem 5rem;
             }
             svg{
                 height: 50px;
-                margin: .5vw 0;
+                margin: 1rem 0;
             }
+            figure{
+                position: relative;
+                overflow: hidden;
+                height: 150px;
+                border-radius: 15px;
+                transition: all .2s;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                .darken{
+                    position: absolute;
+                    background-color: rgb(18, 0, 53);
+                    height: 100%;
+                    width: 100%;
+                    transition: all .2s;
+                }
+                img{
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    transition: all .2s;
+                    opacity: 0.8;
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+                &:hover{
+                    transform: rotate3d(30,0,0,30deg);
+                    .darken{
+                        opacity: 0.4;
+                    }
+                }
+            }
+
             h2{
-                font-family: $contentFont;
-                font-size: 1.5vw;
-                font-weight: bold;
                 margin-bottom: .2vw;
             }
             p{
-                font-family: $contentFont;
-                font-size: .8vw;
                 text-align: justify;
             }
             .button-group{
                 display: flex;
                 align-items: center;
+                justify-self: flex-end;
                 gap: 1vw;
-                margin-top: 1vw;
+                margin-top: 1rem 0 0.5rem;
                 a{
+                    text-decoration: none;
                     transition: all .2s;
                     &:first-child{
                         color:black;
@@ -77,30 +101,92 @@
                     }
                     //github button child
                     &:nth-child(2){
-                        background-color: $secondaryColor;
-                        padding: .5rem 1rem;
+                        background-color: black;
+                        padding: .5rem .5rem;
                         border-radius: 10px;
                         height: fit-content;
+                        transition: all .2s;
                         &:hover{
-                            background-color: $primarycolor;
-                        }
+                            background-color: rgb(94, 94, 94);
+                            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px 0px, rgba(0, 0, 0, 0.09) 0px 4px 2px 0px, rgba(0, 0, 0, 0.09) 0px 8px 4px 0px, rgba(0, 0, 0, 0.09) 0px 16px 8px 0px, rgba(0, 0, 0, 0.09) 0px 32px 16px 0px;                        }
                     }
 
                     svg{
                         height: 40px;
+                        animation: none;
                     }
                 }
 
                 .project-button{
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
                     border-radius: 15px;
                     font-family: $contentFont;
+                    .lottie-live{
+                        height: 20px;
+                        svg{
+                            padding: 0;
+                            margin: 0;
+                            margin-right: 10px;
+                        }
+                    }
                     p{
-                        font-size: .6vw;
-                        font-weight: bold;
                         color: white;
                     }
                 }
             }
         }
 
+    }
+
+    .slide-left{
+        transform: translate(1000px);
+        animation: reset-position ease-in-out forwards;
+        animation-timeline: view();
+        animation-range:entry;
+    }
+    .slide-right{
+        transform: translate(-1000px);
+        animation: reset-position ease-in-out forwards;
+        animation-timeline: view();
+        animation-range:entry;
+    }
+    .fade-in-effect{
+        opacity: 0;
+        scale: 0.6;
+        animation: fade-in ease-in-out forwards;
+        animation-timeline: view();
+        animation-range:entry;
+    }
+
+    @keyframes fade-in {
+        to{
+            scale: 1;
+            opacity: 1;
+        }
+    }
+
+    @keyframes reset-position {
+        to{
+            transform: translateX(0);
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+        .project-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .project-grid .project-title{
+            padding: 2rem 0 1rem 0;
+        }
+        .project-grid .project-item,
+        .project-grid .project-item:nth-child(odd){
+            padding: 1rem 2rem;
+        }
+        .project-grid .project-item .button-group a svg{
+            height: 20px;
+        }
     }

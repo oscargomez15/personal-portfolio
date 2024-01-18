@@ -1,25 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap');
 @import '../../Variables.scss';
-p{
-    font-size: $contentFontSize;
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    body{
+        background-color: $backgroundColor;
+    }
 }
 
 .hero-wrapper{
+    scroll-snap-align: start;
+    border-bottom: 1px solid #dfdfdf;
     width: 100%;
     height: 100vh;
     padding-bottom: 10rem;
-    background-color: #F0F0F0;
+    .hero-container{
+        width: 75%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .name{
+            h2{
+                font-size: 1vw;
+            }
+        }
+    }
     nav{
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+        height: 100px;
+        width: 100%;
     }
     h1{
         font-family: 'Staatliches', sans-serif;
         font-size: 2.5vw;
     }
     h2{
-        font-family: 'Karla', sans-serif;
         margin-top: -.8vw;
     }
     ul{
@@ -30,98 +54,315 @@ p{
         li{
             display: inline-block;
             margin-left: 3vw;
-            font-size: $contentFontSize;
-            font-family: $contentFont;
+            font-size: 1.5rem;
             transition: all .2s;
             a{
                 color: black;
+                text-decoration: none;
+            }
+            &:hover{
+                text-shadow: 1px 1px 15px $secondaryColor;
+            }
+        }
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+            margin-left: 3vw;
+            &:hover .dropdown-content{
+                display: flex;
+            }
+            .dropdown-btn{
+                border: none;
+                padding: .25vw .5vw;
+                font-size: 1vw;
+                &:hover{
+                    cursor:pointer;
+                    text-shadow: 1px 1px 15px $secondaryColor;
+                }
+            }
+            .dropdown-content{
+                transition: all .2s;
+                position: absolute;
+                padding: .5vw;
+                min-width: 170px;
+                max-width: 250px;
+                background-color: #dfdfdf;
+                display: none;
+                flex-direction: column;
+                z-index: 1;
+                a{
+                    text-decoration: none;
+                    margin-top: .3vw;
+                    font-size: .8vw;
+                    color: black;
+                    &:hover{
+                        text-shadow: 1px 1px 15px $secondaryColor;
+                    }
+                }
             }
         }
         .contact-btn{
+            background-color: #658864;
             border-radius: 15px;
-            border: 2px solid #675640;
             padding: .5rem 1rem;
-            a{
-                color: #675640;
-                font-weight: bold;
+            &:hover{
+                background-color: #B7B78A;
             }
-        }
+            a{
+                color: white;
+                text-decoration: none;
+            }
     }
+}
 
     .hero-grid{
         display: grid;
         gap: 2rem;
-        padding: 5rem 20rem 0 20rem;
+        padding-top: 5rem;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        height: 100%;
-        max-width: 100%;
+        grid-template-rows: 1fr 300px;
+        width: 100%;
+        height:  calc(100% - 200px);
         .welcome-box{
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             grid-column: 1/ span 2 ;
-            grid-row: 1/ span 2;
+            grid-row: 1/ span 1;
             background-color: #D9D9D9;
             border-radius: 35px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 6rem 0 6rem 2rem;
+
             h2{
-                font-size: 3vw;
-                font-family: 'Karla', sans-serif;
+                font-feature-settings: "liga" 0;
+                letter-spacing: -3px;
                 font-weight: bold;
-                padding: 6rem 0 0 2rem;
+                line-height: 4.5rem;
             }
             p{
-                justify-self: flex-end;
-                padding: 0 0 2rem 2rem ;
-                font-size: $contentFontSize;
-                font-family: $contentFont;
-            }
-        }
-
-            img{
-                object-fit: cover;
-                border-radius: 25px;
-                grid-column: 3/ span 2;
-                grid-row: 1/ span 3;
-                width: 100%;
-                height: 100%;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        }
-
-        .profile-description{
-            background-color: #C7B299;
-            border-radius: 25px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            transition: all .2s;
-            &:hover{
-                background-color: #C7B299
-            }
-            p{
-                padding: 2rem;
-                color: white;
-                font-family: $contentFont;
+                margin: 1rem 0;
+                font-size: 2rem;
                 span{
+                    position: relative;
                     font-weight: bold;
+                    &::after{
+                        display: block;
+                        bottom: 0;
+                        right: 0;
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: 6px;
+                        background: linear-gradient(90deg, $primarycolor, $secondaryColor);
+                    }
+                }
+            }
+            a{
+                width: fit-content;
+                text-decoration: none;
+                .resume{
+                    display: flex;
+                    width: fit-content;
+                    background-color: $secondaryColor;
+                    transition: all .2s;
                     border-radius: 10px;
-                    padding: 0 0.2rem;
+                    p{
+                        color: white;
+                        font-weight: bold;
+                        font-size: 1rem;
+                        margin: 0;
+                        padding: .5rem 1rem;
+                    }
+                    &:hover{
+                        background-color: $primarycolor;
+                    }
                 }
             }
         }
-        .learn-more-box{
+
+            figure{
+                position: relative;
+                border-radius: 25px;
+                grid-column: 3/ span 2;
+                grid-row: 1/ span 2;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 25px;
+                }
+                a{
+                    bottom: 25px;
+                    left: 25px;
+                    padding: .5rem 1rem;
+                    color: black;
+                    background-color: rgba(255,255,255,0.7);
+                    text-decoration: none;
+                    border: 1px solid black;
+                    border-radius: 35px;
+                    position: absolute;
+                    transition: all .2s;
+                    &:hover{
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                        scale: 1.1;
+                        background-color: white;
+                    }
+                }
+        }
+
+        .profile-description{
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            background-color: #D9D9D9;
+            border-radius: 25px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            transition: all .2s;
+            height: 100%;
+            padding: 2rem;
+            .facts-container{
+                display: flex;
+                flex-direction: column;
+                gap: .1rem;
+                margin-top: 1rem;
+                .fact{
+                    border-radius: 5px;
+                    padding: .5rem;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+        .certifications-box{
+            display: flex;
+            flex-direction: column;
             border: 1px solid black;
             padding: 2rem;
             border-radius: 25px;
-            font-family: $contentFont;
+            height: 100%;
+            .certifications{
+                display: flex;
+                flex-direction: column;
+            }
+            a{
+                text-decoration: none;
+                margin-top: 1rem;
+                font-size: .8vw;
+                color: rgb(139, 139, 139);
+                &:hover{
+                    color: #302517;
+                    text-shadow: 1px 1px 15px rgb(139, 139, 139);
+                }
+            }
+            }
+            svg{
+                color: rgb(139, 139, 139);
+                margin-right: .5vw;
+            }
         }
     }
-}
 
- .contact-btn:hover{
+.contact-btn:hover{
     background-color: #675640;
 }
 .hero-wrapper ul .contact-btn:hover a{
     color: white;
+}
+
+.primary-heading{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.secondary-heading{
+    font-size: 3rem ;
+    font-weight: bold;
+}
+
+.third-heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.sub-heading{
+    font-size: 1.5rem;
+}
+
+.body-text{
+    font-size: 1rem;
+}
+
+.button-text{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1024px) {
+    .hero-wrapper{
+        padding-bottom: 0;
+        ul{
+            .dropdown{
+                .dropdown-btn{
+                    font-size: 1rem;
+                }
+            }
+            li{
+                a{
+                    font-size: 1rem;
+                }
+            }
+        }
+        .hero-grid{
+            gap: 1rem;
+            padding-top: 0;
+            grid-template-rows: repeat(3,1fr);
+            .welcome-box{
+                padding: 2rem 0 0 2rem;
+                h2{
+                    line-height: 1;
+                }
+                p{
+                    margin: .5rem 0;
+                    font-size: 1rem;
+                }
+                a{
+                    .resume{
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            }
+            .profile-description{
+                padding: 1rem;
+                grid-row: 3;
+                grid-column: 1/span 4;
+                h2{
+                    font-size: 1.5rem;
+                }
+                p{
+                    margin-top: 0.4rem;
+                    font-size: 1rem;
+                }
+            }
+            .certifications-box{
+                padding: 1rem;
+                grid-row: 2;
+                grid-column: 1/span 2;
+                h2{
+                    font-size: 1.5rem;
+                }
+                .certifications{
+                    a{
+                    font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }

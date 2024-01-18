@@ -1,14 +1,12 @@
 @import '../../Variables.scss';
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .skills-wrapper{
+    position: relative;
+    scroll-snap-align: start;
     height: 100vh;
     width: 100%;
-    background-color: $backgroundColor;
+    border-bottom: 1px solid #dfdfdf;
     .skills-flex{
         padding-top: 5vw;
         display: flex;
@@ -21,18 +19,6 @@
             margin-top: 5vw;
             grid-column: 1/-1 ;
             grid-row: 1;
-            h2{
-                font-weight: bold;
-                font-family: $headingFont;
-                font-size: 2vw;
-            }
-            h3{
-                font-family: $headingFont;
-                font-size: 1vw;
-            }
-            p{
-                font-family: $contentFont;
-            }
         }
         .skills-names{
             display: flex;
@@ -42,8 +28,7 @@
             ul{
                 li{
                     display: inline-block;
-                    font-family: $contentFont;
-                    font-size: $contentFontSize;
+                    font-size: 1.5rem;
                     font-weight: bold;
                     margin-right: 3vw;
                     margin-bottom: 1vw;
@@ -53,6 +38,17 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .skills-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .skills-flex{
+            padding-top: 0;
         }
     }
 }

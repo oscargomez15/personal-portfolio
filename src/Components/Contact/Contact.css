@@ -1,198 +1,170 @@
-
-.contact-container{
-    width: 75%;
-    margin: auto;
-    background: -webkit-gradient(linear, right top, left top, from(#e3ffe7), to(#d9e7ff));
-    background: -o-linear-gradient(right, #e3ffe7 0%, #d9e7ff 100%);
-    background: linear-gradient(270deg, #e3ffe7 0%, #d9e7ff 100%);    border-radius: 1rem;
-    padding: 3rem;
-    margin-top: 5rem;
-    position: relative;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
+.contact-wrapper {
+  position: relative;
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.contact-container > h1{
-    font-weight: 500;
-    text-align: center;
-    font-family: Sora, sans-serif;
+.contact-wrapper .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
 }
-
-form{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 25%;
-    margin: auto;
-    position: relative;
+.contact-wrapper .contact-container p {
+  margin-bottom: 2.5rem;
 }
-
-form label,
-.formInput{
-    margin-top: 1.5rem;
-    font-weight: 500;
+.contact-wrapper .contact-container form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-
-.formInput{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+.contact-wrapper .contact-container form .formInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.5vw;
 }
-
-.formInput label{
-    margin-top: 0;
+.contact-wrapper .contact-container form .formInput label {
+  font-size: 0.8vw;
 }
-
-.formInput span{
-    color: red;
-    padding: .2rem;
-    display: none;
+.contact-wrapper .contact-container form .formInput label::after {
+  content: "*";
+  color: red;
 }
-
-.formInput input[type=text],
-.formInput input[type=email],
-select,
-textarea{
-    padding: .5rem;
-    font-weight: 500;
-    border-radius: .5rem;
-    border-color: rgb(211, 211, 211);
-    border: none;
+.contact-wrapper .contact-container form .formInput input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  height: 1.2vw;
+  padding: 0.5vw 0.1vw;
+  font-size: 18px;
 }
-
-form input[type=submit]{
-    width: 50%;
-    margin: auto;
-    padding: 1rem 2rem;
-    border: none;
-    cursor: pointer;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-    font-weight: 500;
-    background-color: white;
-    font-family: Sora,sans-serif;
-    background-color:#2f577e;
-    color: white;
-    margin-top: 1rem;
-    border-radius: .5rem;
-
+.contact-wrapper .contact-container form .formInput input:focus {
+  border: solid 2px rgb(119, 119, 119);
 }
-
-form input[type=submit]:hover{
-    -webkit-box-shadow: .5rem .5rem #999999;
-            box-shadow: .5rem .5rem #999999;
-
+.contact-wrapper .contact-container form .formInput textarea {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 80%;
+  padding: 0.5vw 0.1vw;
+  font-size: 0.8vw;
 }
-input[type=submit]:disabled{
-    cursor:default ;
-    background-color: rgb(77, 77, 77);
-    color: rgb(207, 207, 207);
+.contact-wrapper .contact-container form .formInput textarea:focus {
+  border: solid 2px rgb(119, 119, 119);
 }
-
-input:invalid[focused="true"] ~ span,
-select:invalid[isFocused="true"] ~ span{
-    display: block;
+.contact-wrapper .contact-container form .formInput select {
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  height: 1.2vw;
+  font-size: 0.8vw;
 }
-
-input:invalid[focused="true"],
-textarea:invalid[isFocused="true"],
-select:invalid[isFocused="true"]{
-    border: 1px solid rgb(255, 96, 96);
+.contact-wrapper .contact-container form .formInput select:focus {
+  border: solid 2px rgb(119, 119, 119);
 }
-
-.overlay{
-    position: fixed;
-    visibility: hidden;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
+.contact-wrapper .contact-container form .formInput span {
+  color: red;
 }
-
-.hide{
-    visibility: visible;
+.contact-wrapper .contact-container button[type=submit] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background-color: #675640;
+  color: white;
+  padding: 0.5vw 1vw;
+  border-radius: 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.2s;
+  margin-top: 1vw;
 }
-
-.popup{
-    width: 400px;
-    background-color: #ffffff;
-    border-radius: 6px;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0.1);
-        -ms-transform: translate(-50%, -50%) scale(0.1);
-            transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 1rem;
-    color: #333;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    -o-transition: transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
-    visibility: hidden;
+.contact-wrapper .contact-container button[type=submit]:hover {
+  background-color: #A68B5B;
+  cursor: pointer;
 }
-
-.popup h2{
-    font-family: Sora, sans-serif;
-    color: rgb(0, 187, 62);
-    font-size: 2rem;
+.contact-wrapper .contact-container button[type=submit]:focus {
+  box-shadow: 2px 2px 5px rgb(100, 100, 100);
+  border: 2px black solid;
 }
-
-.popup button{
-    outline: none;
-    background-color:rgb(0, 187, 62);
-    border: none;
-    font-weight: 400;
-    color: white;
-    padding: .4rem 0;
-    margin-top: 1rem;
-    -webkit-transition: background-color .2s, -webkit-transform .2s;
-    transition: background-color .2s, -webkit-transform .2s;
-    -o-transition: background-color .2s, transform .2s;
-    transition: background-color .2s, transform .2s;
-    transition: background-color .2s, transform .2s, -webkit-transform .2s;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: 50%;
-    border-radius: .5rem;
+.contact-wrapper .contact-container button[type=submit]:disabled {
+  opacity: 0.3;
+  background-color: rgb(63, 63, 63);
+  color: rgb(255, 255, 255);
+  cursor: not-allowed;
 }
-
-.popup button:hover{
-    background-color:rgb(8, 218, 78);
-    cursor: pointer;
+.contact-wrapper .overlay-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 2;
 }
-
-.openModal{
-    visibility: visible;
-    bottom: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-        -ms-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
+.contact-wrapper .overlay-wrapper .popup {
+  background-color: #F0F0F0;
+  border-radius: 15px;
+  padding: 2rem;
+  z-index: 4;
+  color: white;
 }
-
- @media screen and (max-width:1000px) {
-    .contact-container{
-        width: 90%;
-    }
-
-    form{
-        width: 100%;
-    }
- }
-
+.contact-wrapper .overlay-wrapper .popup .lottie {
+  margin: auto;
+  height: 100px;
+  width: 100px;
+}
+.contact-wrapper .overlay-wrapper .popup h2 {
+  font-size: 2rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  color: #3FB542;
+  text-align: center;
+}
+.contact-wrapper .overlay-wrapper .popup p {
+  text-align: center;
+  color: black;
+  font-family: "Karla", sans-serif;
+  line-height: 1.1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.contact-wrapper .overlay-wrapper .popup button {
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: none;
+  border: 1px solid #3FB542;
+  color: #3FB542;
+  padding: 0.5rem 2rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+.contact-wrapper .overlay-wrapper .popup button:hover {
+  background-color: #3FB542;
+  color: white;
+  cursor: pointer;
+}
+.contact-wrapper .hide {
+  display: none;
+}/*# sourceMappingURL=Contact.css.map */

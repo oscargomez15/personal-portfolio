@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import 'Components/Skills/Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3Alt, faFigma, faGithub, faHtml5, faJava, faJs, faNpm, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faGaugeSimpleHigh, faUniversalAccess, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import { faCss3Alt, faFigma, faGithub, faHtml5, faJs, faNpm, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faGaugeSimpleHigh, faRobot, faUniversalAccess, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 
 export const Skills = () => {
   return(
   <section className='skills-wrapper' id='skills'>
-    <div className="skills-flex">
+    <div className="skills-flex fade-in-effect">
       <article className='section-title'>
-        <h2>Core Competencies</h2>
-        <p>Showcasing some of the skills that have allowed me to become an effective front-end developer. </p>
+        <h2 className='secondary-heading'>Core Competencies</h2>
+        <p className='sub-heading'>Showcasing some of the skills that have allowed me to become an effective front-end developer. </p>
       </article>
       <article className="skills-names">
         <ul>
@@ -29,11 +29,9 @@ export const Skills = () => {
       </article>
 
       <article className='section-title'>
-        <h3> In an era in which technology is growing exponentially, I have found the need of constantly updating my knowledge to
-          keep myself competent and up to date to develop software/apps/websites that are meeting current standards. These are some
-          of the skills that I'm working on as of 2024.
+        <h3 className='third-heading'> In an era in which technology is growing exponentially, it is imperative to keep myself competent and up to date to develop software/apps/websites that meets current standards.
+          These are some of the skills that I'm working on as of 01/2024.
         </h3>
-        <p></p>
       </article>
 
       <article className="skills-names">
@@ -41,6 +39,7 @@ export const Skills = () => {
           <li><FontAwesomeIcon icon={faUniversalAccess} size='lg'/>Accessibility</li>
           <li><FontAwesomeIcon icon={faGaugeSimpleHigh} size='lg'/>Optimization</li>
           <li><FontAwesomeIcon icon={faDatabase} size='lg'/>SQL</li>
+          <li><FontAwesomeIcon icon={faRobot}/>Artificial Intelligence</li>
         </ul>
       </article>
 
