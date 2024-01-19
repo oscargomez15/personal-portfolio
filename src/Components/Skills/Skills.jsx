@@ -22,7 +22,7 @@ export const Skills = () => {
           <li><FontAwesomeIcon icon={faWordpress} size='lg'/>Wordpress</li>
           <li><FontAwesomeIcon icon={faFigma} size='lg'/>Figma</li>
           <li><FontAwesomeIcon icon={faNpm} size='xl'/></li>
-          <li><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='lg'/> Responsiveness </li>
+          <li><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='lg'/> Responsive</li>
           <li><FontAwesomeIcon icon={faGithub} size='lg'/>Github</li>
 
         </ul>

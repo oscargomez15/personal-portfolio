@@ -191,4 +191,15 @@
   .project-wrapper .project-grid {
     width: 90%;
   }
+}
+@media screen and (max-width: 425px) {
+  .project-wrapper .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-wrapper .project-grid .project-title {
+    grid-column: 1;
+  }
+  .project-wrapper .project-grid .project-item {
+    border: none;
+  }
 }/*# sourceMappingURL=Projects.css.map */

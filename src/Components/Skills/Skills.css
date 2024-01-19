@@ -54,4 +54,28 @@
   .skills-wrapper .skills-flex .skills-names ul li {
     font-size: 1rem;
   }
+}
+@media screen and (max-width: 425px) {
+  .secondary-heading {
+    font-size: 1.5rem;
+  }
+  .skills-wrapper .skills-flex .section-title {
+    margin-top: 5rem;
+  }
+  .skills-wrapper .skills-names {
+    width: 100%;
+  }
+  .skills-wrapper .skills-names ul {
+    display: grid;
+    width: 100%;
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-wrapper .skills-names ul li {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  .skills-wrapper .skills-names ul li svg {
+    margin-right: 5px;
+  }
 }/*# sourceMappingURL=Skills.css.map */

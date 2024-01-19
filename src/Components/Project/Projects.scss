@@ -198,3 +198,17 @@
             }
         }
     }
+
+    @media screen and (max-width:$breakpoint-mobile-l) {
+        .project-wrapper{
+            .project-grid{
+                grid-template-columns: 1fr;
+                .project-title{
+                    grid-column: 1;
+                }
+                .project-item{
+                    border: none;
+                }
+            }
+        }
+    }

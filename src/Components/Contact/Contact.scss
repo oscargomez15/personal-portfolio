@@ -159,6 +159,7 @@
     .contact-wrapper{
         .contact-container{
             form{
+                width: 100%;
                 .formInput{
                     textarea{
                         padding-left: .2rem;
@@ -177,6 +178,26 @@
     .contact-wrapper{
         .contact-container{
             width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width:$breakpoint-mobile-l) {
+    .contact-wrapper{
+        .contact-container{
+            form{
+                .formInput{
+                    input{
+                        width: 100%;
+                    }
+                    select{
+                        width: 100%;
+                    }
+                    textarea{
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

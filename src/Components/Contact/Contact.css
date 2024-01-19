@@ -163,6 +163,9 @@
 }
 
 @media screen and (max-width: 1440px) {
+  .contact-wrapper .contact-container form {
+    width: 100%;
+  }
   .contact-wrapper .contact-container form .formInput textarea {
     padding-left: 0.2rem;
   }
@@ -173,5 +176,16 @@
 @media screen and (max-width: 768px) {
   .contact-wrapper .contact-container {
     width: 90%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .contact-wrapper .contact-container form .formInput input {
+    width: 100%;
+  }
+  .contact-wrapper .contact-container form .formInput select {
+    width: 100%;
+  }
+  .contact-wrapper .contact-container form .formInput textarea {
+    width: 100%;
   }
 }/*# sourceMappingURL=Contact.css.map */
