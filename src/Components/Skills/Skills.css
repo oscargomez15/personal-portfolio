@@ -2,8 +2,7 @@
 .skills-wrapper {
   position: relative;
   scroll-snap-align: start;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   border-bottom: 1px solid #dfdfdf;
 }
 .skills-wrapper .skills-flex {
@@ -46,5 +45,13 @@
   }
   .skills-wrapper .skills-flex {
     padding-top: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .skills-wrapper .skills-flex {
+    width: 90%;
+  }
+  .skills-wrapper .skills-flex .skills-names ul li {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=Skills.css.map */

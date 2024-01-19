@@ -3,8 +3,7 @@
 .contact-wrapper{
     position: relative;
     scroll-snap-align: start;
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +13,6 @@
         align-items: flex-start;
         justify-content: center;
         width: 70%;
-        height: 100%;
         p{
             margin-bottom: 2.5rem;
         }
@@ -29,7 +27,7 @@
                 align-items: flex-start;
                 margin-bottom: .5vw;
                 label{
-                    font-size: .8vw;
+                    font-size: 16px;
                     &::after{
                         content: "*";
                         color: red;
@@ -41,9 +39,7 @@
                     border: none;
                     border-radius: 5px;
                     width: 80%;
-                    height: 1.2vw;
-                    padding: .5vw .1vw;
-                    font-size: 18px;
+                    font-size: 16px;
                     &:focus{
                         border: solid 2px rgb(119, 119, 119);
                     }
@@ -54,7 +50,7 @@
                     border-radius: 5px;
                     width: 80%;
                     padding: .5vw .1vw;
-                    font-size: .8vw;
+                    font-size: 16px;
                     &:focus{
                         border: solid 2px rgb(119, 119, 119);
                     }
@@ -63,8 +59,7 @@
                     border: none;
                     border-radius: 5px;
                     width: 30%;
-                    height: 1.2vw;
-                    font-size: .8vw;
+                    font-size: 16px;
                     &:focus{
                         border: solid 2px rgb(119, 119, 119);
                     }
@@ -169,11 +164,19 @@
                         padding-left: .2rem;
                     }
                     input{
-                        font-size: 12px;
+                        //font-size: 12px;
                         padding-left: .2rem;
                     }
                 }
             }
         }
     }
-} 
+}
+
+@media screen and (max-width:$breakpoint-tablet) {
+    .contact-wrapper{
+        .contact-container{
+            width: 90%;
+        }
+    }
+}

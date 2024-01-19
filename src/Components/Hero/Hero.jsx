@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import 'Components/Hero/Hero.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFreeCodeCamp, faLinkedin, faMeta, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-//import resume from 'Assets/Resume.pdf'
+import resume from 'Assets/Resume.pdf'
 import oscar from 'Assets/oscar.jpeg'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faCode, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
 
 export const Hero = () => {
@@ -13,8 +13,8 @@ export const Hero = () => {
       <div className="hero-container">
       <nav>
         <header className="name">
-          <h1>oscar gomez</h1>
-          <h2>Front End Developer</h2>
+          <h1 className='primary-heading'>oscar gomez</h1>
+          <h2 className='sub-heading'>Front End Developer</h2>
         </header>
       <ul>
         <li><a href="#projects">projects</a></li>
@@ -30,6 +30,23 @@ export const Hero = () => {
           </div>
         </div>
         <li className='contact-btn'><a href="#contact">contact</a></li>
+        <li>
+          <label htmlFor="" className='hamburger-menu'>
+            <input type="checkbox" onClick={(e) => {console.log()}}/>
+          </label>
+
+          <aside className='sidebar'>
+            <nav className=''>
+              <ul>
+                <li>Menu</li>
+                <hr />
+                <li>projects</li>
+                <li>skills</li>
+                <li>contact</li>
+              </ul>
+            </nav>
+          </aside>
+        </li>
       </ul>
       </nav>
 
@@ -37,7 +54,7 @@ export const Hero = () => {
         <article className="welcome-box">
           <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
           <p className='sub-heading'>A <span>Front End Developer</span> emphasized in delivering scalable, optimized and accessible designs to meet industry standards.</p>
-          <a href="src\Assets\Resume.pdf" download={true}>
+          <a href={resume} download="Oscars-FrontEnd-Resume">
             <div className="resume">
               <p>Download Resume</p>
             </div>

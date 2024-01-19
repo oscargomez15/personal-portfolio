@@ -6,8 +6,14 @@ $secondaryColor: #675640;
 $gridBorderColor: #6b6b6b;
 $letterSpacing: -3px;
 $navheight: 100px;
-//responsive
+$bar-width: 50px;
+$bar-height: 10px;
+$hamburger-gap: 6px;
+$hamburger-height: calc(($bar-height *3) + ($hamburger-gap * 2));
+$x--width: calc($hamburger-height * 1.41421356237);
 
+//responsive
+$breakpoint-mobile-l:425px;
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
 $breakpoint-laptop-l:1440px;

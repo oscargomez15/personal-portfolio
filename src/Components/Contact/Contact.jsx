@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import 'Components/Contact/Contact.css'
 import { FormInput } from 'Components/Contact/FormInput'
 import emailjs from '@emailjs/browser';
@@ -21,6 +21,7 @@ const lottieRef = useRef();
     const [isSelectBlur, setSelectBlur] = useState(false);
     const [isTextAreaBlur, setTextAreaBlur] = useState(false);
     const [isFormValid, setFormValid] = useState(false);
+    const [isModalOpen, setModal] = useState(false);
 
 
     const inputs = [
@@ -28,7 +29,6 @@ const lottieRef = useRef();
             id:1,
             name:"firstName",
             type:"text",
-            placeholder:"First Name",
             errorMessage:"First name length minimum is 2 and no special characters.",
             pattern: /^[A-Za-z]{2,25}$/,
             label:"First Name",
@@ -38,7 +38,6 @@ const lottieRef = useRef();
             id:2,
             name:"lastName",
             type:"text",
-            placeholder:"Last Name",
             errorMessage:"Last name length minimum is 2 and no special characters.",
             pattern: /^[A-Za-z]{3,25}$/,
             label:"Last Name",
@@ -48,7 +47,6 @@ const lottieRef = useRef();
             id:3,
             name:"email",
             type:"email",
-            placeholder:"Email",
             errorMessage:"Please enter a valid email.",
             pattern:/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
             label:"Email",
@@ -88,11 +86,13 @@ const lottieRef = useRef();
     const openModal = () => {
         overlayRef.current.classList.remove('hide');
         lottieRef.current.play();
+        setModal(!isModalOpen);
     }
 
     const closeModal = () => {
         overlayRef.current.classList.add('hide');
         lottieRef.current.goToAndStop(1,0);
+        setModal(!isModalOpen);
     }
 
     const resetForm = () => {
@@ -106,6 +106,17 @@ const lottieRef = useRef();
         setTextAreaBlur(false)
         setSelectBlur(false)
     }
+
+    useEffect(() => {
+        if(isModalOpen){
+            document.body.style.overflow = 'hidden';
+            console.log("Modal has been opened");
+        }else{
+            document.body.style.overflow = 'unset';
+
+            console.log("Modal has been closed");
+        }
+    },[isModalOpen])
 
     const checkFormValues = () => {
         //storing all inputs validity to then use AND in conjunction to determine if the whole form is valid
@@ -164,7 +175,6 @@ const lottieRef = useRef();
                 pattern="[A-Zaz]{5,250}$"
                 minLength="25"
                 onChange={fillForm}
-                placeholder="Go ahead, I don't bite..."
                 onBlur={() => {setTextAreaBlur(true)
                     checkFormValues()}}/>
                 {(formValues.inquiry.length <= 25 && isTextAreaBlur) ? <span tabIndex="0"> Must be minimum of 25 characters. </span> : ""}

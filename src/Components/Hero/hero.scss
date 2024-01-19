@@ -11,34 +11,39 @@ html{
     scroll-behavior: smooth;
     body{
         background-color: $backgroundColor;
+        &::-webkit-scrollbar{
+            width: 0.75rem;
+        }
+        &::-webkit-scrollbar-track{
+            background: #bdbdbd;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: #888888;
+        }
     }
 }
 
 .hero-wrapper{
     scroll-snap-align: start;
     border-bottom: 1px solid #dfdfdf;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
     .hero-container{
         width: 75%;
         margin: auto;
-        .name{
-            h2{
-                font-size: 1vw;
-            }
-        }
-    }
     nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
         min-height: $navheight;
     }
+
     h1{
         font-family: 'Staatliches', sans-serif;
-        font-size: 2.5vw;
     }
     h2{
-        margin-top: -.8vw;
+        margin-top: -1rem;
     }
     ul{
         display: flex;
@@ -112,13 +117,71 @@ html{
     }
 }
 
+.hamburger-menu{
+    display: flex;
+    flex-direction: column;
+    gap: $hamburger-gap;
+    width: max-content;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    &::before,&::after,input{
+        outline: none;
+        appearance: none;
+        content: "";
+        width: $bar-width;
+        height: $bar-height;
+        background-color: rgb(58, 58, 58);
+        border-radius: 999px;
+        transition: all 200ms ease-in-out;
+        transform-origin: left center;
+        //pointer-events: none;
+    }
+    &:has(input:checked)::before{
+        rotate: 45deg;
+        width: $x--width;
+        translate: 0 (calc($bar-height/-2));
+    }
+    &:has(input:checked)::after{
+        rotate: -45deg;
+        width: $x--width;
+        translate: 0 (calc($bar-height/2));
+    }
+    &:has(input:checked) + .sidebar{
+        background-color: blue;
+        translate: -30%;
+    }
+
+    input{
+        cursor: pointer;
+        z-index: 2;
+        &:checked{
+            opacity: 0;
+        }
+    }
+}
+
+.sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    translate: 100%;
+    nav{
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    background-color: red;
+}
+
     .hero-grid{
         display: grid;
         gap: 2rem;
         margin-top: 5rem;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: minmax(200px,500px) minmax(200px,300px);
-        width: 100%;
         .welcome-box{
             display: flex;
             flex-direction: column;
@@ -260,7 +323,11 @@ html{
                 margin-right: .5vw;
             }
         }
+        .hide{
+            display: block;
+        }
     }
+}
 
 .contact-btn:hover{
     background-color: #675640;
@@ -446,6 +513,75 @@ html{
         .hero-container{
             width: 90%;
         }
+    }
+}
+@media screen and (max-width:$breakpoint-mobile-l) {
 
+    .hero-wrapper{
+        .hero-container{
+            padding-bottom: 1rem;
+            h1{
+                font-size: 3rem;
+            }
+            h2{
+                //margin-top: ;
+            }
+            nav{
+                align-items: center;
+                justify-content: flex-start;
+            }
+            ul{
+                display: none;
+            }
+            .hero-grid{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(3,1fr);
+                margin-top: 0;
+                gap: 1rem;
+                .welcome-box{
+                    grid-column: 1 span 2;
+                    grid-row: 1;
+                    padding: 1rem;
+                    justify-content: center;
+                    h2{
+                        margin-top: .2rem;
+                        font-size: 2rem;
+                        line-height: 2rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin-top: 0;
+                        span{
+                            &::after{
+                                height: .2rem;
+                            }
+                        }
+                    }
+                }
+                figure{
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+                .certifications-box{
+                    padding: 1rem;
+                    grid-row: 3;
+                    grid-column: 1/span 2;
+                }
+                .profile-description{
+                    grid-column: 2;
+                    grid-row: 2;
+                    padding: 1rem;
+                    .facts-container{
+                        margin-top: 0;
+                        gap: 0;
+                        .fact{
+                            p{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

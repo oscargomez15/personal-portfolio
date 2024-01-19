@@ -4,8 +4,7 @@
 .skills-wrapper{
     position: relative;
     scroll-snap-align: start;
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
     border-bottom: 1px solid #dfdfdf;
     .skills-flex{
         padding-top: 5vw;
@@ -42,13 +41,28 @@
     }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:$breakpoint-laptop) {
     .skills-wrapper{
         display: flex;
         justify-content: center;
         align-items: center;
         .skills-flex{
             padding-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width:$breakpoint-tablet) {
+    .skills-wrapper{
+        .skills-flex{
+            width: 90%;
+            .skills-names{
+                ul{
+                    li{
+                        font-size: 1rem;
+                    }
+                }
+            }
         }
     }
 }

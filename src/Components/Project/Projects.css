@@ -2,12 +2,10 @@
 .project-wrapper {
   scroll-snap-align: start;
   display: flex;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   border-bottom: 1px solid #dfdfdf;
 }
 .project-wrapper h1 {
-  font-family: "Karla", sans-serif;
   font-size: 2vw;
   font-weight: bold;
   letter-spacing: -3px;
@@ -23,6 +21,7 @@
   gap: 0px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, minmax(fit-content, 1fr));
+  overflow-x: hidden;
 }
 .project-grid .project-title {
   grid-column: 1/span 2;
@@ -36,6 +35,7 @@
   padding: 2rem 5rem;
   overflow: hidden;
   min-height: 400px;
+  overflow-x: hidden;
 }
 .project-grid .project-item:nth-child(odd) {
   border-left: 1px solid rgb(139, 139, 139);
@@ -124,7 +124,6 @@
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 15px;
-  font-family: "Karla", sans-serif;
 }
 .project-grid .project-item .button-group .project-button .lottie-live {
   height: 20px;
@@ -186,5 +185,10 @@
   }
   .project-grid .project-item .button-group a svg {
     height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-wrapper .project-grid {
+    width: 90%;
   }
 }/*# sourceMappingURL=Projects.css.map */

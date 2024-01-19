@@ -28,7 +28,7 @@ export const FormInput = (props) => {
 
   return (
     <div className='formInput'>
-        <label htmlFor={props.name}>{label}</label>
+        <label htmlFor={props.name} className='sub-heading'>{label}</label>
         <input
         {...inputProps}
         id={props.name}
