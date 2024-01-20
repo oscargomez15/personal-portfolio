@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.254d27da.css",
-    "main.js": "/personal-portfolio/static/js/main.056ca59d.js",
+    "main.css": "/personal-portfolio/static/css/main.9fbf1e02.css",
+    "main.js": "/personal-portfolio/static/js/main.8335fa74.js",
     "static/media/Resume.pdf": "/personal-portfolio/static/media/Resume.8ac31797c5fbdd18e783.pdf",
     "static/media/hangman-ss.png": "/personal-portfolio/static/media/hangman-ss.5297e6ac95b4f53d2bc2.png",
     "static/media/habaneros.jpg": "/personal-portfolio/static/media/habaneros.321187ed687bdbfa4b91.jpg",
@@ -9,11 +9,11 @@
     "static/media/crypto.jpg": "/personal-portfolio/static/media/crypto.a10dcebcf83b5af537b9.jpg",
     "static/media/videogames.jpg": "/personal-portfolio/static/media/videogames.b5db27195216376469e7.jpg",
     "index.html": "/personal-portfolio/index.html",
-    "main.254d27da.css.map": "/personal-portfolio/static/css/main.254d27da.css.map",
-    "main.056ca59d.js.map": "/personal-portfolio/static/js/main.056ca59d.js.map"
+    "main.9fbf1e02.css.map": "/personal-portfolio/static/css/main.9fbf1e02.css.map",
+    "main.8335fa74.js.map": "/personal-portfolio/static/js/main.8335fa74.js.map"
   },
   "entrypoints": [
-    "static/css/main.254d27da.css",
-    "static/js/main.056ca59d.js"
+    "static/css/main.9fbf1e02.css",
+    "static/js/main.8335fa74.js"
   ]
 }
