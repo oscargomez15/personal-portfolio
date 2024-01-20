@@ -24,11 +24,9 @@ html{
 }
 
 .hero-wrapper{
-    scroll-snap-align: start;
-    border-bottom: 1px solid #dfdfdf;
-    min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
+    min-height: fit-content;
+    //overflow-x: hidden;
     .hero-container{
         width: 75%;
         margin: auto;
@@ -117,7 +115,7 @@ html{
 }
 
 .hamburger-menu{
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: $hamburger-gap;
     width: max-content;
@@ -162,6 +160,7 @@ html{
 }
 
 .sidebar{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;

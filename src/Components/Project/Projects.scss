@@ -1,7 +1,6 @@
 @import '../../Variables.scss';
 
 .project-wrapper{
-    scroll-snap-align: start;
     display: flex;
     min-height: 100vh;
     border-bottom: 1px solid #dfdfdf;
@@ -9,7 +8,6 @@
         font-size: 2vw;
         font-weight: bold;
         letter-spacing: $letterSpacing;
-
     }
     p{
         text-align: left;
