@@ -55,7 +55,7 @@
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 431px) {
   .secondary-heading {
     font-size: 1.5rem;
   }
@@ -78,4 +78,4 @@
   .skills-wrapper .skills-names ul li svg {
     margin-right: 5px;
   }
-}/*# sourceMappingURL=Skills.css.map */
+}

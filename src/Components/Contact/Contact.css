@@ -83,6 +83,7 @@
   padding: 0.5vw 1vw;
   border-radius: 15px;
   width: -moz-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
   transition: all 0.2s;
   margin-top: 1vw;
@@ -178,7 +179,7 @@
     width: 90%;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 431px) {
   .contact-wrapper .contact-container form .formInput input {
     width: 100%;
   }
@@ -188,4 +189,7 @@
   .contact-wrapper .contact-container form .formInput textarea {
     width: 100%;
   }
-}/*# sourceMappingURL=Contact.css.map */
+  .contact-wrapper .overlay-wrapper .popup {
+    width: 75%;
+  }
+}

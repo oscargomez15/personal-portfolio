@@ -20,6 +20,7 @@
   width: 80%;
   gap: 0px;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, minmax(-webkit-fit-content, 1fr));
   grid-template-rows: repeat(3, minmax(fit-content, 1fr));
   overflow-x: hidden;
 }
@@ -107,6 +108,7 @@
   padding: 0.5rem 0.5rem;
   border-radius: 10px;
   height: -moz-fit-content;
+  height: -webkit-fit-content;
   height: fit-content;
   transition: all 0.2s;
 }
@@ -116,12 +118,14 @@
 }
 .project-grid .project-item .button-group a svg {
   height: 40px;
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 .project-grid .project-item .button-group .project-button {
   display: flex;
   align-items: center;
   height: -moz-fit-content;
+  height: -webkit-fit-content;
   height: fit-content;
   border-radius: 15px;
 }
@@ -139,14 +143,16 @@
 
 .slide-left {
   transform: translate(1000px);
-  animation: reset-position ease-in-out forwards;
+  -webkit-animation: reset-position ease-in-out forwards;
+          animation: reset-position ease-in-out forwards;
   animation-timeline: view();
   animation-range: entry;
 }
 
 .slide-right {
   transform: translate(-1000px);
-  animation: reset-position ease-in-out forwards;
+  -webkit-animation: reset-position ease-in-out forwards;
+          animation: reset-position ease-in-out forwards;
   animation-timeline: view();
   animation-range: entry;
 }
@@ -154,15 +160,28 @@
 .fade-in-effect {
   opacity: 0;
   scale: 0.6;
-  animation: fade-in ease-in-out forwards;
+  -webkit-animation: fade-in ease-in-out forwards;
+          animation: fade-in ease-in-out forwards;
   animation-timeline: view();
   animation-range: entry;
+}
+
+@-webkit-keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
   to {
     scale: 1;
     opacity: 1;
+  }
+}
+@-webkit-keyframes reset-position {
+  to {
+    transform: translateX(0);
   }
 }
 @keyframes reset-position {
@@ -192,7 +211,7 @@
     width: 90%;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 431px) {
   .project-wrapper .project-grid {
     grid-template-columns: 1fr;
   }
@@ -202,4 +221,4 @@
   .project-wrapper .project-grid .project-item {
     border: none;
   }
-}/*# sourceMappingURL=Projects.css.map */
+}

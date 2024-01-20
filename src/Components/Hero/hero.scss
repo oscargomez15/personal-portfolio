@@ -74,9 +74,7 @@ html{
             .dropdown-btn{
                 border: none;
                 padding: .25vw .5vw;
-                font-size: 1vw;
                 font-size: 1.5rem;
-
                 &:hover{
                     cursor:pointer;
                     text-shadow: 1px 1px 15px $secondaryColor;
@@ -95,8 +93,9 @@ html{
                 a{
                     text-decoration: none;
                     margin-top: .3vw;
-                    font-size: .8vw;
                     color: black;
+                    font-size: 1.5rem;
+
                     &:hover{
                         text-shadow: 1px 1px 15px $secondaryColor;
                     }
@@ -364,7 +363,7 @@ html{
     font-weight: bold;
 }
 
-@media screen and (max-width:1440px){
+@media screen and (max-width:$breakpoint-laptop-l){
     .primary-heading{
         font-size: 4rem;
     }
@@ -381,41 +380,54 @@ html{
         font-size: 1rem;
     }
     .hero-wrapper{
-        ul{
-            .dropdown{
-                .dropdown-content{
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        .hero-grid{
-            margin-top: 2rem;
-            .welcome-box{
-                p{
-                    font-size: 1.5rem;
-                    span{
-                        &::after{
-                        height: 4px;
-                         }
+        .hero-container{
+            ul{
+                .dropdown{
+                    .dropdown-btn{
+                        font-size: 1rem;
+                    }
+                    .dropdown-content{
+                        font-size: 2rem;
                     }
                 }
             }
-            figure{
-                img{
-                    object-position: center;
-                    height: 100%;
-                }
+            h1{
+                font-size: 3rem;
             }
-            .certifications-box{
-                padding: 1rem;
-                a{
-                    font-size: 1rem;
+            .hero-grid{
+                margin-top: 2rem;
+                .welcome-box{
+                    padding: 1rem;
+                    h2{
+                        line-height: 1;
+                        font-size: 2.5rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                        span{
+                            &::after{
+                            height: 4px;
+                             }
+                        }
+                    }
                 }
-            }
-            .profile-description{
-                padding: 1rem;
-                .facts-container{
-                    margin-top: 0;
+                figure{
+                    img{
+                        object-position: center;
+                        height: 100%;
+                    }
+                }
+                .certifications-box{
+                    padding: 1rem;
+                    a{
+                        font-size: 1rem;
+                    }
+                }
+                .profile-description{
+                    padding: 1rem;
+                    .facts-container{
+                        margin-top: 0;
+                    }
                 }
             }
         }
@@ -425,34 +437,36 @@ html{
 @media screen and (max-width:$breakpoint-laptop) {
     .hero-wrapper{
         padding-bottom: 0;
-        ul{
-            .dropdown{
-                .dropdown-btn{
-                    font-size: 1rem;
-                }
-            }
-            li{
-                a{
-                    font-size: 1rem;
-                }
-            }
-            .contact-btn{
-                font-size: .2rem;
-            }
-        }
         .hero-container{
             height: 100%;
-        }
+            ul{
+                .dropdown{
+                    .dropdown-btn{
+                        font-size: 1rem;
+                    }
+                }
+                li{
+                    a{
+                        font-size: 1rem;
+                    }
+                }
+                .contact-btn{
+                    font-size: .2rem;
+                    padding: 1rem;
+                }
+            }
         .hero-grid{
             height: 650px;
             gap: 1rem;
             padding-top: 0;
             grid-template-rows: repeat(2,1fr);
+            margin-top: 0;
             .welcome-box{
                 padding: 1rem;
                 h2{
                     line-height: 1;
                     font-size: 2.5rem;
+                    margin-top: .5rem;
                 }
                 p{
                     margin: .1rem 0;
@@ -480,12 +494,12 @@ html{
                 }
                 p{
                     margin-top: 0.4rem;
-                    font-size: 1rem;
+                    font-size: .5rem;
                 }
                 .facts-container{
                     .fact{
                         p{
-                            font-size: 16px;
+                            font-size: 1rem;
                             margin-top: 0;
                         }
                     }
@@ -506,6 +520,7 @@ html{
             }
         }
     }
+}
 }
 
 @media screen and (max-width:$breakpoint-tablet) {

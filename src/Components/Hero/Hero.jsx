@@ -17,8 +17,8 @@ export const Hero = () => {
           <h2 className='sub-heading'>Front End Developer</h2>
         </header>
       <ul>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#skills">skills</a></li>
+        <li className='body-text'><a href="#projects">projects</a></li>
+        <li className='body-text'><a href="#skills">skills</a></li>
         <div className='dropdown'>
           <button className='dropdown-btn'> social <FontAwesomeIcon icon={faChevronDown} size='sm'/></button>
           <div className="dropdown-content">
