@@ -208,6 +208,16 @@
                 }
                 .project-item{
                     border: none;
+                    .button-group{
+                        a{
+                            svg{
+                                height: 30px;
+                            }
+                            &:nth-child(2){
+                                width: fit-content;
+                            }
+                        }
+                    }
                 }
             }
         }
