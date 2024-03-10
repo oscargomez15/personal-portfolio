@@ -9,7 +9,7 @@ export const Skills = () => {
   <section className='skills-wrapper' id='skills'>
     <div className="skills-flex fade-in-effect">
       <article className='section-title'>
-        <h2 className='secondary-heading'>Core Competencies</h2>
+        <h2 className='secondary-heading' tabIndex={-1}>Core Competencies</h2>
         <p className='sub-heading'>Showcasing some of the skills that have allowed me to become an effective front-end developer. </p>
       </article>
       <article className="skills-names">

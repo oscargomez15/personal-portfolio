@@ -83,7 +83,6 @@
   padding: 0.5vw 1vw;
   border-radius: 15px;
   width: -moz-fit-content;
-  width: -webkit-fit-content;
   width: fit-content;
   transition: all 0.2s;
   margin-top: 1vw;
@@ -192,4 +191,4 @@
   .contact-wrapper .overlay-wrapper .popup {
     width: 75%;
   }
-}
+}/*# sourceMappingURL=Contact.css.map */

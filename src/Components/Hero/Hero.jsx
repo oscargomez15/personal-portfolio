@@ -1,13 +1,37 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import 'Components/Hero/Hero.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFreeCodeCamp, faLinkedin, faMeta, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
 import resume from 'Assets/Resume.pdf'
 import oscar from 'Assets/oscar.jpeg'
-import { faChevronDown, faCode, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
 
 export const Hero = () => {
+  const dropDown = useRef(null);
+  const dropDownContent = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if((e.key == "Enter" || e.key == ' ') && dropDown.current.contains(e.target) && dropDownContent.current.style.display != "flex"){
+        dropDownContent.current.style.display = "flex";
+        console.log(dropDownContent.current.style.display);
+      }else{
+        dropDownContent.current.style.display = "none";
+      }
+    }
+    document.addEventListener("keypress", handler)
+
+    return () => {
+      document.removeEventListener("keypress", handler)
+    }
+  },[])
+
+  const handleBlur = () => {
+    dropDownContent.current.style.display = "none"
+  }
+
+
   return (
     <main className="hero-wrapper">
       <div className="hero-container">
@@ -19,9 +43,9 @@ export const Hero = () => {
       <ul>
         <li className='body-text'><a href="#projects">projects</a></li>
         <li className='body-text'><a href="#skills">skills</a></li>
-        <div className='dropdown'>
+        <div className='dropdown' ref={dropDown} onBlur={handleBlur}>
           <button className='dropdown-btn'> social <FontAwesomeIcon icon={faChevronDown} size='sm'/></button>
-          <div className="dropdown-content">
+          <div className="dropdown-content" ref={dropDownContent}>
             <a href="https://www.facebook.com/oscargomez1998" target='__blank'> <FontAwesomeIcon icon={faSquareFacebook} /> facebook</a>
             <hr/>
             <a href="https://github.com/oscargomez15" target='__blak'> <FontAwesomeIcon icon={faSquareGithub} /> github</a>

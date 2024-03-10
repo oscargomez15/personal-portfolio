@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
 .skills-wrapper {
-  position: relative;
   scroll-snap-align: start;
   min-height: 100vh;
   border-bottom: 1px solid #dfdfdf;
@@ -78,4 +77,4 @@
   .skills-wrapper .skills-names ul li svg {
     margin-right: 5px;
   }
-}
+}/*# sourceMappingURL=Skills.css.map */

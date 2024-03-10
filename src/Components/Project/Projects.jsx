@@ -3,19 +3,25 @@ import 'Components/Project/Projects.css'
 import videogames from "Assets/videogames.jpg"
 import habaneros from "Assets/habaneros.jpg"
 import hangman from "Assets/hangman-ss.png"
-import crypto from "Assets/crypto.jpg"
 import live from "Assets/liveAnimation.json"
+import saas from "Assets/saas-project.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGamepad, faUtensils, faBitcoinSign, faCartShopping, faAddressCard } from '@fortawesome/free-solid-svg-icons'
-
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Lottie from 'lottie-react'
 
 export const Projects = () => {
 const projectsInfo =[
     {
+        image:saas,
+        title:'Saas Landing Page',
+        description:`Developed a ficticious Software-as-a-Service that provides big companies with assisted predictive analysis
+        with the intention of helping them import their data and finding patterns that are hidden in plain sight. It's a single Page
+        for now but I'm planning on integrating a Login page with a Dashboard.`,
+        gitHubRepo:'https://github.com/oscargomez15/saas-landing-page',
+        projectLink:'https://oscargomez15.github.io/saas-landing-page/'
+    },
+    {
         image:videogames,
-        icon:faCartShopping,
         title:'Videogames Ecommerce',
         description:`Developed an ecommerce web app using HTML, CSS, and React.js in which the user can purchase videogames from
         a variety of platforms. The app uses RAWG API to deliver data about 500,000+ videogames. Users are capable of adding to cart and checking out.`,
@@ -23,8 +29,16 @@ const projectsInfo =[
         projectLink:'https://oscargomez15.github.io/pixelworldecommerce/'
     },
     {
+        image:hangman,
+        title:'Hangman Game',
+        description:`Developed a simple Hangman Game using React/Typescript. This game was developed
+        using mostly CSS to render the Drawing along with some computations using Typescript to
+        set a word to guess and compare if the letters entered by the user were found within it.`,
+        gitHubRepo:"https://github.com/oscargomez15/hangman",
+        projectLink:"https://oscargomez15.github.io/hangman/"
+    },
+    {
         image:habaneros,
-        icon:faUtensils,
         title: 'Local Restaurant Website',
         description:`Developed two static SEO-optimized and responsive websites
         for a Mexican Restaurant using HTML, CSS, and Javascript
@@ -34,26 +48,6 @@ const projectsInfo =[
         in paid traffic.`,
         gitHubRepo: "#",
         projectLink: "https://habanerosbonitasprings.com/"
-    },
-    {
-        image:hangman,
-        icon:faGamepad,
-        title:'Hangman Game',
-        description:`Developed a simple Hangman Game using React/Typescript. This game was developed
-        using mostly CSS to render the Drawing along with some computations using Typescript to
-        set a word to guess and compare if the letters entered by the user were found within it.`,
-        gitHubRepo:"https://github.com/oscargomez15/hangman",
-        projectLink:"https://oscargomez15.github.io/hangman/"
-    },
-    {
-        image:crypto,
-        icon:faBitcoinSign,
-        title:'Cryptocurrency Tracker',
-        description:`Built a Cryptocurrency Data Tracker using React that displayed a list of
-        cryptocurrencies and their price, volume, market cap, and names
-        along with the symbol using CoinGecko API.`,
-        gitHubRepo:'https://github.com/oscargomez15/crypto-tracker-app',
-        projectLink:'https://oscargomez15.github.io/crypto-tracker-app/'
     }
 
 ]
@@ -62,7 +56,7 @@ const projectsInfo =[
     <section className='project-wrapper' id='projects'>
         <div className="project-grid fade-in-effect">
             <div className="project-title">
-                <h2 className='secondary-heading'> Project Showcase</h2>
+                <h2 className='secondary-heading' tabIndex={-1}> Project Showcase</h2>
                 <p className='sub-heading'>Bringing digital ideas to life with creative web development</p>
             </div>
             {projectsInfo.map((item,index) => {

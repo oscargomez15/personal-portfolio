@@ -139,7 +139,7 @@ const lottieRef = useRef();
     <section className='contact-wrapper ' id='contact'>
     <div className='contact-container fade-in-effect' id='contact' ref={containerRef}>
 
-        <h2 className='secondary-heading'>Let's Connect!</h2>
+        <h2 className='secondary-heading' tabIndex={-1}>Let's Connect!</h2>
         <p className='sub-heading'>Fill out the form below to reach me out about any collaboration, employment offer, or any other topic you want to discuss.  </p>
         <form action='#' onSubmit={handleSubmit}>
 

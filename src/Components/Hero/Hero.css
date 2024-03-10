@@ -24,9 +24,7 @@ html body::-webkit-scrollbar-thumb {
 }
 
 .hero-wrapper {
-  position: relative;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
+  min-height: 100dvh;
 }
 .hero-wrapper .hero-container {
   width: 75%;
@@ -70,6 +68,12 @@ html body::-webkit-scrollbar-thumb {
 }
 .hero-wrapper .hero-container ul .dropdown:hover .dropdown-content {
   display: flex;
+}
+.hero-wrapper .hero-container ul .dropdown:focus .dropdown-content {
+  display: flex;
+}
+.hero-wrapper .hero-container ul .dropdown:focus {
+  background-color: red;
 }
 .hero-wrapper .hero-container ul .dropdown .dropdown-btn {
   border: none;
@@ -532,10 +536,11 @@ html body::-webkit-scrollbar-thumb {
     grid-column: 1;
     grid-row: 2;
   }
+  .hero-wrapper .hero-container .hero-grid figure a {
+    font-size: 0.6rem;
+  }
   .hero-wrapper .hero-container .hero-grid .certifications-box {
     padding: 1rem;
-    grid-row: 3;
-    grid-column: 1/span 2;
   }
   .hero-wrapper .hero-container .hero-grid .profile-description {
     grid-column: 2;
