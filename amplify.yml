@@ -3,8 +3,7 @@ frontend:
   phases:
     # IMPORTANT - Please verify your build commands
     build:
-      commands:
-      react-scripts build
+      commands: react-scripts build
   artifacts:
     baseDirectory: build
     files:
