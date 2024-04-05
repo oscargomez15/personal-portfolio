@@ -13,7 +13,7 @@ export const Hero = () => {
 
   useEffect(() => {
     const handler = (e) => {
-      if((e.key == "Enter" || e.key == ' ') && dropDown.current.contains(e.target) && dropDownContent.current.style.display != "flex"){
+      if((e.key === "Enter" || e.key === ' ') && dropDown.current.contains(e.target) && dropDownContent.current.style.display !== "flex"){
         dropDownContent.current.style.display = "flex";
         console.log(dropDownContent.current.style.display);
       }else{
