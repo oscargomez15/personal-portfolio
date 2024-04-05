@@ -78,7 +78,7 @@ export const Hero = () => {
         <article className="welcome-box">
           <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
           <p className='sub-heading'>A <span>Front End Developer</span> emphasized in delivering scalable, optimized and accessible designs to meet industry standards.</p>
-          <a href={resume} download="Oscars-FrontEnd-Resume">
+          <a href="https://oscargomez-webportfolio.s3.amazonaws.com/Oscar-Cloud-Resume.pdf">
             <div className="resume">
               <p>Download Resume</p>
             </div>
