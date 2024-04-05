@@ -2,10 +2,10 @@ version: 1
 frontend:
   phases:
     preBuild:
-    commands:
-    - rm -rf node_modules
-    - rm -rf package-lock.json
-    - npm i
+      commands:
+        - rm -rf node_modules
+        - rm -rf package-lock.json
+        - npm i
     build:
       commands:
         - npm run build
