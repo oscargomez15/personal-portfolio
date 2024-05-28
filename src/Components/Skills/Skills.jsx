@@ -1,8 +1,8 @@
 import React from 'react'
 import 'Components/Skills/Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3Alt, faFigma, faGithub, faHtml5, faJs, faNpm, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faGaugeSimpleHigh, faRobot, faUniversalAccess, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import { faAws, faCss3Alt, faDocker, faFigma, faGithub, faHtml5, faJenkins, faJs, faLinux, faNpm, faPython, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDatabase, faGaugeSimpleHigh, faNetworkWired, faRobot, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 
 export const Skills = () => {
   return(
@@ -14,6 +14,12 @@ export const Skills = () => {
       </article>
       <article className="skills-names">
         <ul>
+          <li><FontAwesomeIcon icon={faAws} size='lg'/> Amazon Web Service</li>
+          <li><FontAwesomeIcon icon={faNetworkWired} size='lg'/> Networking </li>
+          <li><FontAwesomeIcon icon={faDocker} size='lg'/> Docker </li>
+          <li><FontAwesomeIcon icon={faLinux} size='lg'/> Linux </li>
+          <li><FontAwesomeIcon icon={faCode} size='lg'/> IaC </li>
+          <li><FontAwesomeIcon icon={faPython} size='lg'/> Python </li>
           <li><FontAwesomeIcon icon={faHtml5} size='lg'/>HTML5</li>
           <li><FontAwesomeIcon icon={faCss3Alt} size='lg'/>CSS3</li>
           <li><FontAwesomeIcon icon={faJs} size='lg'/>Javascript</li>
@@ -24,19 +30,19 @@ export const Skills = () => {
           <li><FontAwesomeIcon icon={faNpm} size='xl'/></li>
           <li><FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} size='lg'/> Responsive</li>
           <li><FontAwesomeIcon icon={faGithub} size='lg'/>Github</li>
-
         </ul>
       </article>
 
       <article className='section-title'>
         <h3 className='sub-heading'> In an era in which technology is growing exponentially, it is imperative to keep myself competent and up to date to develop software/apps/websites that meets current standards.
-          These are some of the skills that I'm working on as of 01/2024.
+          These are some of the skills that I'm working on as of 02/2024.
         </h3>
       </article>
 
       <article className="skills-names">
         <ul>
-          <li><FontAwesomeIcon icon={faUniversalAccess} size='lg'/>Accessibility</li>
+          <li><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Solutions Architect - AS</li>
+          <li><FontAwesomeIcon icon={faJenkins} size='lg'/>Jenkins</li>
           <li><FontAwesomeIcon icon={faGaugeSimpleHigh} size='lg'/>Optimization</li>
           <li><FontAwesomeIcon icon={faDatabase} size='lg'/>SQL</li>
           <li><FontAwesomeIcon icon={faRobot}/>Artificial Intelligence</li>

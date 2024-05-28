@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react'
 import 'Components/Hero/Hero.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFreeCodeCamp, faLinkedin, faMeta, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-import resume from 'Assets/Resume.pdf'
 import oscar from 'Assets/oscar.jpeg'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
@@ -38,7 +37,7 @@ export const Hero = () => {
       <nav>
         <header className="name">
           <h1 className='primary-heading'>oscar gomez</h1>
-          <h2 className='sub-heading'>Front End Developer</h2>
+          <h2 className='sub-heading'>Cloud Engineer & Front End Developer</h2>
         </header>
       <ul>
         <li className='body-text'><a href="#projects">projects</a></li>
@@ -77,8 +76,9 @@ export const Hero = () => {
       <section className="hero-grid">
         <article className="welcome-box">
           <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
-          <p className='sub-heading'>A <span>Front End Developer</span> emphasized in delivering scalable, optimized and accessible designs to meet industry standards.</p>
-          <a href="https://oscargomez-webportfolio.s3.amazonaws.com/Oscar-Cloud-Resume.pdf">
+          <p className='sub-heading'>A <span>Front End Developer & Cloud Engineer</span> emphasized in delivering scalable, reliable, cost-optimized, and accessible designs to meet industry standards.
+          </p>
+          <a href="https://oscargomez-webportfolio.s3.amazonaws.com/Oscar-Cloud-Resume.pdf" target='_blank'>
             <div className="resume">
               <p>Download Resume</p>
             </div>
@@ -112,8 +112,8 @@ export const Hero = () => {
           <h3 className='third-heading'>Certifications</h3>
           <div className='certifications'>
             <a target='__blank' href="https://www.freecodecamp.org/certification/fcc017c1802-5df9-4f3b-878e-20584d956dee/responsive-web-design"><FontAwesomeIcon icon={faFreeCodeCamp} size='lg'/> Responsive Web Design Course </a>
-            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
             <a target='__blank' href="https://www.coursera.org/account/accomplishments/verify/JEPNHX3AT2GH"><FontAwesomeIcon icon={faMeta} size='lg'/> Front End Developer Course by Meta</a>
+            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
           </div>
         </article>
       </section>

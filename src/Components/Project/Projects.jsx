@@ -14,17 +14,18 @@ const projectsInfo =[
     {
         image:saas,
         title:'Saas Landing Page',
-        description:`Developed a ficticious Software-as-a-Service that provides big companies with assisted predictive analysis
-        with the intention of helping them import their data and finding patterns that are hidden in plain sight. It's a single Page
-        for now but I'm planning on integrating a Login page with a Dashboard.`,
+        description:`Utilized React.js to develop dynamic and interactive features, enhancing user engagement and experience.
+        Integrated Tailwind CSS to ensure a modern and responsive design, optimizing for various screen sizes and devices.
+        Showcased product features, pricing details, and a captivating hero section with a concise description to effectively communicate the value proposition.`,
         gitHubRepo:'https://github.com/oscargomez15/saas-landing-page',
         projectLink:'https://oscargomez15.github.io/saas-landing-page/'
     },
     {
         image:videogames,
         title:'Videogames Ecommerce',
-        description:`Developed an ecommerce web app using HTML, CSS, and React.js in which the user can purchase videogames from
-        a variety of platforms. The app uses RAWG API to deliver data about 500,000+ videogames. Users are capable of adding to cart and checking out.`,
+        description:`Developed a responsive and cross-browser-compatible e-commerce platform using HTML, CSS, and React.js, ensuring optimal user experience across all devices and browsers.
+        Integrated the RAWG API to access a vast database of over 500,000 video games, enabling users to browse and explore a diverse selection of titles across various platforms.
+        Designed visually appealing product pages with detailed information and imagery to showcase game titles and entice user engagement.`,
         gitHubRepo:'https://github.com/oscargomez15/pixelworldecommerce',
         projectLink:'https://oscargomez15.github.io/pixelworldecommerce/'
     },
@@ -40,12 +41,9 @@ const projectsInfo =[
     {
         image:habaneros,
         title: 'Local Restaurant Website',
-        description:`Developed two static SEO-optimized and responsive websites
-        for a Mexican Restaurant using HTML, CSS, and Javascript
-        for basic functions. Responsible for creating and managing the ads
-        campaign as well as creating content for them. This led to
-        an increase of 50% in organic traffic and a 125% increase
-        in paid traffic.`,
+        description:`Utilized React.js to develop dynamic and interactive features, enhancing user engagement and experience.
+        Integrated Tailwind CSS to ensure a modern and responsive design, optimizing for various screen sizes and devices.
+        Showcased product features, pricing details, and a captivating hero section with a concise description to effectively communicate the value proposition.`,
         gitHubRepo: "#",
         projectLink: "https://habanerosbonitasprings.com/"
     }
@@ -65,8 +63,8 @@ const projectsInfo =[
                     <article className={`${index % 2 ? "slide-left" : "slide-right"} project-item`}>
                         <figure>
                             <div className="darken"></div>
-                            <img src={item.image} alt="" />
-                            </figure>
+                            <img src={item.image} alt={`Project-${index + 1}-image`}/>
+                        </figure>
                         <h3 className='third-heading'> {item.title}</h3>
                         <p className='body-text'> {item.description} </p>
                         <div className="button-group">

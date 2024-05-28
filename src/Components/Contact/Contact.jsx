@@ -110,11 +110,9 @@ const lottieRef = useRef();
     useEffect(() => {
         if(isModalOpen){
             document.body.style.overflow = 'hidden';
-            console.log("Modal has been opened");
         }else{
             document.body.style.overflow = 'unset';
 
-            console.log("Modal has been closed");
         }
     },[isModalOpen])
 

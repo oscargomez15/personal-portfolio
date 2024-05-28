@@ -1,0 +1,42 @@
+.diagrams-wrapper{
+    min-height: 100vh;
+    border-bottom: 1px solid #dfdfdf;
+
+    .diagram-title{
+        margin-top: 2rem;
+    }
+
+    .diagram-grid{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+
+        .diagrams-container{
+            margin-top: 8rem;
+            article{
+                display: flex;
+                flex-direction: column;
+                margin-top: 8rem;
+                gap: 1rem;
+                align-items: center;
+                width: 50%;
+                margin: auto ;
+                img{
+                    border: 2px rgb(116, 116, 116) solid;
+                    padding-left: 2rem;
+                }
+
+                .diagram-content{
+                    align-self: flex-end;
+                    h3{
+                        font-size: 2rem;
+                    }
+                    p{
+                        text-wrap: pretty;
+                    }
+                }
+            }
+        }
+    }
+}
