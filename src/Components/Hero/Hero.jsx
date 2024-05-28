@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import 'Components/Hero/Hero.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFreeCodeCamp, faLinkedin, faMeta, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-import oscar from 'Assets/oscar.jpeg'
+import oscar from 'Assets/oscar.jpg'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
 
