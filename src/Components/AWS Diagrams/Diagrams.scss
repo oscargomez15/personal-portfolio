@@ -1,42 +1,46 @@
+@import '../../Variables.scss';
+
 .diagrams-wrapper{
+    display: flex;
     min-height: 100vh;
     border-bottom: 1px solid #dfdfdf;
-
-    .diagram-title{
-        margin-top: 2rem;
-    }
+}
 
     .diagram-grid{
-        display: flex;
-        flex-direction: column;
+        margin: auto;
+        display: grid;
         width: 80%;
-        margin: 0 auto;
+        gap: 0px;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: hidden;
 
-        .diagrams-container{
+        .diagram-title{
+            grid-column: 1/ span 2;
+            padding: 3rem;
+            text-align: left;
+        }
+
+        article{
+            display: flex;
+            flex-direction: column;
             margin-top: 8rem;
-            article{
-                display: flex;
-                flex-direction: column;
-                margin-top: 8rem;
-                gap: 1rem;
-                align-items: center;
-                width: 50%;
-                margin: auto ;
-                img{
-                    border: 2px rgb(116, 116, 116) solid;
-                    padding-left: 2rem;
-                }
+            gap: 1rem;
+            align-items: center;
+            margin: auto ;
+            padding: 2rem 5rem;
+            img{
+                border: 2px rgb(116, 116, 116) solid;
+                padding-left: 2rem;
+            }
 
-                .diagram-content{
-                    align-self: flex-end;
-                    h3{
-                        font-size: 2rem;
-                    }
-                    p{
-                        text-wrap: pretty;
-                    }
+            .diagram-content{
+                align-self: flex-end;
+                h3{
+                    font-size: 2rem;
+                }
+                p{
+                    text-wrap: pretty;
                 }
             }
         }
     }
-}

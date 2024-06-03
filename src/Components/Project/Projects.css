@@ -19,7 +19,6 @@
   width: 80%;
   gap: 0px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, minmax(fit-content, 1fr));
   overflow-x: hidden;
 }
 .project-grid .project-title {

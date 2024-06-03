@@ -95,11 +95,11 @@ export const Hero = () => {
             <div className="fact">
               <p>
                 <FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-                Located in Cape Coral, Florida</p>
+                Located in Cape Coral, Florida - willing to relocate</p>
             </div>
             <div className="fact">
               <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-              Learning new things is my favorite Hobby</p>
+              Bacherlor Degree in Computer Science</p>
             </div>
             <div className="fact">
               <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>

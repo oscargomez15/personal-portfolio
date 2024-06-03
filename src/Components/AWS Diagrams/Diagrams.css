@@ -1,38 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
 .diagrams-wrapper {
+  display: flex;
   min-height: 100vh;
   border-bottom: 1px solid #dfdfdf;
 }
-.diagrams-wrapper .diagram-title {
-  margin-top: 2rem;
-}
-.diagrams-wrapper .diagram-grid {
-  display: flex;
-  flex-direction: column;
+
+.diagram-grid {
+  margin: auto;
+  display: grid;
   width: 80%;
-  margin: 0 auto;
+  gap: 0px;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-x: hidden;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container {
-  margin-top: 8rem;
+.diagram-grid .diagram-title {
+  grid-column: 1/span 2;
+  padding: 3rem;
+  text-align: left;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container article {
+.diagram-grid article {
   display: flex;
   flex-direction: column;
   margin-top: 8rem;
   gap: 1rem;
   align-items: center;
-  width: 50%;
   margin: auto;
+  padding: 2rem 5rem;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container article img {
+.diagram-grid article img {
   border: 2px rgb(116, 116, 116) solid;
   padding-left: 2rem;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container article .diagram-content {
+.diagram-grid article .diagram-content {
   align-self: flex-end;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container article .diagram-content h3 {
+.diagram-grid article .diagram-content h3 {
   font-size: 2rem;
 }
-.diagrams-wrapper .diagram-grid .diagrams-container article .diagram-content p {
+.diagram-grid article .diagram-content p {
   text-wrap: pretty;
 }/*# sourceMappingURL=diagrams.css.map */
