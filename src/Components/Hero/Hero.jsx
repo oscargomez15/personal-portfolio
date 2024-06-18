@@ -99,7 +99,7 @@ export const Hero = () => {
             </div>
             <div className="fact">
               <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-              Bacherlor Degree in Computer Science</p>
+              Bachelor Degree in Computer Science</p>
             </div>
             <div className="fact">
               <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
