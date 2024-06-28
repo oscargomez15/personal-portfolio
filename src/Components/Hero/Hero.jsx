@@ -113,7 +113,8 @@ export const Hero = () => {
           <div className='certifications'>
             <a target='__blank' href="https://www.freecodecamp.org/certification/fcc017c1802-5df9-4f3b-878e-20584d956dee/responsive-web-design"><FontAwesomeIcon icon={faFreeCodeCamp} size='lg'/> Responsive Web Design Course </a>
             <a target='__blank' href="https://www.coursera.org/account/accomplishments/verify/JEPNHX3AT2GH"><FontAwesomeIcon icon={faMeta} size='lg'/> Front End Developer Course by Meta</a>
-            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
+            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential/ENTDB5H2V244QKG2"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
+            <a target="__blank" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421"><FontAwesomeIcon icon={faAws} size='lg'/> Solutions Architect</a>
           </div>
         </article>
       </section>
