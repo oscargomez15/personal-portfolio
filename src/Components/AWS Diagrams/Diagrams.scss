@@ -6,41 +6,70 @@
     border-bottom: 1px solid #dfdfdf;
 }
 
-    .diagram-grid{
-        margin: auto;
-        display: grid;
-        width: 80%;
-        gap: 0px;
-        grid-template-columns: repeat(2, 1fr);
-        overflow-x: hidden;
+.diagram-grid{
+    margin: auto;
+    display: grid;
+    width: 80%;
+    gap: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: hidden;
 
-        .diagram-title{
-            grid-column: 1/ span 2;
-            padding: 3rem;
-            text-align: left;
+    .diagram-title{
+        grid-column: 1/ span 2;
+        padding: 3rem;
+        text-align: left;
+    }
+
+    article{
+        display: flex;
+        flex-direction: column;
+        margin-top: 8rem;
+        gap: 1rem;
+        align-items: center;
+        margin: auto ;
+        padding: 2rem 5rem;
+        img{
+            border: 2px rgb(116, 116, 116) solid;
+            padding-left: 2rem;
         }
 
-        article{
-            display: flex;
-            flex-direction: column;
-            margin-top: 8rem;
-            gap: 1rem;
-            align-items: center;
-            margin: auto ;
-            padding: 2rem 5rem;
-            img{
-                border: 2px rgb(116, 116, 116) solid;
-                padding-left: 2rem;
+        .diagram-content{
+            align-self: flex-end;
+            h3{
+                font-size: 2rem;
             }
-
-            .diagram-content{
-                align-self: flex-end;
-                h3{
-                    font-size: 2rem;
-                }
-                p{
-                    text-wrap: pretty;
-                }
+            p{
+                text-wrap: pretty;
             }
         }
     }
+}
+
+@media screen and (max-width:$breakpoint-laptop) {
+    .diagram-grid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .diagram-grid .diagram-title{
+        padding: 2rem 0 1rem 0;
+    }
+
+    .diagram-grid article{
+        padding: 0;
+    }
+
+    .diagram-grid article img{
+        width: 100%;
+        object-fit: contain;
+        padding: 0;
+        border: none;
+        height: fit-content;
+    }
+
+    .diagram-content ul{
+        list-style-type: disc;
+    }
+}

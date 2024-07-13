@@ -28,14 +28,14 @@ return (
         < div className="diagram-grid">
             <div className="diagram-title">
                 <h1 className='secondary-heading'>Cloud Infrastructure Diagrams</h1>
-                <p className='sub-heading'> Building highly-available, secure, cost-optimized, and reliable solutions while taking off the undifferentiated heavy lifting from your organization. heavy lifting from your organization.</p>
+                <p className='sub-heading'> Building highly-available, secure, cost-optimized, and reliable solutions in the cloud.</p>
             </div>
             {diagramsInfo.map((item) => {
                 return(
                     <article>
                         <img src={item.image} height="450px" alt="" />
                         <div className="diagram-content">
-                            <h3 className='item-title'>{item.title}</h3>
+                            <h3 className='third-heading'>{item.title}</h3>
                             <ul>{item.points.map((item) => {
                                 return(
                                     <li>{item}</li>

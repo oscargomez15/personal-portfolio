@@ -39,4 +39,32 @@
 }
 .diagram-grid article .diagram-content p {
   text-wrap: pretty;
+}
+
+@media screen and (max-width: 1024px) {
+  .diagram-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .diagram-grid .diagram-title {
+    padding: 2rem 0 1rem 0;
+  }
+  .diagram-grid article {
+    padding: 0;
+  }
+  .diagram-grid article img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding: 0;
+    border: none;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .diagram-content ul {
+    list-style-type: disc;
+  }
 }/*# sourceMappingURL=diagrams.css.map */
