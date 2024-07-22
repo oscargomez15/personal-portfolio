@@ -43,7 +43,6 @@ export const Skills = () => {
       <article className="skills-names">
         <ul>
           <li><FontAwesomeIcon icon={faJenkins} size='lg'/>Jenkins</li>
-          <li><FontAwesomeIcon icon={faDatabase} size='lg'/>Backend</li>
           <li><FontAwesomeIcon icon={faRobot}/>Artificial Intelligence</li>
 
         </ul>

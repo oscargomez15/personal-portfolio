@@ -37,7 +37,7 @@ export const Hero = () => {
       <nav>
         <header className="name">
           <h1 className='primary-heading'>oscar gomez</h1>
-          <h2 className='sub-heading'>Cloud Engineer & Front End Developer</h2>
+          <h2 className='sub-heading'>Cloud Engineer & Full Stack Developer</h2>
         </header>
       <ul>
         <li className='body-text'><a href="#projects">projects</a></li>
@@ -76,7 +76,7 @@ export const Hero = () => {
       <section className="hero-grid">
         <article className="welcome-box">
           <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
-          <p className='sub-heading'>A <span>Front End Developer & Cloud Engineer</span> emphasized in delivering scalable, reliable, cost-optimized, and accessible designs to meet industry standards.
+          <p className='sub-heading'>A <span>Cloud Engineer & Full Stack Developer</span> emphasized in delivering scalable, reliable, cost-optimized, and accessible designs to meet industry standards.
           </p>
           <a href="https://oscargomez-webportfolio.s3.amazonaws.com/Oscar-Cloud-Resume.pdf" target='_blank'>
             <div className="resume">
