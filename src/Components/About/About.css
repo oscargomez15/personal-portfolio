@@ -61,6 +61,9 @@ section .image-collection-desktop .image-behind {
   section .image-collection-desktop {
     display: none;
   }
+  section .image-collection-mb {
+    display: block;
+  }
   section .image-collection-mb img {
     width: 50%;
     border: 5px solid white;
