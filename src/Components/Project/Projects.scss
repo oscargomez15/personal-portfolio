@@ -63,9 +63,11 @@
 
 @media screen and (max-width:800px) {
     .projects-list{
+        flex-direction: column;
         flex-wrap: wrap;
         gap: 1rem;
         align-items: stretch;
+        height: fit-content;
 
         .project-item{
             height: 100%;

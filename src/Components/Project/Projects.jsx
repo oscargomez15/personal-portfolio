@@ -95,6 +95,7 @@ const projectsInfo =[
                                 alt=""
                                 className='project-background'
                                 whileHover={{scaleY:hoveredProject == id ? 1.5 : 1}}
+                                whileTap={{scaleY: 1.5}}
                                 transition={{duration:5}} />
 
                                 <div className="project-content">

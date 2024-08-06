@@ -8,7 +8,6 @@ import { motion, useInView } from 'framer-motion';
 export const Skills = () => {
   const sectionRef = useRef(null);
   const sectionInView = useInView(sectionRef, {amount:0.1});
-console.log("skills" + sectionInView);
 
   const skillsList = [{
     icon: faAws,

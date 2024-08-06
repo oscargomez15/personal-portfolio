@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import 'Components/Experience/Experience.css'
 
-import habaneros from "Assets/habaneros.jpeg"
+import habaneros from "Assets/habaneros.jpg"
 import alorica from "Assets/alorica.png"
 import allied from "Assets/allied-global.jpg"
 import gial from "Assets/gial-red.jpg"

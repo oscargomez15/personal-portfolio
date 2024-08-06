@@ -78,6 +78,10 @@
     height: fit-content;
     padding: 2rem 0;
   }
+  .diagrams-list .diagram-item h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
   .diagrams-list .diagram-item .diagram-text {
     flex-direction: row;
     flex-direction: column;

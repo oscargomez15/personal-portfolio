@@ -38,7 +38,7 @@ export const Hero = () => {
 
   return (
     <main className="hero-wrapper">
-      <video autoPlay loop>
+      <video autoPlay loop muted playsInline>
         <source src='https://oscargomez-webportfolio.s3.amazonaws.com/abstract.mp4' type='video/mp4'/>
         Your browser does not support the video tag.
       </video>
