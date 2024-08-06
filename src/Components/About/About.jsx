@@ -2,11 +2,10 @@ import React, { useRef } from 'react'
 import './About.css'
 import oscar from '../../Assets/oscar-picture.jpg'
 import oscar2 from '../../Assets/oscar.jpg'
-
+import youngPicture from 'Assets/oscar-young.jpg'
 import { motion, useInView } from 'framer-motion'
 
 export const About = () => {
-
     const sectionRef = useRef(null);
     const sectionInView = useInView(sectionRef, {amount:0.1});
 
@@ -34,12 +33,10 @@ export const About = () => {
                 initial="hide"
                 animate="visible"
                 transition={{duration:2}}>
-                    Hello there, my name is Oscar Gomez. I was born and raised in Honduras but
-                    decided to move to Florida in 2020 to pursue better career and professional
-                    opportunities. By 2024 I have been able to successfully achieve a Bachelor’s
-                    Degree in Computer Science and become a certified AWS Cloud Solutions Architect.
-                    I'm actively seeking a company that would benefit
-                    from my talent.</motion.p>
+                    Hi there, <br/>
+                    My name is Oscar Gomez, and I am a Cloud Engineer and Full Stack Developer. My passion for technology started in childhood (yes, that's the kid version of me in the picture). This early interest inspired me to pursue a career in tech, where I continue to grow and learn every day.
+                    <br/><br/>
+                    As a dedicated and skilled Fullstack and Cloud Engineer, I am now seeking to join a tech-centered company where I can leverage my expertise in building scalable web applications and cloud solutions. I am eager to collaborate with a team of talented professionals, further develop my technical skills, and contribute to innovative projects that drive the company’s success.</motion.p>
             </article>
 
             <motion.div className="image-collection"
