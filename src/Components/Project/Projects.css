@@ -1,210 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
-.project-wrapper {
-  display: flex;
-  min-height: 100vh;
-  border-bottom: 1px solid #dfdfdf;
-}
-.project-wrapper h1 {
-  font-size: 2vw;
-  font-weight: bold;
-  letter-spacing: -3px;
-}
-.project-wrapper p {
-  text-align: left;
+.projects-section {
+  flex-direction: column;
 }
 
-.project-grid {
-  margin: auto;
-  display: grid;
-  width: 80%;
-  gap: 0px;
-  grid-template-columns: repeat(2, 1fr);
-  overflow-x: hidden;
+.projects-list {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding-top: 3rem;
 }
-.project-grid .project-title {
-  grid-column: 1/span 2;
-  padding: 3rem;
-  text-align: left;
-}
-.project-grid .project-item {
+.projects-list .project-item {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  padding: 2rem 5rem;
-  overflow: hidden;
-  min-height: 400px;
-  overflow-x: hidden;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  height: 100%;
+  border: 1px solid #7a7a7a;
+  transform-origin: top;
 }
-.project-grid .project-item:nth-child(odd) {
-  border-left: 1px solid rgb(139, 139, 139);
-  padding: 2rem 5rem;
-}
-.project-grid .project-item svg {
-  height: 50px;
-  margin: 1rem 0;
-}
-.project-grid .project-item figure {
-  position: relative;
-  overflow: hidden;
-  height: 150px;
-  border-radius: 15px;
-  transition: all 0.2s;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.project-grid .project-item figure .darken {
-  position: absolute;
-  background-color: rgb(18, 0, 53);
+.projects-list .project-item img {
   height: 100%;
   width: 100%;
-  transition: all 0.2s;
-}
-.project-grid .project-item figure img {
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100%;
-  width: 100%;
-  transition: all 0.2s;
-  opacity: 0.8;
+  opacity: 0.5;
 }
-.project-grid .project-item figure img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.projects-list .project-item .project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 0;
 }
-.project-grid .project-item figure:hover {
-  transform: rotate3d(30, 0, 0, 30deg);
+.projects-list .project-item .project-content h2 {
+  font-family: "Adamina", serif;
+  letter-spacing: 0.2rem;
 }
-.project-grid .project-item figure:hover .darken {
-  opacity: 0.4;
-}
-.project-grid .project-item h2 {
-  margin-bottom: 0.2vw;
-}
-.project-grid .project-item p {
-  text-align: justify;
-}
-.project-grid .project-item .button-group {
+.projects-list .project-item .project-content .project-buttons {
   display: flex;
   align-items: center;
-  justify-self: flex-end;
-  gap: 1vw;
-  margin-top: 1rem 0 0.5rem;
+  gap: 1rem;
 }
-.project-grid .project-item .button-group a {
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.project-grid .project-item .button-group a:first-child {
-  color: black;
-  font-weight: bold;
-}
-.project-grid .project-item .button-group a:hover {
-  color: rgb(104, 104, 104);
-}
-.project-grid .project-item .button-group a:nth-child(2) {
-  background-color: black;
-  padding: 0.5rem 0.5rem;
-  border-radius: 10px;
-  height: -moz-fit-content;
-  height: fit-content;
-  transition: all 0.2s;
-}
-.project-grid .project-item .button-group a:nth-child(2):hover {
-  background-color: rgb(94, 94, 94);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px 0px, rgba(0, 0, 0, 0.09) 0px 4px 2px 0px, rgba(0, 0, 0, 0.09) 0px 8px 4px 0px, rgba(0, 0, 0, 0.09) 0px 16px 8px 0px, rgba(0, 0, 0, 0.09) 0px 32px 16px 0px;
-}
-.project-grid .project-item .button-group a svg {
-  height: 40px;
-  animation: none;
-}
-.project-grid .project-item .button-group .project-button {
-  display: flex;
-  align-items: center;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-radius: 15px;
-}
-.project-grid .project-item .button-group .project-button .lottie-live {
-  height: 20px;
-}
-.project-grid .project-item .button-group .project-button .lottie-live svg {
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
-}
-.project-grid .project-item .button-group .project-button p {
+.projects-list .project-item .project-content .project-buttons a {
   color: white;
 }
-
-.slide-left {
-  transform: translate(1000px);
-  animation: reset-position ease-in-out forwards;
-  animation-timeline: view();
-  animation-range: entry;
+.projects-list .project-item .project-content .project-buttons svg {
+  height: 35px;
+  padding: 0.25rem;
+}
+.projects-list .project-item .project-content .project-buttons .buttons-divider {
+  height: 10px;
 }
 
-.slide-right {
-  transform: translate(-1000px);
-  animation: reset-position ease-in-out forwards;
-  animation-timeline: view();
-  animation-range: entry;
-}
-
-.fade-in-effect {
-  opacity: 0;
-  scale: 0.6;
-  animation: fade-in ease-in-out forwards;
-  animation-timeline: view();
-  animation-range: entry;
-}
-
-@keyframes fade-in {
-  to {
-    scale: 1;
-    opacity: 1;
+@media screen and (max-width: 800px) {
+  .projects-list {
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
   }
-}
-@keyframes reset-position {
-  to {
-    transform: translateX(0);
+  .projects-list .project-item {
+    height: 100%;
   }
-}
-@media screen and (max-width: 1024px) {
-  .project-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .project-grid .project-title {
-    padding: 2rem 0 1rem 0;
-  }
-  .project-grid .project-item,
-  .project-grid .project-item:nth-child(odd) {
-    padding: 1rem 2rem;
-  }
-  .project-grid .project-item .button-group a svg {
-    height: 20px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .project-wrapper .project-grid {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 431px) {
-  .project-wrapper .project-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-wrapper .project-grid .project-title {
-    grid-column: 1;
-  }
-  .project-wrapper .project-grid .project-item {
-    border: none;
-  }
-  .project-wrapper .project-grid .project-item .button-group a svg {
-    height: 30px;
-  }
-  .project-wrapper .project-grid .project-item .button-group a:nth-child(2) {
-    width: -moz-fit-content;
-    width: fit-content;
+  .projects-list .project-item .project-content h2 {
+    text-align: center;
   }
 }/*# sourceMappingURL=Projects.css.map */

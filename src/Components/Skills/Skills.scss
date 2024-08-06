@@ -1,97 +1,52 @@
 @import '../../Variables.scss';
 
-
-.skills-wrapper{
-    scroll-snap-align: start;
-    min-height: 100vh;
-    border-bottom: 1px solid #dfdfdf;
-    .skills-flex{
-        padding-top: 5vw;
-        display: flex;
-        width: 70%;
-        margin: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        .section-title{
-            margin-top: 5vw;
-            grid-column: 1/-1 ;
-            grid-row: 1;
-        }
-        .skills-names{
-            display: flex;
-            justify-content: center;
-            margin-top: 2vw;
+section{
+    .content{
+        ul{
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                svg{
+                    padding: 1rem;
+                    border-radius: 5px;
+                    border: 1px white solid;
+                }
+
+                .skill-content{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    section{
+        .content{
             ul{
+                padding-top: 3rem;
+                gap: 1rem;
+                justify-content: space-between;
                 li{
-                    display: inline-block;
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    margin-right: 3vw;
-                    margin-bottom: 1vw;
-                    color: rgb(139, 139, 139);
-                    svg{
-                        margin-right: .3vw;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width:$breakpoint-laptop) {
-    .skills-wrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .skills-flex{
-            padding-top: 0;
-        }
-    }
-}
-
-@media screen and (max-width:$breakpoint-tablet) {
-    .skills-wrapper{
-        .skills-flex{
-            width: 90%;
-            .skills-names{
-                ul{
-                    li{
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width:$breakpoint-mobile-l) {
-    .secondary-heading{
-        font-size: 1.5rem;
-    }
-
-    .skills-wrapper{
-        .skills-flex{
-            .section-title{
-                margin-top: 5rem;
-            }
-            }
-            .skills-names{
-                width: 100%;
-                ul{
-                    display: grid;
-                    width: 100%;
-                    gap: 5px;
-                    grid-template-columns: repeat(2,1fr);
-                    li{
-                        margin-bottom: 0;
-                        font-size: .8rem;
-                        svg{
-                            margin-right: 5px;
+                    flex: 1;
+                    .skill-content{
+                        justify-content: start;
+                        width: 100%;
+                        h2{
+                            font-size: 1.2rem;
                         }
                     }
                 }
             }
         }
     }
+}

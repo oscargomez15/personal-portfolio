@@ -1,123 +1,125 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import 'Components/Hero/Hero.css'
+import backgroundVideo from '../../Assets/abstract.mp4'
+import { motion, useInView } from 'framer-motion'
+import Lottie from 'lottie-react'
+
+import animationData from "Assets/scroll.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAws, faFreeCodeCamp, faLinkedin, faMeta, faSquareFacebook, faSquareGithub} from '@fortawesome/free-brands-svg-icons'
-import oscar from 'Assets/oscar.jpg'
-import { faChevronDown} from '@fortawesome/free-solid-svg-icons'
-import { faHandPointRight } from '@fortawesome/free-regular-svg-icons'
+import { faAws, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faBars, faChevronRight, faDiamond, faGraduationCap, faHamburger } from '@fortawesome/free-solid-svg-icons'
 
 export const Hero = () => {
-  const dropDown = useRef(null);
-  const dropDownContent = useRef(null);
+  const sectionRef = useRef();
+  const sectionInView = useInView(sectionRef);
 
-  useEffect(() => {
-    const handler = (e) => {
-      if((e.key === "Enter" || e.key === ' ') && dropDown.current.contains(e.target) && dropDownContent.current.style.display !== "flex"){
-        dropDownContent.current.style.display = "flex";
-        console.log(dropDownContent.current.style.display);
-      }else{
-        dropDownContent.current.style.display = "none";
-      }
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  useEffect(()=>{
+    if(!hamburgerOpen){
+      document.body.classList.add('no-scroll');
+    }else{
+      document.body.classList.remove('no-scroll');
     }
-    document.addEventListener("keypress", handler)
+  })
 
-    return () => {
-      document.removeEventListener("keypress", handler)
-    }
-  },[])
-
-  const handleBlur = () => {
-    dropDownContent.current.style.display = "none"
+  const handleClick = () => {
+    setHamburgerOpen(!hamburgerOpen);
   }
-
 
   return (
     <main className="hero-wrapper">
-      <div className="hero-container">
-      <nav>
-        <header className="name">
-          <h1 className='primary-heading'>oscar gomez</h1>
-          <h2 className='sub-heading'>Cloud Engineer & Full Stack Developer</h2>
-        </header>
-      <ul>
-        <li className='body-text'><a href="#projects">projects</a></li>
-        <li className='body-text'><a href="#skills">skills</a></li>
-        <div className='dropdown' ref={dropDown} onBlur={handleBlur}>
-          <button className='dropdown-btn'> social <FontAwesomeIcon icon={faChevronDown} size='sm'/></button>
-          <div className="dropdown-content" ref={dropDownContent}>
-            <a href="https://www.facebook.com/oscargomez1998" target='__blank'> <FontAwesomeIcon icon={faSquareFacebook} /> facebook</a>
-            <hr/>
-            <a href="https://github.com/oscargomez15" target='__blak'> <FontAwesomeIcon icon={faSquareGithub} /> github</a>
-            <hr/>
-            <a href="https://www.linkedin.com/in/oscargomez1998/"target='__blank'> <FontAwesomeIcon icon={faLinkedin} /> linkedIn</a>
-          </div>
-        </div>
-        <li className='contact-btn'><a href="#contact">contact</a></li>
-        <li>
-          <label htmlFor="" className='hamburger-menu'>
-            <input type="checkbox" onClick={(e) => {console.log()}}/>
-          </label>
+      <video autoPlay loop>
+        <source src={backgroundVideo} type='video/mp4'/>
+      </video>
 
-          <aside className='sidebar'>
-            <nav className=''>
-              <ul>
-                <li>Menu</li>
-                <hr />
-                <li>projects</li>
-                <li>skills</li>
-                <li>contact</li>
-              </ul>
-            </nav>
-          </aside>
-        </li>
-      </ul>
-      </nav>
+      <div className="overlay"></div>
 
-      <section className="hero-grid">
-        <article className="welcome-box">
-          <h2 className='primary-heading'>Hey, <br/> I'm Oscar Gomez <br/></h2>
-          <p className='sub-heading'>A <span>Cloud Engineer & Full Stack Developer</span> emphasized in delivering scalable, reliable, cost-optimized, and accessible designs to meet industry standards.
-          </p>
-          <a href="https://oscargomez-webportfolio.s3.amazonaws.com/Oscar-Cloud-Resume.pdf" target='_blank'>
-            <div className="resume">
-              <p>Download Resume</p>
-            </div>
-          </a>
-        </article>
-        <figure>
-          <img src={oscar} alt="oscar-picture" />
-          <a href="#contact"> Let's Connect </a>
-        </figure>
+      <motion.div className="hamburger"
+      whileTap={{scale:1.1, color:'gray'}}
+      onClick={handleClick}>
+        <FontAwesomeIcon icon={faBars}/>
+      </motion.div>
 
-        <article className="profile-description">
-          <h3 className='third-heading'>Facts About Me</h3>
-          <div className="facts-container">
-            <div className="fact">
-              <p>
-                <FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-                Located in Cape Coral, Florida - willing to relocate</p>
-            </div>
-            <div className="fact">
-              <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-              Bachelor Degree in Computer Science</p>
-            </div>
-            <div className="fact">
-              <p><FontAwesomeIcon icon={faHandPointRight} style={{color:"black"}}/>
-              Passionate about technology since I was a kid</p>
+      <motion.div className="hamburger-menu"
+      animate={{opacity: hamburgerOpen == true ? 0 : 1}}
+      transition={{duration:.5}}>
+        <nav className='nav-mobile'>
+          <h2>NAVIGATION</h2>
+        <ul>
+            <li><a href="#about"><FontAwesomeIcon icon={faDiamond}/>ABOUT</a></li>
+            <li><a href="#skills"><FontAwesomeIcon icon={faDiamond}/>SKILLS</a></li>
+            <li> <a href="#experience"><FontAwesomeIcon icon={faDiamond}/>EXPERIENCE</a></li>
+            <li><a href="#projects"><FontAwesomeIcon icon={faDiamond}/>PROJECTS</a></li>
+            <li><a href="#diagrams"><FontAwesomeIcon icon={faDiamond}/>DIAGRAMS</a></li>
+            <li className='contact-button'><a href="#contact"><FontAwesomeIcon icon={faDiamond}/>CONTACT</a></li>
+          </ul>
+          <div className="socials">
+            <h2>LET'S CONNECT</h2>
+            <div className="socials-icons">
+              <a href="https://www.linkedin.com/in/oscargomez1998/" target='_blank'>
+                <FontAwesomeIcon icon={faLinkedin}/>
+              </a>
+
+              <FontAwesomeIcon icon={faDiamond}/>
+
+              <a href="https://github.com/oscargomez15" target='_blank'>
+                <FontAwesomeIcon icon={faGithub}/>
+              </a>
+
+              <FontAwesomeIcon icon={faDiamond}/>
+
+              <a href="https://www.facebook.com/oscargomez1998">
+                <FontAwesomeIcon icon={faFacebook}/>
+              </a>
             </div>
           </div>
-        </article>
+        </nav>
+      </motion.div>
 
-        <article className="certifications-box">
-          <h3 className='third-heading'>Certifications</h3>
-          <div className='certifications'>
-            <a target="__blank" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421"><FontAwesomeIcon icon={faAws} size='lg'/> Solutions Architect</a>
-            <a target='__blank'href="https://cp.certmetrics.com/amazon/en/public/verify/credential/ENTDB5H2V244QKG2"><FontAwesomeIcon icon={faAws} size='lg'/> Cloud Practictioner</a>
-            <a target='__blank' href="https://www.coursera.org/account/accomplishments/verify/JEPNHX3AT2GH"><FontAwesomeIcon icon={faMeta} size='lg'/> Front End Developer Course by Meta</a>
-            <a target='__blank' href="https://www.freecodecamp.org/certification/fcc017c1802-5df9-4f3b-878e-20584d956dee/responsive-web-design"><FontAwesomeIcon icon={faFreeCodeCamp} size='lg'/> Responsive Web Design Course </a>
+      <div className="hero-content">
+        <nav className='desktop-nav'>
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li> <a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#diagrams">DIAGRAMS</a></li>
+            <li className='contact-button'><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <motion.div
+        ref={sectionRef}
+        initial= {{opacity:0, y: 50}}
+        animate= {{opacity: sectionInView ? 1: 0, y: sectionInView ? 0 : 75 }}
+        transition={{duration:2}}
+        onClick={handleClick}
+        className="text-content">
+          <h2>CLOUD ENGINEER & FULL STACK DEVELOPER</h2>
+          <h1>OSCAR GOMEZ</h1>
+          <div className="certifications">
+            <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421" target='_blank' className="cert-link">
+              <motion.div className="cert-item"
+              whileHover={{scale:1.1, cursor:"pointer"}}>
+                <FontAwesomeIcon icon={faAws}/>
+                <h3>AS Solutions Architect</h3>
+              </motion.div>
+            </a>
+
+            <FontAwesomeIcon icon={faDiamond}/>
+            <a href="" className='cert-link' target='_blank'>
+              <motion.div className="cert-item"
+              whileHover={{scale:1.1, cursor:"pointer"}}>
+                <FontAwesomeIcon icon={faGraduationCap}/>
+                <h3>BS Computer Science </h3>
+              </motion.div>
+            </a>
+
           </div>
-        </article>
-      </section>
+          <Lottie animationData={animationData} className='scroll'/>
+        </motion.div>
+
       </div>
     </main>
   )

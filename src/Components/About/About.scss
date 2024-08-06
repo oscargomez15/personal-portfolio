@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px rgb(39, 39, 39) solid;
+    .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            width: 100%;
+            height: 100%;
+
+            .section-heading{
+                letter-spacing: .5rem;
+                font-size: 5rem;
+                color: white;
+                font-family: 'Adamina', serif;
+            }
+
+            .section-text{
+                font-size: 2rem;
+            }
+
+        }
+        .image-collection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            position: relative;
+            width: 100%;
+            img{
+                width: 40%;
+                border: 10px solid white;
+            }
+            .image-behind{
+                position: absolute;
+                top: 0;
+                left: 50;
+                z-index: -1;
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        section{
+            flex-direction: column;
+            padding: 5rem 0;
+            .content{
+                .section-heading{
+                    font-size: 3rem;
+                }
+                .section-text{
+                    font-size: 1rem;
+                }
+            }
+            .image-collection{
+                img{
+                    width: 75%;
+                }
+            }
+        }
+    }

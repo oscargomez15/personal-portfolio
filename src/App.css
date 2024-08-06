@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(26, 26, 26);
+}
+
+.content-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .content-wrapper {
+    width: 90%;
+  }
+}/*# sourceMappingURL=App.css.map */

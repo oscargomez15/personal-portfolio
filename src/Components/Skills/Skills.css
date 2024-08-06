@@ -1,80 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&family=Staatliches&display=swap");
-.skills-wrapper {
-  scroll-snap-align: start;
-  min-height: 100vh;
-  border-bottom: 1px solid #dfdfdf;
-}
-.skills-wrapper .skills-flex {
-  padding-top: 5vw;
-  display: flex;
-  width: 70%;
-  margin: auto;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-.skills-wrapper .skills-flex .section-title {
-  margin-top: 5vw;
-  grid-column: 1/-1;
-  grid-row: 1;
-}
-.skills-wrapper .skills-flex .skills-names {
-  display: flex;
-  justify-content: center;
-  margin-top: 2vw;
+section .content ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
 }
-.skills-wrapper .skills-flex .skills-names ul li {
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: 3vw;
-  margin-bottom: 1vw;
-  color: rgb(139, 139, 139);
+section .content ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.skills-wrapper .skills-flex .skills-names ul li svg {
-  margin-right: 0.3vw;
+section .content ul li svg {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px white solid;
+}
+section .content ul li .skill-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-@media screen and (max-width: 1024px) {
-  .skills-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 800px) {
+  section .content ul {
+    padding-top: 3rem;
+    gap: 1rem;
+    justify-content: space-between;
   }
-  .skills-wrapper .skills-flex {
-    padding-top: 0;
+  section .content ul li {
+    flex: 1;
   }
-}
-@media screen and (max-width: 768px) {
-  .skills-wrapper .skills-flex {
-    width: 90%;
-  }
-  .skills-wrapper .skills-flex .skills-names ul li {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 431px) {
-  .secondary-heading {
-    font-size: 1.5rem;
-  }
-  .skills-wrapper .skills-flex .section-title {
-    margin-top: 5rem;
-  }
-  .skills-wrapper .skills-names {
+  section .content ul li .skill-content {
+    justify-content: start;
     width: 100%;
   }
-  .skills-wrapper .skills-names ul {
-    display: grid;
-    width: 100%;
-    gap: 5px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .skills-wrapper .skills-names ul li {
-    margin-bottom: 0;
-    font-size: 0.8rem;
-  }
-  .skills-wrapper .skills-names ul li svg {
-    margin-right: 5px;
+  section .content ul li .skill-content h2 {
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=Skills.css.map */

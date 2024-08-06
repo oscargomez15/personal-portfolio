@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import 'Components/Project/Projects.css'
-import videogames from "Assets/videogames.jpg"
-import habaneros from "Assets/habaneros.jpg"
-import hangman from "Assets/hangman-ss.png"
-import live from "Assets/liveAnimation.json"
-import saas from "Assets/saas-project.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import Lottie from 'lottie-react'
+import { motion, useInView } from 'framer-motion'
+import { faBagShopping, faDiamond, faGamepad, faGlobe, faPlaneArrival, faScrewdriverWrench, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons'
+import {RiTailwindCssFill} from "react-icons/ri"
+import {SiTypescript} from 'react-icons/si'
+import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
 
 export const Projects = () => {
+const projectRef = useRef(null);
+const projectIsInView = useInView(projectRef,{amount:0.6});
+const [hoveredProject, setHoveredProject] = useState(null);
+
+const handleHover = (id) => {
+    setHoveredProject(id);
+}
+
+const handleHoverOut = () => {
+    setHoveredProject(null);
+}
+
+console.log(hoveredProject);
+
 const projectsInfo =[
     {
-        image:saas,
-        title:'Saas Landing Page',
+        icon:faSquarePollVertical,
+        title:'Pattern Finder',
+        languages: [faReact, RiTailwindCssFill],
         points:[`Utilized React.js to develop dynamic and interactive features, enhancing user engagement and experience.
         `,`Integrated Tailwind CSS to ensure a modern and responsive design, optimizing for various screen sizes and devices.
         `,`Showcased product features, pricing details, and a captivating hero section with a concise description to effectively communicate the value proposition.`],
@@ -21,74 +34,95 @@ const projectsInfo =[
         projectLink:'https://oscargomez15.github.io/saas-landing-page/'
     },
     {
-        image:videogames,
-        title:'Videogames Ecommerce',
-        points:[`Developed a responsive and cross-browser-compatible e-commerce platform using HTML, CSS, and React.js, ensuring optimal user experience across all devices and browsers.
+        icon:faBagShopping,
+        title:'Pixel World',
+        languages: [faCss3Alt, faReact],
+        points:[`Developed a responsive and cross-browser-compatible e-commerce platform using CSS, and React.js, ensuring optimal user experience across all devices and browsers.
         `,`Integrated the RAWG API to access a vast database of over 500,000 video games, enabling users to browse and explore a diverse selection of titles across various platforms.
         `,"Designed visually appealing product pages with detailed information and imagery to showcase game titles and entice user engagement."],
         gitHubRepo:'https://github.com/oscargomez15/pixelworldecommerce',
         projectLink:'https://oscargomez15.github.io/pixelworldecommerce/'
     },
     {
-        image:hangman,
+        icon:faGamepad,
         title:'Hangman Game',
+        languages: [SiTypescript, faCss3Alt],
         points:[`Implemented game logic to set a word, compare user-entered letters, and manage game state.
         `,`Leveraged TypeScript for type safety and improved code quality.
         `,"Utilized CSS for rendering the Hangman drawing and creating a responsive, visually appealing interface."],
-        gitHubRepo:"https://github.com/oscargomez15/hangman", 
+        gitHubRepo:"https://github.com/oscargomez15/hangman",
         projectLink:"https://oscargomez15.github.io/hangman/"
     },
     {
-        image:habaneros,
-        title: 'Front End Consultant -  @Habaneros',
+        icon:faScrewdriverWrench,
+        title: 'GIAL Handyman',
+        languages: [],
         points:["Developed a user-friendly website to showcase the restaurant's amenities, menu, upcoming events, and other information using HTML5, CSS3, and JavaScript.",
             "Performed website updates and maintenance through FTP Protocol for efficient and secure file management.",
             "Utilized HostGator shared hosting for reliable and cost-effective website hosting."
         ],
-        gitHubRepo: "#",
-        projectLink: "https://habanerosbonitasprings.com/"
+        gitHubRepo: "https://github.com/oscargomez15/handyman-website",
+        projectLink: "https://oscargomez15.github.io/handyman-website/"
     }
 
 ]
 
   return (
-    <section className='project-wrapper' id='projects'>
-        <div className="project-grid fade-in-effect">
-            <div className="project-title">
-                <h2 className='secondary-heading' tabIndex={-1}> Project Showcase</h2>
-                <p className='sub-heading'>Bringing digital ideas to life with creative web development</p>
-            </div>
-            {projectsInfo.map((item,index) => {
-                return (
-                    //add the slide-left or right depending on where the item is positioned
-                    <article className={`${index % 2 ? "slide-left" : "slide-right"} project-item`}>
-                        <figure>
-                            <div className="darken"></div>
-                            <img src={item.image} alt={`Project-${index + 1}-image`}/>
-                        </figure>
-                        <h3 className='third-heading'> {item.title}</h3>
-                        <ul>{item.points.map((point) => {
-                            return(
-                                <li>{point}</li>
-                            )
-                        })}</ul>
-                        <p className='body-text'> {item.description} </p>
-                        <div className="button-group">
-                            <a href={item.gitHubRepo} target='__blank'> <div className='project-button'>
-                            <FontAwesomeIcon icon={faGithub}/>
-                            </div>
-                            </a>
-                            <a href={item.projectLink} target='__blank'>
-                            <div className='project-button'>
-                                <Lottie animationData={live} class='lottie-live'/>
-                                 <p className='button-text'>Live Preview</p>
-                                 </div>
-                                 </a>
-                        </div>
-                    </article>
-                )
-            })}
-        </div>
+    <section className='projects-section'
+    id='projects'
+    ref={projectRef}>
+        <article className='content'>
+            <motion.h1 className='section-heading'
+            animate={{opacity: projectIsInView ? 1 : 0}}
+            transition={{duration:2}}>Projects</motion.h1>
+                <div className="projects-list">
+                    {projectsInfo.map((project, id)=>{
+                        return(
+                            <motion.div
+                            key={id}
+                            onMouseEnter={() => handleHover(id)}
+                            onMouseLeave={handleHoverOut}
+                            initial={{scaleY:0}}
+                            animate={{scaleY: projectIsInView ? 1 : 0, transformOrigin: "top"}}
+                            whileHover={{scale:1.05, cursor:"pointer", opacity:1, background:"white", color:"black"}}
+                            transition={{
+                                duration:0.5,
+                                scaleY: {duration:0.5, delay: id * 0.2}}}
+                            className='project-item'>
+
+                                <div className="project-content">
+                                    <FontAwesomeIcon icon={project.icon} size='5x'/>
+                                    <h2>{project.title}</h2>
+                                    <h3>0{id+1}</h3>
+                                    <div
+                                    className="project-buttons">
+                                        <motion.a
+                                        href={project.gitHubRepo}
+                                        target='_blank'
+                                        animate={{
+                                            color : hoveredProject == id ? "black" : "",
+                                            scale : hoveredProject == id ? 1.25 : 1
+                                        }}
+                                        whileHover = {{color:"#cacaca"}}>
+                                            <FontAwesomeIcon icon={faGithub}/></motion.a>
+
+                                            <FontAwesomeIcon icon={faDiamond} className='buttons-divider'/>
+                                        <motion.a
+                                        href={project.projectLink}
+                                        animate={{
+                                            color : hoveredProject == id ? "black" : "",
+                                            scale : hoveredProject == id ? 1.25 : 1
+                                        }}
+                                        whileHover = {{color:"#cacaca"}}
+                                        target='_blank'>
+                                            <FontAwesomeIcon icon={faGlobe}/></motion.a>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )
+                    })}
+                </div>
+        </article>
     </section>
   )
 }

@@ -1,75 +1,91 @@
-@import '../../Variables.scss';
-
-.diagrams-wrapper{
+.diagrams-list{
     display: flex;
-    min-height: 100vh;
-    border-bottom: 1px solid #dfdfdf;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 3rem 0;
+    .diagram-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2rem;
+        position: relative;
+        height: 700px;
+        width: 80%;
+        border: 1px rgb(73, 73, 73) solid;
+
+        .background-image{
+            width: 100%;
+            height: 100%;
+            filter: opacity(.1) blur(1px);
+            position: absolute;
+            object-fit: cover;
+            z-index: -1;
+        }
+        h2{
+            font-family: "Adamina", serif;
+            font-size: 3rem;
+        }
+        h3{
+            font-family: "Adamina", sans-serif;
+            color: #ff9b58 ;
+        }
+        .diagram-image{
+            object-fit: contain;
+            max-height: 600px;
+        }
+        .diagram-text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            height: 100%;
+            width: 45%;
+            .diagram-title{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .diagrams-bullepoints{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .bulletpoint{
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
+        }
+        .diagram-divider{
+            height: 30px;
+        }
+    }:nth-child(odd) .background-image{
+        transform: scaleX(-1);
+        border-color: red;
+    }
 }
 
-.diagram-grid{
-    margin: auto;
-    display: grid;
-    width: 80%;
-    gap: 0px;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: hidden;
-
-    .diagram-title{
-        grid-column: 1/ span 2;
-        padding: 3rem;
-        text-align: left;
-    }
-
-    article{
-        display: flex;
-        flex-direction: column;
-        margin-top: 8rem;
-        gap: 1rem;
-        align-items: center;
-        margin: auto ;
-        padding: 2rem 5rem;
-        img{
-            border: 2px rgb(116, 116, 116) solid;
-            padding-left: 2rem;
-        }
-
-        .diagram-content{
-            align-self: flex-end;
-            h3{
-                font-size: 2rem;
+@media screen and (max-width:800px) {
+    .diagrams-list{
+        .diagram-item{
+            flex-direction: column;
+            width: 100%;
+            height: fit-content;
+            padding: 2rem 0;
+            .diagram-text{
+                flex-direction: row;
+                flex-direction: column;
+                width: 90%;
             }
-            p{
-                text-wrap: pretty;
+            .diagram-divider{
+                display: none;
+            }
+            .diagram-image{
+                max-width: 100%;
             }
         }
-    }
-}
-
-@media screen and (max-width:$breakpoint-laptop) {
-    .diagram-grid{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 3rem;
-    }
-    .diagram-grid .diagram-title{
-        padding: 2rem 0 1rem 0;
-    }
-
-    .diagram-grid article{
-        padding: 0;
-    }
-
-    .diagram-grid article img{
-        width: 100%;
-        object-fit: contain;
-        padding: 0;
-        border: none;
-        height: fit-content;
-    }
-
-    .diagram-content ul{
-        list-style-type: disc;
     }
 }
