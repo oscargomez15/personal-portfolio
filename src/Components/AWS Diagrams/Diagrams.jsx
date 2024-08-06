@@ -8,12 +8,12 @@ import background from 'Assets/abstract-bg.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faDiamond } from '@fortawesome/free-solid-svg-icons'
 
-import { animate, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 export const Diagrams = () => {
     const sectionRef = useRef(null);
     const sectionInView = useInView(sectionRef, {amount:0.1});
-    
+
 const diagramsInfo = [{
     image: ridesDiagram,
     title:'Rides Service Web App',

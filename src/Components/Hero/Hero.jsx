@@ -7,7 +7,7 @@ import Lottie from 'lottie-react'
 import animationData from "Assets/scroll.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faChevronRight, faDiamond, faGraduationCap, faHamburger } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faDiamond, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 export const Hero = () => {
   const sectionRef = useRef();
@@ -16,10 +16,10 @@ export const Hero = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   useEffect(()=>{
-    if(!hamburgerOpen){
-      document.body.classList.add('no-scroll');
+    if(hamburgerOpen){
+      addNoScroll();
     }else{
-      document.body.classList.remove('no-scroll');
+      removeNoScroll();
     }
   })
 
@@ -27,10 +27,20 @@ export const Hero = () => {
     setHamburgerOpen(!hamburgerOpen);
   }
 
+  const addNoScroll = () => {
+    document.body.classList.add('no-scroll');
+  }
+
+  const removeNoScroll = () => {
+    document.body.classList.remove('no-scroll');
+    setHamburgerOpen(false);
+  }
+
   return (
     <main className="hero-wrapper">
       <video autoPlay loop>
         <source src={backgroundVideo} type='video/mp4'/>
+        Your browser does not support the video tag.
       </video>
 
       <div className="overlay"></div>
@@ -42,17 +52,18 @@ export const Hero = () => {
       </motion.div>
 
       <motion.div className="hamburger-menu"
-      animate={{opacity: hamburgerOpen == true ? 0 : 1}}
+      initial={{opacity:0}}
+      animate={{opacity: hamburgerOpen == true ? 1 : 0}}
       transition={{duration:.5}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>
         <ul>
-            <li><a href="#about"><FontAwesomeIcon icon={faDiamond}/>ABOUT</a></li>
-            <li><a href="#skills"><FontAwesomeIcon icon={faDiamond}/>SKILLS</a></li>
-            <li> <a href="#experience"><FontAwesomeIcon icon={faDiamond}/>EXPERIENCE</a></li>
-            <li><a href="#projects"><FontAwesomeIcon icon={faDiamond}/>PROJECTS</a></li>
-            <li><a href="#diagrams"><FontAwesomeIcon icon={faDiamond}/>DIAGRAMS</a></li>
-            <li className='contact-button'><a href="#contact"><FontAwesomeIcon icon={faDiamond}/>CONTACT</a></li>
+            <li><a href="#about" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>ABOUT</a></li>
+            <li><a href="#skills" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>SKILLS</a></li>
+            <li> <a href="#experience" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>EXPERIENCE</a></li>
+            <li><a href="#projects" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>PROJECTS</a></li>
+            <li><a href="#diagrams" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>DIAGRAMS</a></li>
+            <li className='contact-button' onClick={removeNoScroll}><a href="#contact"><FontAwesomeIcon icon={faDiamond}/>CONTACT</a></li>
           </ul>
           <div className="socials">
             <h2>LET'S CONNECT</h2>

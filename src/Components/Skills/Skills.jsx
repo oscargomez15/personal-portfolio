@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 import 'Components/Skills/Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAws, faCss3, faCss3Alt, faDocker, faFigma, faGithub, faHtml5, faJenkins, faJs, faLinux, faNodeJs, faNpm, faPython, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDatabase, faGaugeSimpleHigh, faGear, faGears, faNetworkWired, faRobot, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import { faAws, faCss3, faDocker, faFigma, faGithub, faHtml5, faJs, faLinux, faNodeJs, faPython, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDatabase, faGear, faNetworkWired, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 import { motion, useInView } from 'framer-motion';
 
 export const Skills = () => {
   const sectionRef = useRef(null);
-  const sectionInView = useInView(sectionRef, {amount:0.2});
+  const sectionInView = useInView(sectionRef, {amount:0.1});
 console.log("skills" + sectionInView);
 
   const skillsList = [{

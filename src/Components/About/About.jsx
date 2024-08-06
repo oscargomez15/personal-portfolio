@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import './About.css'
-import oscar from '../../Assets/oscar-picture.jpeg'
+import oscar from '../../Assets/oscar-picture.jpg'
 import oscar2 from '../../Assets/oscar.jpg'
 
-import { motion, useInView, delay } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 export const About = () => {
 
     const sectionRef = useRef(null);
-    const sectionInView = useInView(sectionRef, {amount:0.2});
+    const sectionInView = useInView(sectionRef, {amount:0.1});
 
     const textVariants = {
         visible:{opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50},

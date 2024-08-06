@@ -7,12 +7,12 @@ import allied from "Assets/allied-global.jpg"
 import gial from "Assets/gial-red.jpg"
 
 import { motion, useInView } from 'framer-motion'
-import { faBagShopping, faChevronRight, faDiamond, faGamepad, faPepperHot, faPlaneArrival } from '@fortawesome/free-solid-svg-icons'
+import { faBagShopping, faDiamond, faGamepad, faPepperHot, faPlaneArrival } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Experience = () => {
 const experienceRef = useRef(null);
-const experienceIsInView = useInView(experienceRef,{amount:0.6});
+const experienceIsInView = useInView(experienceRef,{amount:0.1});
 const [hoveredProject, setHoveredProject] = useState(null);
 
 console.log(hoveredProject);
@@ -116,20 +116,19 @@ const experienceInfo =[
                                 </div>
 
                                 {/* Bulletpoints mapping along with a symbol */}
-                                <div className="experience-bulletpoints">
+                                <motion.div className="experience-bulletpoints"
+                                    initial={{display:"none"}}
+                                    animate={{display: hoveredProject == id ? "flex" : "none"}}
+                                    transition={{duration:0.1}}>
                                     {experience.points.map((bullet, bulletId) => {
                                         return(
-                                            <motion.div className="bulletpoint"
-                                            initial={{display:"none"}}
-                                            animate={{display: hoveredProject == id ? "flex" : "none"}}
-                                            transition={{duration:0.1}}
-                                            >
+                                            <div className="bulletpoint">
                                                 <FontAwesomeIcon icon={faDiamond} />
                                                 <p>{bullet}</p>
-                                            </motion.div>
+                                            </div>
                                         )
                                     })}
-                                </div>
+                                </motion.div>
                             </motion.div>
                         )
                     })}

@@ -9,7 +9,7 @@ import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons
 
 export const Projects = () => {
 const projectRef = useRef(null);
-const projectIsInView = useInView(projectRef,{amount:0.6});
+const projectIsInView = useInView(projectRef,{amount:0.1});
 const [hoveredProject, setHoveredProject] = useState(null);
 
 const handleHover = (id) => {

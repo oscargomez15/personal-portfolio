@@ -4,8 +4,8 @@ import { Projects } from './Components/Project/Projects.jsx';
 import { Contact } from './Components/Contact/Contact.jsx';
 import { Diagrams } from 'Components/AWS Diagrams/Diagrams.jsx';
 import { About } from 'Components/About/About.jsx';
-import 'App.css'
 import { Experience } from 'Components/Experience/Experience.jsx';
+import 'App.css';
 
 function App() {
 
