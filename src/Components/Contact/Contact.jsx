@@ -4,6 +4,8 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import axios from 'axios';
 import LoadingIcons from 'react-loading-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAws } from '@fortawesome/free-brands-svg-icons';
 
 export const Contact = () => {
 const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +53,11 @@ const clearForm = () => {
         <motion.article className='content'
         ref={contactRef}
         animate={{opacity: contactIsInView ? 1 : 0 }}>
-            <h1 className='section-heading'>Contact</h1>
+            <div className="contact-heading">
+                <h1 className='section-heading'>Contact</h1>
+                <h3 className='section-subheading'>Powered by <FontAwesomeIcon icon={faAws}/></h3>
+
+            </div>
             <form action="submit" onSubmit={handleSubmit}>
                 <div className="field-container">
                     <label htmlFor="fname"> First Name </label>

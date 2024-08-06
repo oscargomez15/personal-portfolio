@@ -28,7 +28,10 @@ section{
             }
 
         }
-        .image-collection{
+        .image-collection-mb{
+            display: none;
+        }
+        .image-collection-desktop{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -60,9 +63,13 @@ section{
                     font-size: 1rem;
                 }
             }
-            .image-collection{
+            .image-collection-desktop{
+                display: none;
+            }
+            .image-collection-mb{
                 img{
-                    width: 75%;
+                    width: 50%;
+                    border: 5px solid white;
                 }
             }
         }

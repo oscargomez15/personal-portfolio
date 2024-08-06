@@ -25,7 +25,10 @@ section .content .section-heading {
 section .content .section-text {
   font-size: 2rem;
 }
-section .image-collection {
+section .image-collection-mb {
+  display: none;
+}
+section .image-collection-desktop {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,11 +36,11 @@ section .image-collection {
   position: relative;
   width: 100%;
 }
-section .image-collection img {
+section .image-collection-desktop img {
   width: 40%;
   border: 10px solid white;
 }
-section .image-collection .image-behind {
+section .image-collection-desktop .image-behind {
   position: absolute;
   top: 0;
   left: 50;
@@ -55,7 +58,11 @@ section .image-collection .image-behind {
   section .content .section-text {
     font-size: 1rem;
   }
-  section .image-collection img {
-    width: 75%;
+  section .image-collection-desktop {
+    display: none;
+  }
+  section .image-collection-mb img {
+    width: 50%;
+    border: 5px solid white;
   }
 }/*# sourceMappingURL=About.css.map */
