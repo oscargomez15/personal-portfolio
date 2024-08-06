@@ -3,8 +3,6 @@ import 'Components/Contact/Contact.css'
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import axios from 'axios';
-import Lottie from 'lottie-react';
-import animationData from 'Assets/loading-anim.json'
 import LoadingIcons from 'react-loading-icons';
 
 export const Contact = () => {
