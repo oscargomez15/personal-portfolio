@@ -7,6 +7,8 @@ import {RiTailwindCssFill} from "react-icons/ri"
 import {SiTypescript} from 'react-icons/si'
 import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
 
+import backgroundLines from 'Assets/abstract-lines-3.jpg'
+
 export const Projects = () => {
 const projectRef = useRef(null);
 const projectIsInView = useInView(projectRef,{amount:0.1});
@@ -84,11 +86,16 @@ const projectsInfo =[
                             onMouseLeave={handleHoverOut}
                             initial={{scaleY:0}}
                             animate={{scaleY: projectIsInView ? 1 : 0, transformOrigin: "top"}}
-                            whileHover={{scale:1.05, cursor:"pointer", opacity:1, background:"white", color:"black"}}
+                            whileHover={{scale:1.05, cursor:"pointer", opacity:1}}
                             transition={{
                                 duration:0.5,
                                 scaleY: {duration:0.5, delay: id * 0.2}}}
                             className='project-item'>
+                                <motion.img src={backgroundLines}
+                                alt=""
+                                className='project-background'
+                                whileHover={{scaleY:hoveredProject == id ? 1.5 : 1}}
+                                transition={{duration:5}} />
 
                                 <div className="project-content">
                                     <FontAwesomeIcon icon={project.icon} size='5x'/>
@@ -100,20 +107,20 @@ const projectsInfo =[
                                         href={project.gitHubRepo}
                                         target='_blank'
                                         animate={{
-                                            color : hoveredProject == id ? "black" : "",
-                                            scale : hoveredProject == id ? 1.25 : 1
+                                            scale : hoveredProject == id ? 1.25 : 1,
+                                            color: hoveredProject == id ? "#ff9b58" : "white"
                                         }}
-                                        whileHover = {{color:"#cacaca"}}>
+                                        whileHover = {{color:"#ffb98a"}}>
                                             <FontAwesomeIcon icon={faGithub}/></motion.a>
 
                                             <FontAwesomeIcon icon={faDiamond} className='buttons-divider'/>
                                         <motion.a
                                         href={project.projectLink}
                                         animate={{
-                                            color : hoveredProject == id ? "black" : "",
-                                            scale : hoveredProject == id ? 1.25 : 1
+                                            scale : hoveredProject == id ? 1.25 : 1,
+                                            color: hoveredProject == id ? "#ff9b58" : "white"
                                         }}
-                                        whileHover = {{color:"#cacaca"}}
+                                        whileHover = {{color:"#ffb98a"}}
                                         target='_blank'>
                                             <FontAwesomeIcon icon={faGlobe}/></motion.a>
                                     </div>

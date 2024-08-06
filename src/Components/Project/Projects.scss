@@ -18,11 +18,16 @@
         height: 100%;
         border: 1px solid #7a7a7a;
         transform-origin: top;
-        img{
+        position: relative;
+        overflow: hidden;
+
+        .project-background{
             height: 100%;
             width: 100%;
             object-fit: cover;
             opacity: .5;
+            position: absolute;
+            z-index: -1;
         }
         .project-content{
             display: flex;

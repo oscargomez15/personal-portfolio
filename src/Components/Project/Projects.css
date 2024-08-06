@@ -17,13 +17,17 @@
   height: 100%;
   border: 1px solid #7a7a7a;
   transform-origin: top;
+  position: relative;
+  overflow: hidden;
 }
-.projects-list .project-item img {
+.projects-list .project-item .project-background {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.5;
+  position: absolute;
+  z-index: -1;
 }
 .projects-list .project-item .project-content {
   display: flex;
