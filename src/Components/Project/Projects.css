@@ -68,6 +68,9 @@
   .projects-list .project-item {
     height: 100%;
   }
+  .projects-list .project-item .project-content {
+    gap: 1rem;
+  }
   .projects-list .project-item .project-content h2 {
     text-align: center;
   }

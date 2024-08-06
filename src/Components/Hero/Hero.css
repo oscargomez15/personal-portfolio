@@ -213,6 +213,7 @@ body::-webkit-scrollbar-track {
     color: white;
     text-decoration: none;
     padding-left: 1rem;
+    font-size: 1.5rem;
   }
   .hero-wrapper .hamburger-menu .nav-mobile ul li a svg {
     height: 10px;
