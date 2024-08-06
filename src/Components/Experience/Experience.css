@@ -55,10 +55,18 @@
   }
   .experience-list .experience-item {
     width: 100%;
+    padding: 1rem;
+  }
+  .experience-list .experience-item .experience-content img {
+    height: 75px;
   }
   .experience-list .experience-item .experience-content .experience-text .experience-date-mb {
+    display: block;
     font-weight: normal;
     font-size: 1rem;
+  }
+  .experience-list .experience-item .experience-content .experience-text .job-title {
+    font-size: 1.2rem;
   }
   .experience-list .experience-item .experience-content .experience-date h2 {
     display: none;

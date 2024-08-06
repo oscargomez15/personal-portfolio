@@ -61,11 +61,19 @@
         width: 100%;
         .experience-item{
             width: 100%;
+            padding: 1rem;
             .experience-content{
+                img{
+                    height: 75px;
+                }
                 .experience-text{
                     .experience-date-mb{
+                        display: block;
                         font-weight: normal;
                         font-size: 1rem;
+                    }
+                    .job-title{
+                        font-size: 1.2rem;
                     }
                 }
                 .experience-date{
