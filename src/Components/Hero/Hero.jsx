@@ -12,9 +12,10 @@ import { faBars, faDiamond, faGraduationCap } from '@fortawesome/free-solid-svg-
 export const Hero = () => {
   const sectionRef = useRef();
   const sectionInView = useInView(sectionRef);
-  
+
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  
+  const hamburgerMenu = useRef();
+
   useEffect(()=>{
     if(hamburgerOpen){
       addNoScroll();
@@ -46,13 +47,14 @@ export const Hero = () => {
       <div className="overlay"></div>
 
       <motion.div className="hamburger"
+      ref={hamburgerMenu}
       whileTap={{scale:1.1, color:'gray'}}
       onClick={handleClick}>
         <FontAwesomeIcon icon={faBars}/>
       </motion.div>
 
       <motion.div className="hamburger-menu"
-      initial={{opacity:0}}
+      initial={{opacity:0, display:"none"}}
       animate={{opacity: hamburgerOpen == true ? 1 : 0, display: hamburgerOpen ? "block" : "none"}}
       transition={{duration:.5}}>
         <nav className='nav-mobile'>
