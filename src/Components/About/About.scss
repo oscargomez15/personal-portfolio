@@ -6,6 +6,7 @@ section{
     align-items: center;
     justify-content: space-around;
     border-bottom: 2px rgb(39, 39, 39) solid;
+    overflow-x: hidden;
     .content{
             display: flex;
             flex-direction: column;

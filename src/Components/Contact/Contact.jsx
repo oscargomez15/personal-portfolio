@@ -56,7 +56,6 @@ const clearForm = () => {
             <div className="contact-heading">
                 <h1 className='section-heading'>Contact</h1>
                 <h3 className='section-subheading'>Powered by <FontAwesomeIcon icon={faAws}/></h3>
-
             </div>
             <form action="submit" onSubmit={handleSubmit}>
                 <div className="field-container">
