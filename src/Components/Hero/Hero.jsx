@@ -14,15 +14,34 @@ export const Hero = () => {
   const sectionInView = useInView(sectionRef);
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  let lastScrollTop = 0;
+
   const hamburgerMenu = useRef();
 
   useEffect(()=>{
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > lastScrollTop){
+        setIsVisible(false);
+      }else{
+        setIsVisible(true);
+      }
+      lastScrollTop = scrollTop <= 0 ? 0: scrollTop;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollTop]);
+
+  useEffect(()=> {
     if(hamburgerOpen){
       addNoScroll();
     }else{
       removeNoScroll();
     }
-  })
+  },[hamburgerOpen])
 
   const handleClick = () => {
     setHamburgerOpen(!hamburgerOpen);
@@ -48,6 +67,7 @@ export const Hero = () => {
 
       <motion.div className="hamburger"
       ref={hamburgerMenu}
+      animate={{y: isVisible ? 0 : -100}}
       whileTap={{scale:1.1, color:'gray'}}
       onClick={handleClick}>
         <FontAwesomeIcon icon={faBars}/>
