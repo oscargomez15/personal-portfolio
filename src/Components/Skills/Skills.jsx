@@ -71,6 +71,7 @@ export const Skills = () => {
           {skillsList.map((item,id) => {
             return(
               <motion.li
+              key={id}
               whileHover={{ scale:1.1, cursor:"pointer"}}
               initial={{opacity:0, translateX: -50}}
               animate={{opacity: sectionInView ? 1 : 0, translateX: sectionInView ? 0 : -50}}

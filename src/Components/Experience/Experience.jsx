@@ -15,8 +15,6 @@ const experienceRef = useRef(null);
 const experienceIsInView = useInView(experienceRef,{amount:0.1});
 const [hoveredProject, setHoveredProject] = useState(null);
 
-console.log(hoveredProject);
-
 const handleHover = (itemId) => {
     setHoveredProject(itemId);
 }
@@ -85,7 +83,7 @@ const experienceInfo =[
                     {experienceInfo.map((experience, id)=>{
                         return(
                             <motion.div
-                            key={id}
+                            key={id+1}
                             onMouseEnter={() => handleHover(id)}
                             onMouseLeave={handleHoverOut}
                             initial={{scaleY:0}}
@@ -122,7 +120,7 @@ const experienceInfo =[
                                     transition={{duration:0.1}}>
                                     {experience.points.map((bullet, bulletId) => {
                                         return(
-                                            <div className="bulletpoint">
+                                            <div className="bulletpoint" key={`experience-${id}-bp-${bulletId}`}>
                                                 <FontAwesomeIcon icon={faDiamond} />
                                                 <p>{bullet}</p>
                                             </div>

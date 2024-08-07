@@ -15,7 +15,6 @@ export const Hero = () => {
   
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   
-  console.log(hamburgerOpen);
   useEffect(()=>{
     if(hamburgerOpen){
       addNoScroll();
@@ -120,7 +119,7 @@ export const Hero = () => {
             </a>
 
             <FontAwesomeIcon icon={faDiamond}/>
-            <a href="" className='cert-link' target='_blank'>
+            <a href="https://oscargomez-webportfolio.s3.amazonaws.com/bs-cs-oscargomez.jpg" className='cert-link' target='_blank'>
               <motion.div className="cert-item"
               whileHover={{scale:1.1, cursor:"pointer"}}
               whileTap={{scale:1.1}}>

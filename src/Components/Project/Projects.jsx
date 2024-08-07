@@ -22,8 +22,6 @@ const handleHoverOut = () => {
     setHoveredProject(null);
 }
 
-console.log(hoveredProject);
-
 const projectsInfo =[
     {
         icon:faSquarePollVertical,

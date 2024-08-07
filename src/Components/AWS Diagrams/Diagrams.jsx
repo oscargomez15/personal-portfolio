@@ -51,6 +51,7 @@ return (
                 {diagramsInfo.map((item, id) => {
                     return(
                         <motion.div className="diagram-item"
+                        key={`diagram-${id+1}`}
                         initial={{scale:0, opacity:0}}
                         animate={{scale: sectionInView ? 1 : 0, opacity: sectionInView ?  1 : 0}}
                         transition={{duration:1, delay: id * 0.2}}>
@@ -63,9 +64,9 @@ return (
                                 </div>
                                 <FontAwesomeIcon icon={faChevronDown} className='diagram-divider'/>
                                 <div className="diagrams-bullepoints">
-                                    {item.points.map((point, id) => {
+                                    {item.points.map((point, pointId) => {
                                         return(
-                                            <div className="bulletpoint">
+                                            <div className="bulletpoint" key={`diagram-${id}-bp-${pointId}`}>
                                                 <FontAwesomeIcon icon={faDiamond}/>
                                                 {point}
                                             </div>
