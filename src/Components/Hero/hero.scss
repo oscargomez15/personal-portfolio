@@ -168,7 +168,7 @@ body::-webkit-scrollbar-track{
         }
         .hamburger{
             display: block;
-            position: absolute;
+            position: fixed;
             top: 10px;
             left: 10px;
             color: rgb(245, 245, 245);
@@ -183,7 +183,7 @@ body::-webkit-scrollbar-track{
             background-color: rgb(54, 54, 54);
             height: 100dvh;
             width: 100%;
-            position: absolute;
+            position: fixed;
             top: 0;
             z-index: 5;
             .nav-mobile{
