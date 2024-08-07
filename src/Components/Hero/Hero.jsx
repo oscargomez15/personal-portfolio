@@ -12,9 +12,10 @@ import { faBars, faDiamond, faGraduationCap } from '@fortawesome/free-solid-svg-
 export const Hero = () => {
   const sectionRef = useRef();
   const sectionInView = useInView(sectionRef);
-
+  
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-
+  
+  console.log(hamburgerOpen);
   useEffect(()=>{
     if(hamburgerOpen){
       addNoScroll();
@@ -53,7 +54,7 @@ export const Hero = () => {
 
       <motion.div className="hamburger-menu"
       initial={{opacity:0}}
-      animate={{opacity: hamburgerOpen == true ? 1 : 0}}
+      animate={{opacity: hamburgerOpen == true ? 1 : 0, display: hamburgerOpen ? "block" : "none"}}
       transition={{duration:.5}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>
@@ -105,14 +106,14 @@ export const Hero = () => {
         initial= {{opacity:0, y: 50}}
         animate= {{opacity: sectionInView ? 1: 0, y: sectionInView ? 0 : 75 }}
         transition={{duration:2}}
-        onClick={handleClick}
         className="text-content">
           <h2>CLOUD ENGINEER & FULL STACK DEVELOPER</h2>
           <h1>OSCAR GOMEZ</h1>
           <div className="certifications">
             <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421" target='_blank' className="cert-link">
               <motion.div className="cert-item"
-              whileHover={{scale:1.1, cursor:"pointer"}}>
+              whileHover={{scale:1.1, cursor:"pointer"}}
+              whileTap={{scale: 1.1}}>
                 <FontAwesomeIcon icon={faAws}/>
                 <h3>AS Solutions Architect</h3>
               </motion.div>
@@ -121,7 +122,8 @@ export const Hero = () => {
             <FontAwesomeIcon icon={faDiamond}/>
             <a href="" className='cert-link' target='_blank'>
               <motion.div className="cert-item"
-              whileHover={{scale:1.1, cursor:"pointer"}}>
+              whileHover={{scale:1.1, cursor:"pointer"}}
+              whileTap={{scale:1.1}}>
                 <FontAwesomeIcon icon={faGraduationCap}/>
                 <h3>BS Computer Science </h3>
               </motion.div>

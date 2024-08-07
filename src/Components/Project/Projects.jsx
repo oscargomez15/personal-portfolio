@@ -86,7 +86,8 @@ const projectsInfo =[
                             onMouseLeave={handleHoverOut}
                             initial={{scaleY:0}}
                             animate={{scaleY: projectIsInView ? 1 : 0, transformOrigin: "top"}}
-                            whileHover={{scale:1.05, cursor:"pointer", opacity:1}}
+                            whileHover={{scale: 1.05, cursor:"pointer"}}
+                            whileTap={{scale: 1.05}}
                             transition={{
                                 duration:0.5,
                                 scaleY: {duration:0.5, delay: id * 0.2}}}
