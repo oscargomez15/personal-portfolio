@@ -24,7 +24,8 @@
         .project-background{
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            -o-object-fit: cover;
+               object-fit: cover;
             opacity: .5;
             position: absolute;
             z-index: -1;
@@ -67,6 +68,8 @@
         flex-wrap: wrap;
         gap: 1rem;
         align-items: stretch;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
 
         .project-item{

@@ -80,9 +80,9 @@ const clearForm = () => {
 
                 <motion.button
                 className='form-send'
-                animate={{backgroundColor: isLoading ? "#585858" : ""}}
+                animate={{backgroundColor: isLoading ? "#585858" : "",paddingInline: isLoading ? '2px' : ''}}
                 whileHover={{opacity:0.8, cursor:"pointer"}}
-                transition={{duration:.2, delay:0}}> {isLoading ? <div className="loading-animation"> Sending<LoadingIcons.TailSpin/></div> : "Send"} </motion.button>
+                transition={{duration:.2, delay:0}}> {isLoading ? <div className="loading-animation"> <LoadingIcons.Bars/></div> : "Send"} </motion.button>
             </form>
         </motion.article>
     </section>

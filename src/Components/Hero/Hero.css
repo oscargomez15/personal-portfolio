@@ -41,7 +41,7 @@ body::-webkit-scrollbar-track {
   max-height: 100vh;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 5;
 }
 .hero-wrapper .hero-content {

@@ -30,7 +30,9 @@ form{
         }
         input, textarea{
             flex: 0 1 auto;
-            appearance: none;
+            -webkit-appearance: none;
+               -moz-appearance: none;
+                    appearance: none;
             outline: none;
             border: none;
             padding: .75rem;
@@ -47,9 +49,13 @@ form{
 
     .form-send{
         outline: none;
-        appearance: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
         background: none;
         border: none;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         background-color: #ff9b58;
         color: white;

@@ -21,7 +21,7 @@
   filter: opacity(0.1) blur(1px);
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: -1;
 }
 .diagrams-list .diagram-item h2 {
@@ -34,7 +34,7 @@
 }
 .diagrams-list .diagram-item .diagram-image {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   max-height: 600px;
 }
 .diagrams-list .diagram-item .diagram-text {
