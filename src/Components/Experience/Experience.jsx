@@ -11,9 +11,13 @@ import { faBagShopping, faDiamond, faGamepad, faPepperHot, faPlaneArrival } from
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Experience = () => {
-const experienceRef = useRef(null);
-const experienceIsInView = useInView(experienceRef,{amount:0.1});
 const [hoveredProject, setHoveredProject] = useState(null);
+
+const viewportConfig = {amount:0.1, once:true};
+const variantsOpacity = {
+    visible:{opacity:1},
+    hide:{opacity:0}
+}
 
 const handleHover = (itemId) => {
     setHoveredProject(itemId);
@@ -73,11 +77,13 @@ const experienceInfo =[
 
   return (
     <section
-    id='experience'
-    ref={experienceRef}>
+    id='experience'>
         <article className='content'>
             <motion.h1 className='section-heading'
-            animate={{opacity: experienceIsInView ? 1 : 0}}
+            variants={variantsOpacity}
+            initial='hide'
+            whileInView='visible'
+            viewport={viewportConfig}
             transition={{duration:2}}>Experience</motion.h1>
                 <div className="experience-list">
                     {experienceInfo.map((experience, id)=>{
@@ -87,7 +93,8 @@ const experienceInfo =[
                             onMouseEnter={() => handleHover(id)}
                             onMouseLeave={handleHoverOut}
                             initial={{scaleY:0}}
-                            animate={{scaleY: experienceIsInView ? 1 : 0, transformOrigin: "top"}}
+                            whileInView={{scaleY: 1}}
+                            viewport={viewportConfig}
                             whileHover={{
                                 scale:1.05,
                                 cursor:"pointer",

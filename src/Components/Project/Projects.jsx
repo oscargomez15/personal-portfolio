@@ -10,9 +10,12 @@ import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons
 import backgroundLines from 'Assets/abstract-lines-3.jpg'
 
 export const Projects = () => {
-const projectRef = useRef(null);
-const projectIsInView = useInView(projectRef,{amount:0.1});
 const [hoveredProject, setHoveredProject] = useState(null);
+const opacityVariant = {
+    visible: {opacity: 1},
+    hide: {opacity: 0}
+}
+const viewportConfig = {amount: 0.1, once:true}
 
 const handleHover = (id) => {
     setHoveredProject(id);
@@ -69,11 +72,13 @@ const projectsInfo =[
 
   return (
     <section className='projects-section'
-    id='projects'
-    ref={projectRef}>
+    id='projects'>
         <article className='content'>
             <motion.h1 className='section-heading'
-            animate={{opacity: projectIsInView ? 1 : 0}}
+            variants={opacityVariant}
+            initial='hide'
+            whileInView='visible'
+            viewport={viewportConfig}
             transition={{duration:2}}>Projects</motion.h1>
                 <div className="projects-list">
                     {projectsInfo.map((project, id)=>{
@@ -83,9 +88,10 @@ const projectsInfo =[
                             onMouseEnter={() => handleHover(id)}
                             onMouseLeave={handleHoverOut}
                             initial={{scaleY:0}}
-                            animate={{scaleY: projectIsInView ? 1 : 0, transformOrigin: "top"}}
+                            whileInView={{scaleY: 1, transformOrigin: 'top'}}
                             whileHover={{scale: 1.05, cursor:"pointer"}}
                             whileTap={{scale: 1.05}}
+                            viewport={viewportConfig}
                             transition={{
                                 duration:0.5,
                                 scaleY: {duration:0.5, delay: id * 0.2}}}

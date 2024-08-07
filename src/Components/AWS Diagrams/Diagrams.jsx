@@ -11,8 +11,12 @@ import { faChevronDown, faDiamond } from '@fortawesome/free-solid-svg-icons'
 import { motion, useInView } from 'framer-motion'
 
 export const Diagrams = () => {
-    const sectionRef = useRef(null);
-    const sectionInView = useInView(sectionRef, {amount:0.1});
+
+    const viewportConfig = {once: true, amount: 0.1}
+    const opacityVariants = {
+        hide: {opacity:0},
+        visible: {opacity: 1}
+    }
 
 const diagramsInfo = [{
     image: ridesDiagram,
@@ -41,11 +45,14 @@ const diagramsInfo = [{
 }]
 
 return (
-    <section id='diagrams' ref={sectionRef}>
+    <section id='diagrams'>
         <article className='content'>
             <motion.h1
             className='section-heading'
-            animate={{opacity: sectionInView ? 1 : 0}}
+            variants={opacityVariants}
+            initial='hide'
+            whileInView='visible'
+            viewport={viewportConfig}
             transition={{duration:2}}> Diagrams</motion.h1>
             <div className="diagrams-list">
                 {diagramsInfo.map((item, id) => {
@@ -53,7 +60,8 @@ return (
                         <motion.div className="diagram-item"
                         key={`diagram-${id+1}`}
                         initial={{scale:0, opacity:0}}
-                        animate={{scale: sectionInView ? 1 : 0, opacity: sectionInView ?  1 : 0}}
+                        whileInView={{opacity:1, scale:1}}
+                        viewport={viewportConfig}
                         transition={{duration:1, delay: id * 0.2}}>
                             <img src={background} alt="" className='background-image' />
                             <img src={item.image} alt="" className='diagram-image' />

@@ -6,8 +6,11 @@ import { faCode, faDatabase, faGear, faNetworkWired, faUpRightAndDownLeftFromCen
 import { motion, useInView } from 'framer-motion';
 
 export const Skills = () => {
-  const sectionRef = useRef(null);
-  const sectionInView = useInView(sectionRef, {amount:0.1});
+  const opacityVariants = {
+    visible: {opacity:1},
+    hide: {opacity:0}
+  }
+  const viewportConfig = {amount:0.1, once:true}
 
   const skillsList = [{
     icon: faAws,
@@ -61,20 +64,25 @@ export const Skills = () => {
   }
 ]
   return(
-  <motion.section className='skills-section' id='skills' ref={sectionRef}>
+  <section className='skills-section' id='skills'>
       <article className="content">
         <motion.h1
-        initial={{opacity:0}}
-        animate={{opacity: sectionInView ? 1 : 0}}
-        transition={{duration: 2}} className='section-heading'> Skills </motion.h1>
+        variants={opacityVariants}
+        initial='hide'
+        whileInView='visible'
+        viewport={viewportConfig}
+        transition={{duration: 2}}
+        className='section-heading'> Skills </motion.h1>
         <motion.ul>
           {skillsList.map((item,id) => {
             return(
               <motion.li
               key={id}
               whileHover={{ scale:1.1, cursor:"pointer"}}
+              whileTap={{scale:1.1}}
               initial={{opacity:0, translateX: -50}}
-              animate={{opacity: sectionInView ? 1 : 0, translateX: sectionInView ? 0 : -50}}
+              whileInView={{opacity:1, translateX:0}}
+              viewport={viewportConfig}
               transition={{
                 opacity: {duration:1, delay: id * 0.2},
                 translateX:{duration:1, delay: id * 0.2},
@@ -89,5 +97,5 @@ export const Skills = () => {
           })}
         </motion.ul>
       </article>
-  </motion.section>)
+  </section>)
 }
