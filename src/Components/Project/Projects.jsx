@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import 'Components/Project/Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion, useInView } from 'framer-motion'
-import { faBagShopping, faDiamond, faGamepad, faGlobe, faPlaneArrival, faScrewdriverWrench, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
+import { faBagShopping, faDiamond, faGamepad, faGlobe, faScrewdriverWrench, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons'
 import {RiTailwindCssFill} from "react-icons/ri"
 import {SiTypescript} from 'react-icons/si'
 import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
@@ -94,12 +94,12 @@ const projectsInfo =[
                             viewport={viewportConfig}
                             transition={{
                                 duration:0.5,
-                                scaleY: {duration:0.5, delay: id * 0.2}}}
+                                scaleY: {duration:0.5}}}
                             className='project-item'>
                                 <motion.img src={backgroundLines}
                                 alt=""
                                 className='project-background'
-                                whileHover={{scaleY:hoveredProject == id ? 1.5 : 1}}
+                                whileHover={{scaleY:hoveredProject === id ? 1.5 : 1}}
                                 transition={{duration:5}} />
 
                                 <div className="project-content">
@@ -112,8 +112,8 @@ const projectsInfo =[
                                         href={project.gitHubRepo}
                                         target='_blank'
                                         animate={{
-                                            scale : hoveredProject == id ? 1.25 : 1,
-                                            color: hoveredProject == id ? "#ff9b58" : "white"
+                                            scale : hoveredProject === id ? 1.25 : 1,
+                                            color: hoveredProject === id ? "#ff9b58" : "white"
                                         }}
                                         whileHover = {{color:"#ffb98a"}}>
                                             <FontAwesomeIcon icon={faGithub}/></motion.a>
@@ -122,8 +122,8 @@ const projectsInfo =[
                                         <motion.a
                                         href={project.projectLink}
                                         animate={{
-                                            scale : hoveredProject == id ? 1.25 : 1,
-                                            color: hoveredProject == id ? "#ff9b58" : "white"
+                                            scale : hoveredProject === id ? 1.25 : 1,
+                                            color: hoveredProject === id ? "#ff9b58" : "white"
                                         }}
                                         whileHover = {{color:"#ffb98a"}}
                                         target='_blank'>

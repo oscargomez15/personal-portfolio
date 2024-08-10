@@ -23,6 +23,7 @@ body::-webkit-scrollbar-track{
 .hero-wrapper{
     max-height: 100dvh;
     position: relative;
+    overflow: hidden;
 
     .overlay{
         position: absolute;
@@ -37,6 +38,20 @@ body::-webkit-scrollbar-track{
 
     .hamburger, .hamburger-menu{
         display: none;
+    }
+
+    .back-to-top{
+        display: block;
+        position: fixed;
+        z-index: 6;
+        bottom: 10px;
+        right: 10px;
+        a{
+            color: white;
+        }
+        svg{
+            height: 50px;
+        }
     }
 
     video{
@@ -161,6 +176,7 @@ body::-webkit-scrollbar-track{
     }
     .hero-wrapper{
         position: relative;
+        overflow-x: hidden;
         .hero-content{
             top: 0;
         }

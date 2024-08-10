@@ -77,7 +77,7 @@ export const About = () => {
                 <motion.img src={youngPicture} alt="" className='image-behind'
                 initial={{x:50, rotate:0, opacity: 0}}
                 viewport={viewportConfig}
-                whileInView={{x:-15, rotate:15, opacity:1}}
+                whileInView={{x:-20, rotate:15, opacity:1}}
                 transition={{duration:2, delay:2}}/>
             </motion.div>
 

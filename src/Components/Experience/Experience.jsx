@@ -6,7 +6,7 @@ import alorica from "Assets/alorica.png"
 import allied from "Assets/allied-global.jpg"
 import gial from "Assets/gial-red.jpg"
 
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { faBagShopping, faDiamond, faGamepad, faPepperHot, faPlaneArrival } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

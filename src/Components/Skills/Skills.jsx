@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import 'Components/Skills/Skills.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAws, faCss3, faDocker, faFigma, faGithub, faHtml5, faJs, faLinux, faNodeJs, faPython, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faAws, faCss3, faDocker, faFigma, faGithub, faHtml5, faJs, faLinux, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDatabase, faGear, faNetworkWired, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const Skills = () => {
   const opacityVariants = {

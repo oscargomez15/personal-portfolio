@@ -23,6 +23,7 @@ body::-webkit-scrollbar-track {
 .hero-wrapper {
   max-height: 100dvh;
   position: relative;
+  overflow: hidden;
 }
 .hero-wrapper .overlay {
   position: absolute;
@@ -36,6 +37,19 @@ body::-webkit-scrollbar-track {
 }
 .hero-wrapper .hamburger, .hero-wrapper .hamburger-menu {
   display: none;
+}
+.hero-wrapper .back-to-top {
+  display: block;
+  position: fixed;
+  z-index: 6;
+  bottom: 10px;
+  right: 10px;
+}
+.hero-wrapper .back-to-top a {
+  color: white;
+}
+.hero-wrapper .back-to-top svg {
+  height: 50px;
 }
 .hero-wrapper video {
   max-height: 100vh;
@@ -155,6 +169,7 @@ body::-webkit-scrollbar-track {
   }
   .hero-wrapper {
     position: relative;
+    overflow-x: hidden;
   }
   .hero-wrapper .hero-content {
     top: 0;

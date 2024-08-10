@@ -1,13 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react'
 import 'Components/Hero/Hero.css'
-import backgroundVideo from '../../Assets/abstract.mp4'
 import { motion, useInView } from 'framer-motion'
 import Lottie from 'lottie-react'
 
 import animationData from "Assets/scroll.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faDiamond, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCircleArrowUp, faDiamond, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 export const Hero = () => {
   const sectionRef = useRef();
@@ -57,7 +56,7 @@ export const Hero = () => {
   }
 
   return (
-    <main className="hero-wrapper">
+    <main className="hero-wrapper" id='home'>
       <video autoPlay loop muted playsInline>
         <source src='https://oscargomez-webportfolio.s3.amazonaws.com/abstract.mp4' type='video/mp4'/>
         Your browser does not support the video tag.
@@ -73,13 +72,23 @@ export const Hero = () => {
         <FontAwesomeIcon icon={faBars}/>
       </motion.div>
 
+      <motion.div
+      className="back-to-top"
+      animate={{y: isVisible ? 0 : 100}}
+      transition={{
+        y:{duration:1}
+      }}>
+        <a href="#home"><FontAwesomeIcon icon={faCircleArrowUp}/></a>
+      </motion.div>
+
       <motion.div className="hamburger-menu"
       initial={{opacity:0, display:"none"}}
-      animate={{opacity: hamburgerOpen == true ? 1 : 0, display: hamburgerOpen ? "block" : "none"}}
+      animate={{opacity: hamburgerOpen === true ? 1 : 0, display: hamburgerOpen ? "block" : "none"}}
       transition={{duration:.5}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>
         <ul>
+            <li><a href="#home" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>HOME</a></li>
             <li><a href="#about" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>ABOUT</a></li>
             <li><a href="#skills" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>SKILLS</a></li>
             <li> <a href="#experience" onClick={removeNoScroll}><FontAwesomeIcon icon={faDiamond}/>EXPERIENCE</a></li>
@@ -90,19 +99,19 @@ export const Hero = () => {
           <div className="socials">
             <h2>LET'S CONNECT</h2>
             <div className="socials-icons">
-              <a href="https://www.linkedin.com/in/oscargomez1998/" target='_blank'>
+              <a href="https://www.linkedin.com/in/oscargomez1998/" target='_blank' rel='noreferrer'>
                 <FontAwesomeIcon icon={faLinkedin}/>
               </a>
 
               <FontAwesomeIcon icon={faDiamond}/>
 
-              <a href="https://github.com/oscargomez15" target='_blank'>
+              <a href="https://github.com/oscargomez15" target='_blank' rel='noreferrer'>
                 <FontAwesomeIcon icon={faGithub}/>
               </a>
 
               <FontAwesomeIcon icon={faDiamond}/>
 
-              <a href="https://www.facebook.com/oscargomez1998">
+              <a href="https://www.facebook.com/oscargomez1998" target='_blank' rel='noreferrer'>
                 <FontAwesomeIcon icon={faFacebook}/>
               </a>
             </div>
@@ -131,7 +140,7 @@ export const Hero = () => {
           <h2>CLOUD ENGINEER & FULL STACK DEVELOPER</h2>
           <h1>OSCAR GOMEZ</h1>
           <div className="certifications">
-            <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421" target='_blank' className="cert-link">
+            <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/bf73a72437574e879acee54fc1f40421" target='_blank' className="cert-link" rel='noreferrer'>
               <motion.div className="cert-item"
               whileHover={{scale:1.1, cursor:"pointer"}}
               whileTap={{scale: 1.1}}>
@@ -141,7 +150,7 @@ export const Hero = () => {
             </a>
 
             <FontAwesomeIcon icon={faDiamond}/>
-            <a href="https://oscargomez-webportfolio.s3.amazonaws.com/bs-cs-oscargomez.jpg" className='cert-link' target='_blank'>
+            <a href="https://oscargomez-webportfolio.s3.amazonaws.com/bs-cs-oscargomez.jpg" className='cert-link' target='_blank' rel='noreferrer'>
               <motion.div className="cert-item"
               whileHover={{scale:1.1, cursor:"pointer"}}
               whileTap={{scale:1.1}}>

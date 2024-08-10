@@ -62,7 +62,7 @@ return (
                         initial={{scale:0, opacity:0}}
                         whileInView={{opacity:1, scale:1}}
                         viewport={viewportConfig}
-                        transition={{duration:1, delay: id * 0.2}}>
+                        transition={{duration:1}}>
                             <img src={background} alt="" className='background-image' />
                             <img src={item.image} alt="" className='diagram-image' />
                             <div className="diagram-text">

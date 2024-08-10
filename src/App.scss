@@ -6,13 +6,12 @@
 
 body{
     background-color: rgb(26, 26, 26);
-    overflow-x: hidden;
-
 }
 
 .content-wrapper{
     width: 80%;
     margin: auto;
+    overflow: hidden;
 }
 
 @media screen and (max-width:1200px) {
