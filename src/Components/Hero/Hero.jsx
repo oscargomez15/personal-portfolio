@@ -82,8 +82,8 @@ export const Hero = () => {
       </motion.div>
 
       <motion.div className="hamburger-menu"
-      initial={{opacity:0, display:"none"}}
-      animate={{opacity: hamburgerOpen === true ? 1 : 0, display: hamburgerOpen ? "block" : "none"}}
+      initial={{opacity:0}}
+      animate={{opacity: hamburgerOpen ? 1 : 0, display: hamburgerOpen ? 'block' : 'none' }}
       transition={{duration:.5}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>
