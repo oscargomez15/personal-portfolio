@@ -63,6 +63,7 @@ section .image-collection-desktop .image-behind {
   }
   section .image-collection-mb {
     display: block;
+    width: 100%;
   }
   section .image-collection-mb img {
     width: 50%;
