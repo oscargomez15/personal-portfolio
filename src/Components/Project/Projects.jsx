@@ -65,7 +65,7 @@ const projectsInfo =[
             "Utilized HostGator shared hosting for reliable and cost-effective website hosting."
         ],
         gitHubRepo: "https://github.com/oscargomez15/handyman-website",
-        projectLink: "https://oscargomez15.github.io/handyman-website/"
+        projectLink: "https://www.gialservices.com"
     }
 
 ]
