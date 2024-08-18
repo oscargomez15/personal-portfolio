@@ -67,6 +67,7 @@ export const Hero = () => {
       <motion.div className="hamburger"
       ref={hamburgerMenu}
       animate={{y: isVisible ? 0 : -100}}
+      whileHover={{cursor:'pointer'}}
       whileTap={{scale:1.1, color:'gray'}}
       onClick={handleClick}>
         <FontAwesomeIcon icon={faBars}/>
