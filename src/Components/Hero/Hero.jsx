@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react'
 import 'Components/Hero/Hero.css'
 import { motion, useInView } from 'framer-motion'
 import Lottie from 'lottie-react'
-
 import animationData from "Assets/scroll.json"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAws, faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -79,12 +78,12 @@ export const Hero = () => {
       transition={{
         y:{duration:1}
       }}>
-        <a href="#home"><FontAwesomeIcon icon={faCircleArrowUp}/></a>
+        <a href="#home" aria-label='back to top button'><FontAwesomeIcon icon={faCircleArrowUp}/></a>
       </motion.div>
 
       <motion.div className="hamburger-menu"
       initial={{x: -300}}
-      animate={{x: hamburgerOpen ? 0 : -1280}}
+      animate={{x: hamburgerOpen ? 0 : '-100vw'}}
       transition={{duration:.3}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>

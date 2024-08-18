@@ -47,7 +47,25 @@ section .image-collection-desktop .image-behind {
   z-index: -1;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 2300px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .about-section .image-collection-desktop {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1980px) {
+  .about-section .image-collection-desktop {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1750px) {
+  .about-section .content .section-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1300px) {
   section {
     flex-direction: column;
     padding: 5rem 0;
@@ -63,10 +81,15 @@ section .image-collection-desktop .image-behind {
   }
   section .image-collection-mb {
     display: block;
-    width: 100%;
+    width: 70%;
   }
   section .image-collection-mb img {
     width: 50%;
     border: 5px solid white;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section .image-collection-mb {
+    width: 100%;
   }
 }/*# sourceMappingURL=About.css.map */

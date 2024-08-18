@@ -1,9 +1,8 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './About.css'
-import oscar from '../../Assets/oscar-picture.jpg'
-import oscar2 from '../../Assets/oscar.jpg'
-import youngPicture from 'Assets/oscar-young.png'
-import { motion, useInView } from 'framer-motion'
+import oscar from '../../Assets/oscar-picture.webp'
+import youngPicture from 'Assets/oscar-young.webp'
+import { motion } from 'framer-motion'
 
 export const About = () => {
 
@@ -55,13 +54,15 @@ export const About = () => {
                   initial={{opacity:0, scale:0.8}}
                   whileInView={{opacity:1, scale: 1}}
                   viewport={viewportConfig}
-                  transition={{delay: 1, duration: 1}}/>
+                  transition={{delay: 1, duration: 1}}
+                  loading='lazy'/>
 
                   <motion.img src={youngPicture} alt="" className='image-behind'
                   initial={{x:0, rotate:0, opacity: 0}}
                   whileInView={{x:350, rotate: 15, opacity:1}}
                   viewport={viewportConfig}
-                  transition={{duration:2, delay:2}}/>
+                  transition={{duration:2, delay:2}}
+                  loading='lazy'/>
               </motion.div>
 
               {/* This div is to be displayed only on small devices/mobile. */}
@@ -75,13 +76,15 @@ export const About = () => {
                   initial={{opacity:0, scale:0.8}}
                   whileInView={{opacity:1, scale: 1}}
                   viewport={viewportConfig}
-                  transition={{delay: 1, duration: 1}}/>
+                  transition={{delay: 1, duration: 1}}
+                  loading='lazy'/>
 
                   <motion.img src={youngPicture} alt="" className='image-behind'
                   initial={{x:-50, rotate:0, opacity: 0}}
                   viewport={viewportConfig}
                   whileInView={{x:0, rotate:15, opacity:1}}
-                  transition={{duration:2, delay:2}}/>
+                  transition={{duration:2, delay:2}}
+                  loading='lazy'/>
               </motion.div>
 
     </section>

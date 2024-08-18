@@ -163,19 +163,9 @@ body::-webkit-scrollbar-track {
   width: 200px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1920px) {
   .desktop-nav {
     display: none;
-  }
-  .hero-wrapper {
-    position: relative;
-    overflow-x: hidden;
-  }
-  .hero-wrapper .hero-content {
-    top: 0;
-  }
-  .hero-wrapper video {
-    min-height: 100dvh;
   }
   .hero-wrapper .hamburger {
     display: block;
@@ -255,25 +245,81 @@ body::-webkit-scrollbar-track {
     color: #ff9b58;
     height: 15px;
   }
+  .hero-wrapper .text-content h1 {
+    text-align: center;
+    line-height: 15rem;
+    font-size: 17rem;
+  }
+  .hero-wrapper .text-content .certifications {
+    margin-top: 3rem;
+  }
+  .hero-wrapper .text-content .certifications .cert-item h3 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .hero-wrapper {
+    min-height: 100dvh;
+  }
+  .hero-wrapper .text-content h1 {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .desktop-nav {
+    display: none;
+  }
+  .hero-wrapper {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .hero-wrapper .hero-content {
+    top: 0;
+  }
+  .hero-wrapper video {
+    min-height: 100dvh;
+  }
   .hero-wrapper .text-content {
     height: 100dvh;
     text-align: center;
     gap: 1rem;
   }
+  .hero-wrapper .text-content .certifications {
+    margin-top: 1rem;
+  }
   .hero-wrapper .text-content .certifications .cert-item {
     flex-direction: column;
   }
+  .hero-wrapper .text-content .certifications .cert-item h3 {
+    font-size: 1rem;
+  }
   .hero-wrapper .text-content h2 {
-    font-size: 0.8rem;
+    font-size: 2rem;
     letter-spacing: normal;
     padding: 0.2rem 0.5rem;
   }
   .hero-wrapper .text-content h1 {
-    font-size: 5rem;
+    font-size: 8rem;
     letter-spacing: 0.2rem;
     line-height: 5rem;
   }
   .hero-wrapper .text-content .scroll {
     right: 25%;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .hero-wrapper .text-content h1 {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .hero-wrapper .text-content h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+  .hero-wrapper .text-content h2 {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=hero.css.map */

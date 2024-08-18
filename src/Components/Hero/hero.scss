@@ -170,19 +170,12 @@ body::-webkit-scrollbar-track{
     }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1920px) {
     .desktop-nav{
         display: none;
     }
+
     .hero-wrapper{
-        position: relative;
-        overflow-x: hidden;
-        .hero-content{
-            top: 0;
-        }
-        video{
-            min-height: 100dvh;
-        }
         .hamburger{
             display: block;
             position: fixed;
@@ -265,26 +258,99 @@ body::-webkit-scrollbar-track{
             }
         }
         .text-content{
+            h1{
+                text-align: center;
+                line-height: 15rem;
+                font-size: 17rem;
+            }
+
+            .certifications{
+                margin-top: 3rem;
+                .cert-item{
+                    h3{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .hero-wrapper{
+        min-height: 100dvh;
+        .text-content{
+            h1{
+                font-size: 10rem;
+                line-height: 9rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .desktop-nav{
+        display: none;
+    }
+    .hero-wrapper{
+        position: relative;
+        overflow-x: hidden;
+        .hero-content{
+            top: 0;
+        }
+        video{
+            min-height: 100dvh;
+        }
+        .text-content{
             height: 100dvh;
             text-align: center;
             gap: 1rem;
             .certifications{
+                margin-top: 1rem;
                 .cert-item{
                     flex-direction: column;
+                    h3{
+                        font-size: 1rem;
+                    }
                 }
             }
             h2{
-                font-size: .8rem;
+                font-size: 2rem;
                 letter-spacing: normal;
                 padding: 0.2rem 0.5rem;
             }
             h1{
-                font-size: 5rem;
+                font-size: 8rem;
                 letter-spacing: 0.2rem;
                 line-height: 5rem;
             }
             .scroll{
                 right: 25%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1080px) {
+    .hero-wrapper{
+        .text-content{
+            h1{
+                font-size: 10rem;
+                line-height: 9rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .hero-wrapper{
+        .text-content{
+            h1{
+                font-size:6rem;
+                line-height: 6rem;
+            }
+            h2{
+                font-size: 1rem;
             }
         }
     }

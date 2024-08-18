@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
+
 import 'Components/Project/Projects.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { motion } from 'framer-motion'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBagShopping, faDiamond, faGamepad, faGlobe, faScrewdriverWrench, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons'
 import {RiTailwindCssFill} from "react-icons/ri"
 import {SiTypescript} from 'react-icons/si'
 import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
 
-import backgroundLines from 'Assets/abstract-lines-3.jpg'
+import backgroundLines from 'Assets/abstract-lines-3.webp'
 
 export const Projects = () => {
 const [hoveredProject, setHoveredProject] = useState(null);
@@ -97,10 +100,11 @@ const projectsInfo =[
                                 scaleY: {duration:0.5}}}
                             className='project-item'>
                                 <motion.img src={backgroundLines}
-                                alt=""
+                                alt={`background-project-${id}`}
                                 className='project-background'
                                 whileHover={{scaleY:hoveredProject === id ? 1.5 : 1}}
-                                transition={{duration:5}} />
+                                transition={{duration:5}}
+                                loading='lazy'/>
 
                                 <div className="project-content">
                                     <FontAwesomeIcon icon={project.icon} size='5x'/>
@@ -109,6 +113,7 @@ const projectsInfo =[
                                     <div
                                     className="project-buttons">
                                         <motion.a
+                                        aria-label={`Go to ${project.title} project repository`}
                                         href={project.gitHubRepo}
                                         target='_blank'
                                         animate={{
@@ -120,6 +125,7 @@ const projectsInfo =[
 
                                             <FontAwesomeIcon icon={faDiamond} className='buttons-divider'/>
                                         <motion.a
+                                        aria-label={`view ${project.title} live project`}
                                         href={project.projectLink}
                                         animate={{
                                             scale : hoveredProject === id ? 1.25 : 1,

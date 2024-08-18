@@ -1,14 +1,14 @@
-import React, { useRef } from 'react'
-import ridesDiagram from 'Assets/Rides-diagram.png'
-import ecsDiagram from 'Assets/esc-ecr-diagram.png'
-import libraryDiagram from 'Assets/library-diagram.png'
+import React from 'react'
+import ridesDiagram from 'Assets/Rides-diagram.webp'
+import ecsDiagram from 'Assets/esc-ecr-diagram.webp'
+import libraryDiagram from 'Assets/library-diagram.webp'
 
 import 'Components/AWS Diagrams/Diagrams.css'
-import background from 'Assets/abstract-bg.jpg'
+import background from 'Assets/abstract-bg.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faDiamond } from '@fortawesome/free-solid-svg-icons'
 
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export const Diagrams = () => {
 
@@ -63,8 +63,8 @@ return (
                         whileInView={{opacity:1, scale:1}}
                         viewport={viewportConfig}
                         transition={{duration:1}}>
-                            <img src={background} alt="" className='background-image' />
-                            <img src={item.image} alt="" className='diagram-image' />
+                            <img src={background} alt={`background-diagram-${id}`} className='background-image' loading='lazy' />
+                            <img src={item.image} alt={`diagram-image-${id}`} className='diagram-image' loading='lazy'/>
                             <div className="diagram-text">
                                 <div className="diagram-title">
                                     <h2>{item.title}</h2>
