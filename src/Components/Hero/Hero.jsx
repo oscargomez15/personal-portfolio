@@ -83,7 +83,7 @@ export const Hero = () => {
 
       <motion.div className="hamburger-menu"
       initial={{x: -300}}
-      animate={{x: hamburgerOpen ? 0 : -1000}}
+      animate={{x: hamburgerOpen ? 0 : -1280}}
       transition={{duration:.3}}>
         <nav className='nav-mobile'>
           <h2>NAVIGATION</h2>
