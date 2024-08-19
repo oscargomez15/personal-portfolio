@@ -1,10 +1,10 @@
 import React from 'react'
-import ridesDiagram from 'Assets/Rides-diagram.webp'
-import ecsDiagram from 'Assets/esc-ecr-diagram.webp'
-import libraryDiagram from 'Assets/library-diagram.webp'
+import ridesDiagram from '../../Assets/Rides-diagram.webp'
+import ecsDiagram from '../../Assets/esc-ecr-diagram.webp'
+import libraryDiagram from '../../Assets/library-diagram.webp'
 
 import 'Components/AWS Diagrams/Diagrams.css'
-import background from 'Assets/abstract-bg.webp'
+import background from '../../Assets/abstract-bg.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faDiamond } from '@fortawesome/free-solid-svg-icons'
 

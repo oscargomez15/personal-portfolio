@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.css'
 import oscar from '../../Assets/oscar-picture.webp'
-import youngPicture from 'Assets/oscar-young.webp'
+import youngPicture from '../../Assets/oscar-young.webp'
 import { motion } from 'framer-motion'
 
 export const About = () => {
@@ -50,14 +50,15 @@ export const About = () => {
               whileInView='visible'
               viewport={viewportConfig}
               transition={{delay: 0, duration: 2}}>
-                  <motion.img src={oscar} alt=""
+                
+                  <motion.img src={oscar} alt='oscar-picture'
                   initial={{opacity:0, scale:0.8}}
                   whileInView={{opacity:1, scale: 1}}
                   viewport={viewportConfig}
                   transition={{delay: 1, duration: 1}}
                   loading='lazy'/>
 
-                  <motion.img src={youngPicture} alt="" className='image-behind'
+                  <motion.img src={youngPicture} alt='oscar-kid-picture' className='image-behind'
                   initial={{x:0, rotate:0, opacity: 0}}
                   whileInView={{x:350, rotate: 15, opacity:1}}
                   viewport={viewportConfig}

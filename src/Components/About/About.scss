@@ -38,16 +38,16 @@ section{
             flex: 1;
             position: relative;
             width: 100%;
-            img{
-                width: 40%;
-                border: 10px solid white;
-            }
-            .image-behind{
-                position: absolute;
-                top: 0;
-                left: 50;
-                z-index: -1;
-            }
+                img{
+                    width: 40%;
+                    border: 10px solid white;
+                }
+                .image-behind{
+                    position: absolute;
+                    top: 0;
+                    left: 50;
+                    z-index: -1;
+                }
         }
     }
 

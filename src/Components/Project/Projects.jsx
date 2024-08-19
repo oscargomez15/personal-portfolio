@@ -10,7 +10,7 @@ import {RiTailwindCssFill} from "react-icons/ri"
 import {SiTypescript} from 'react-icons/si'
 import { faCss3Alt, faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
 
-import backgroundLines from 'Assets/abstract-lines-3.webp'
+import backgroundLines from '../../Assets/abstract-lines-3.webp'
 
 export const Projects = () => {
 const [hoveredProject, setHoveredProject] = useState(null);
