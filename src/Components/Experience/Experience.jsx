@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
 import 'Components/Experience/Experience.css'
 
-import habaneros from "../../Assets/habaneros.webp"
-import alorica from "../../Assets/alorica.webp"
-import allied from "../../Assets/allied-global.webp"
-import gial from "../../Assets/gial-red.webp"
+import habaneros from "../../Assets/habaneros.jpg"
+import alorica from "../../Assets/alorica.png"
+import allied from "../../Assets/allied-global.jpg"
+import gial from "../../Assets/gial-red.jpg"
 
 import { motion } from 'framer-motion'
 import { faBagShopping, faDiamond, faGamepad, faPepperHot, faPlaneArrival } from '@fortawesome/free-solid-svg-icons'

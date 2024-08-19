@@ -1,7 +1,7 @@
 import React from 'react'
-import ridesDiagram from '../../Assets/Rides-diagram.webp'
-import ecsDiagram from '../../Assets/esc-ecr-diagram.webp'
-import libraryDiagram from '../../Assets/library-diagram.webp'
+import ridesDiagram from '../../Assets/Rides-diagram.png'
+import ecsDiagram from '../../Assets/esc-ecr-diagram.png'
+import libraryDiagram from '../../Assets/library-diagram.png'
 
 import 'Components/AWS Diagrams/Diagrams.css'
 import background from '../../Assets/abstract-bg.webp'

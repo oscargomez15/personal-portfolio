@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.css'
-import oscar from '../../Assets/oscar-picture.webp'
-import youngPicture from '../../Assets/oscar-young.webp'
+import oscar from '../../Assets/oscar-picture.jpg'
+import youngPicture from '../../Assets/oscar-young.png'
 import { motion } from 'framer-motion'
 
 export const About = () => {
